@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presentations | VanderOffice</title>
+  <title>Innovation Fellowship Library</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,15 +12,12 @@
 
   <style>
     :root {
-      /* California Modern Palette */
       --bg-primary: #08080f;
       --bg-secondary: #0e0e18;
       --bg-elevated: #1a1a28;
       --text-primary: #f2f2f8;
       --text-secondary: #a5a5b8;
       --text-muted: #65657a;
-
-      /* Accent colors from California seal */
       --accent-blue: #4a9eff;
       --accent-gold: #d4a04a;
       --accent-teal: #4a9a7a;
@@ -38,7 +35,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -49,6 +46,10 @@
       border-bottom: 1px solid var(--bg-elevated);
     }
 
+    .header-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
     h1 {
       font-size: 2.5rem;
@@ -67,17 +68,30 @@
       margin: 0.75rem auto 0;
     }
 
+    .hub-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
     .subtitle {
       color: var(--text-secondary);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      margin-top: 0.5rem;
+      line-height: 1.5;
     }
 
-    .presentations {
+    /* Category grid */
+    .category-grid {
       display: grid;
       gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 3rem;
     }
 
-    .presentation-card {
+    .category-card {
       background: var(--bg-secondary);
       border: 1px solid var(--bg-elevated);
       border-left: 3px solid var(--accent-gold);
@@ -86,88 +100,120 @@
       text-decoration: none;
       color: inherit;
       transition: all 0.2s ease;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
     }
 
-    .presentation-card:hover {
+    .category-card:hover {
       border-color: var(--accent-blue);
       border-left-color: var(--accent-gold);
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(74, 158, 255, 0.15);
     }
 
-    .card-header {
+    .category-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .category-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-description {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .category-footer {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.75rem;
-      gap: 1rem;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--bg-elevated);
     }
 
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .card-meta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.25rem;
-      flex-shrink: 0;
-    }
-
-    .card-slides {
+    .category-count {
       font-size: 0.8rem;
-      color: var(--accent-gold);
+      color: var(--text-muted);
+    }
+
+    .category-link {
+      font-size: 0.85rem;
+      color: var(--accent-blue);
       font-weight: 500;
     }
 
-    .card-dates {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-align: right;
-    }
-
-    .card-description {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    .card-tags {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 100px;
-      background: var(--bg-elevated);
-      color: var(--text-muted);
-    }
-
-    .tag.corrections { background: rgba(74, 158, 255, 0.15); color: var(--accent-blue); }
-    .tag.technical { background: rgba(74, 154, 122, 0.15); color: var(--accent-teal); }
-    .tag.ai { background: rgba(212, 160, 74, 0.15); color: var(--accent-gold); }
-    .tag.government { background: rgba(168, 84, 84, 0.15); color: #c87070; }
-
-    .badge-new {
-      display: inline-block;
-      font-size: 0.65rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 100px;
-      background: var(--accent-teal);
-      color: var(--bg-primary);
+    /* Recently added */
+    .section-title {
+      font-size: 1.1rem;
       font-weight: 600;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-left: 0.5rem;
-      vertical-align: middle;
+      margin-bottom: 1.25rem;
+    }
+
+    .recent-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .recent-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--bg-elevated);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: block;
+    }
+
+    .recent-card:hover {
+      border-color: var(--accent-blue);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(74, 158, 255, 0.1);
+    }
+
+    .recent-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .recent-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .recent-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .recent-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      background: rgba(168, 84, 84, 0.15);
+      color: #c87070;
+    }
+
+    .recent-tag.training {
+      background: rgba(74, 154, 122, 0.15);
+      color: var(--accent-teal);
     }
 
     footer {
@@ -188,130 +234,104 @@
       text-decoration: underline;
     }
 
-    kbd {
-      background: var(--bg-elevated);
-      padding: 0.15rem 0.4rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      border: 1px solid var(--text-muted);
+    /* Responsive */
+    @media (max-width: 900px) {
+      .recent-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 600px) {
       body { padding: 1rem; }
       h1 { font-size: 1.75rem; }
-      .card-header { flex-direction: column; gap: 0.5rem; }
-      .card-meta { align-items: flex-start; }
+      .hub-title { font-size: 1.2rem; }
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-card {
+        min-height: auto;
+      }
+      .recent-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Presentations</h1>
-      <p class="subtitle">Interactive slide decks for California state government</p>
+      <div class="header-icon">🏛️</div>
+      <h1>Governor's Innovation Fellowship</h1>
+      <div class="hub-title">Knowledge &amp; Briefing Library</div>
+      <p class="subtitle">Resources for California's government modernization initiative</p>
     </header>
 
-    <div class="presentations">
+    <div class="category-grid">
 
-      <a href="ca-enterprise-modernization-govoffice-2026-01.html" class="presentation-card">
-        <div class="card-header">
-          <span class="card-title">California Enterprise Modernization Plan<span class="badge-new">New</span></span>
-          <div class="card-meta">
-            <span class="card-slides">26 + 35 slides</span>
-            <span class="card-dates">Created Jan 26</span>
-          </div>
-        </div>
-        <p class="card-description">
-          Governor's Office briefing on the comprehensive state IT modernization strategy.
-          Covers E3 accountability model, Technical Executive Assignment framework, data governance,
-          $100M Breakthrough Fund, and procurement reform. Includes detailed appendix.
-        </p>
-        <div class="card-tags">
-          <span class="tag government">Government</span>
-          <span class="tag technical">Technical</span>
+      <a href="briefings/" class="category-card">
+        <div class="category-icon">🏛️</div>
+        <h2 class="category-title">Briefings</h2>
+        <p class="category-description">Executive briefings, governance frameworks, and agency overviews for California state government leaders and stakeholders.</p>
+        <div class="category-footer">
+          <span class="category-count">4 briefings</span>
+          <span class="category-link">Browse &rarr;</span>
         </div>
       </a>
 
-      <a href="rag-quality-assurance-2026-01.html" class="presentation-card">
-        <div class="card-header">
-          <span class="card-title">Quality Assurance for RAG Knowledge Bases<span class="badge-new">Updated</span></span>
-          <div class="card-meta">
-            <span class="card-slides">16 slides</span>
-            <span class="card-dates">Created Jan 21 · Updated Jan 25</span>
-          </div>
-        </div>
-        <p class="card-description">
-          Best practices for ensuring data quality in RAG systems: deduplication, validation,
-          embedding integrity, and testing methodologies for AI-powered knowledge bases.
-        </p>
-        <div class="card-tags">
-          <span class="tag ai">AI/ML</span>
-          <span class="tag technical">Technical</span>
+      <a href="training/" class="category-card">
+        <div class="category-icon">📚</div>
+        <h2 class="category-title">Training</h2>
+        <p class="category-description">Structured learning paths for state employees. Complete modules in order to build practical AI and technology skills.</p>
+        <div class="category-footer">
+          <span class="category-count">1 course · 2 of 6 ready</span>
+          <span class="category-link">Browse &rarr;</span>
         </div>
       </a>
 
-      <a href="claude-code-deployment-swrcb-2026-01-24.html" class="presentation-card">
-        <div class="card-header">
-          <span class="card-title">Claude Code Deployment at SWRCB<span class="badge-new">New</span></span>
-          <div class="card-meta">
-            <span class="card-slides">14 slides</span>
-            <span class="card-dates">Created Jan 25</span>
-          </div>
-        </div>
-        <p class="card-description">
-          Executive briefing for deploying AI coding assistants in California state government.
-          Covers compliance requirements, risk classification, technical controls, and phased implementation.
-        </p>
-        <div class="card-tags">
-          <span class="tag government">Government</span>
-          <span class="tag ai">AI/ML</span>
-          <span class="tag technical">Technical</span>
+      <a href="fellowops/" class="category-card">
+        <div class="category-icon">⚙️</div>
+        <h2 class="category-title">FellowOps</h2>
+        <p class="category-description">Onboarding, methodology, and lessons learned for current and future Governor's Innovation Fellowship cohorts.</p>
+        <div class="category-footer">
+          <span class="category-count">Coming Soon</span>
+          <span class="category-link">Browse &rarr;</span>
         </div>
       </a>
 
-      <a href="tea-cabinet-briefing-2026-01.html" class="presentation-card">
-        <div class="card-header">
-          <span class="card-title">Technical Executive Standards Initiative<span class="badge-new">New</span></span>
-          <div class="card-meta">
-            <span class="card-slides">15 slides</span>
-            <span class="card-dates">Created Jan 25</span>
-          </div>
-        </div>
-        <p class="card-description">
-          Cabinet briefing on the Technical Executive Assignment (TEA) framework. Establishes
-          verified competence requirements for CIO, CISO, CDO, and CTO positions in California state government.
-        </p>
-        <div class="card-tags">
-          <span class="tag government">Government</span>
-          <span class="tag technical">Technical</span>
+    </div>
+
+    <h3 class="section-title">Recently Added</h3>
+
+    <div class="recent-grid">
+
+      <a href="decks/ca-enterprise-modernization-govoffice-2026-01.html" class="recent-card">
+        <h3 class="recent-title">California Enterprise Modernization Plan</h3>
+        <div class="recent-meta">
+          <span class="recent-date">Jan 26, 2026</span>
+          <span class="recent-tag">Briefings</span>
         </div>
       </a>
 
-      <a href="corrections-digital-transformation-2026-01.html" class="presentation-card">
-        <div class="card-header">
-          <span class="card-title">Digital Transformation in Corrections<span class="badge-new">Updated</span></span>
-          <div class="card-meta">
-            <span class="card-slides">13 slides</span>
-            <span class="card-dates">Created Jan 20 · Updated Jan 25</span>
-          </div>
+      <a href="decks/tea-cabinet-briefing-2026-01.html" class="recent-card">
+        <h3 class="recent-title">Technical Executive Standards Initiative</h3>
+        <div class="recent-meta">
+          <span class="recent-date">Jan 25, 2026</span>
+          <span class="recent-tag">Briefings</span>
         </div>
-        <p class="card-description">
-          Strategic framework for modernizing correctional facility operations through
-          secure technology adoption, AI-assisted case management, and data-driven decision making.
-        </p>
-        <div class="card-tags">
-          <span class="tag corrections">Corrections</span>
-          <span class="tag ai">AI/ML</span>
+      </a>
+
+      <a href="decks/claude-code-deployment-swrcb-2026-01-24.html" class="recent-card">
+        <h3 class="recent-title">Claude Code Deployment at SWRCB</h3>
+        <div class="recent-meta">
+          <span class="recent-date">Jan 25, 2026</span>
+          <span class="recent-tag">Briefings</span>
         </div>
       </a>
 
     </div>
 
     <footer>
-      <p>Use arrow keys or swipe to navigate presentations · Press <kbd>?</kbd> for help</p>
-      <p style="margin-top: 0.5rem;">
-        <a href="https://github.com/vanderoffice/presentations">View on GitHub</a>
-      </p>
+      <a href="https://github.com/vanderoffice/presentations">View on GitHub</a>
     </footer>
   </div>
 </body>
