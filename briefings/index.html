@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefings | Innovation Fellowship Library</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #08080f;
+      --bg-secondary: #0e0e18;
+      --bg-elevated: #1a1a28;
+      --text-primary: #f2f2f8;
+      --text-secondary: #a5a5b8;
+      --text-muted: #65657a;
+      --accent-blue: #4a9eff;
+      --accent-gold: #d4a04a;
+      --accent-teal: #4a9a7a;
+      --accent-burgundy: #a85454;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .back-nav {
+      margin-bottom: 2rem;
+    }
+
+    .back-nav a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--bg-elevated);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--accent-gold);
+      margin-top: 0.75rem;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Tag filter bar */
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .filter-tag {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--bg-elevated);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .filter-tag:hover {
+      border-color: var(--accent-blue);
+      color: var(--text-primary);
+    }
+
+    .filter-tag.active {
+      background: rgba(74, 158, 255, 0.15);
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    /* Card grid */
+    .presentations {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 769px) {
+      .presentations {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .presentation-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--bg-elevated);
+      border-left: 3px solid var(--accent-gold);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .presentation-card:hover {
+      border-color: var(--accent-blue);
+      border-left-color: var(--accent-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(74, 158, 255, 0.15);
+    }
+
+    .presentation-card.hidden {
+      display: none;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-slides {
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+      font-weight: 500;
+    }
+
+    .card-dates {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .card-description {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .card-secondary {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+
+    .card-secondary:hover {
+      text-decoration: underline;
+    }
+
+    .card-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+    }
+
+    .tag.governance  { background: rgba(168, 84, 84, 0.15); color: #c87070; }
+    .tag.executive   { background: rgba(212, 160, 74, 0.15); color: var(--accent-gold); }
+    .tag.technology  { background: rgba(74, 154, 122, 0.15); color: var(--accent-teal); }
+    .tag.agency-overview { background: rgba(74, 158, 255, 0.15); color: var(--accent-blue); }
+    .tag.technical   { background: rgba(74, 154, 122, 0.15); color: var(--accent-teal); }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--bg-elevated);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="back-nav">
+      <a href="../">&larr; Back to Library</a>
+    </nav>
+
+    <header>
+      <h1>Briefings</h1>
+      <p class="subtitle">Executive briefings, governance frameworks, and agency overviews for California state government leaders and stakeholders.</p>
+    </header>
+
+    <div class="filter-bar">
+      <button class="filter-tag active" data-filter="all">All</button>
+      <button class="filter-tag" data-filter="governance">Governance</button>
+      <button class="filter-tag" data-filter="executive">Executive</button>
+      <button class="filter-tag" data-filter="technology">Technology</button>
+      <button class="filter-tag" data-filter="agency-overview">Agency Overview</button>
+      <button class="filter-tag" data-filter="technical">Technical</button>
+    </div>
+
+    <div class="presentations">
+
+      <a href="../decks/ca-enterprise-modernization-govoffice-2026-01.html" class="presentation-card" data-tags="governance executive">
+        <span class="card-title">California Enterprise Modernization Plan</span>
+        <div class="card-meta">
+          <span class="card-slides">26 + 35 slides</span>
+          <span class="card-dates">Jan 2026</span>
+        </div>
+        <p class="card-description">Governor's Office briefing on the comprehensive state IT modernization strategy. Covers E3 accountability model, Technical Executive Assignment framework, data governance, $100M Breakthrough Fund, and procurement reform.</p>
+        <span class="card-secondary" href="../decks/ca-enterprise-modernization-appendix-2026-01.html" onclick="event.preventDefault(); event.stopPropagation(); window.location.href='../decks/ca-enterprise-modernization-appendix-2026-01.html';">View Appendix &rarr;</span>
+        <div class="card-tags">
+          <span class="tag governance">Governance</span>
+          <span class="tag executive">Executive</span>
+        </div>
+      </a>
+
+      <a href="../decks/tea-cabinet-briefing-2026-01.html" class="presentation-card" data-tags="governance executive">
+        <span class="card-title">Technical Executive Standards Initiative</span>
+        <div class="card-meta">
+          <span class="card-slides">15 slides</span>
+          <span class="card-dates">Jan 2026</span>
+        </div>
+        <p class="card-description">Cabinet briefing on the TEA framework. Establishes verified competence requirements for CIO, CISO, CDO, and CTO positions in California state government.</p>
+        <div class="card-tags">
+          <span class="tag governance">Governance</span>
+          <span class="tag executive">Executive</span>
+        </div>
+      </a>
+
+      <a href="../decks/claude-code-deployment-swrcb-2026-01-24.html" class="presentation-card" data-tags="technology executive">
+        <span class="card-title">Claude Code Deployment at SWRCB</span>
+        <div class="card-meta">
+          <span class="card-slides">14 slides</span>
+          <span class="card-dates">Jan 2026</span>
+        </div>
+        <p class="card-description">Executive briefing for deploying AI coding assistants in California state government. Covers compliance requirements, risk classification, technical controls, and phased implementation.</p>
+        <div class="card-tags">
+          <span class="tag technology">Technology</span>
+          <span class="tag executive">Executive</span>
+        </div>
+      </a>
+
+      <a href="../decks/corrections-digital-transformation-2026-01.html" class="presentation-card" data-tags="agency-overview technical">
+        <span class="card-title">Digital Transformation in Corrections</span>
+        <div class="card-meta">
+          <span class="card-slides">13 slides</span>
+          <span class="card-dates">Jan 2026</span>
+        </div>
+        <p class="card-description">Strategic framework for modernizing correctional facility operations through secure technology adoption, AI-assisted case management, and data-driven decision making.</p>
+        <div class="card-tags">
+          <span class="tag agency-overview">Agency Overview</span>
+          <span class="tag technical">Technical</span>
+        </div>
+      </a>
+
+    </div>
+
+    <footer>
+      <a href="https://github.com/vanderoffice/presentations">View on GitHub</a>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.filter-tag').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = this.getAttribute('data-filter');
+        var allBtn = document.querySelector('.filter-tag[data-filter="all"]');
+
+        if (filter === 'all') {
+          document.querySelectorAll('.filter-tag').forEach(function(t) { t.classList.remove('active'); });
+          allBtn.classList.add('active');
+        } else {
+          allBtn.classList.remove('active');
+          this.classList.toggle('active');
+
+          var anyActive = document.querySelectorAll('.filter-tag.active').length > 0;
+          if (!anyActive) {
+            allBtn.classList.add('active');
+          }
+        }
+
+        var activeTags = [];
+        document.querySelectorAll('.filter-tag.active').forEach(function(t) {
+          var f = t.getAttribute('data-filter');
+          if (f !== 'all') activeTags.push(f);
+        });
+
+        var showAll = document.querySelector('.filter-tag[data-filter="all"]').classList.contains('active');
+
+        document.querySelectorAll('.presentation-card').forEach(function(card) {
+          if (showAll) {
+            card.classList.remove('hidden');
+            return;
+          }
+          var cardTags = card.getAttribute('data-tags').split(' ');
+          var match = activeTags.some(function(tag) { return cardTags.indexOf(tag) !== -1; });
+          card.classList.toggle('hidden', !match);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
