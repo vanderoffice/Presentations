@@ -3,37 +3,59 @@
 Governor's Innovation Fellowship · February 2026
 
 <style>
-.reveal .columns { gap: 1.5rem; align-items: flex-start; }
-.reveal .columns .column:first-child { flex: 0 0 200px; max-width: 200px; }
-.reveal .columns .column:first-child img { width: 200px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+.reveal .columns { gap: 2rem; align-items: flex-start; }
+.reveal .columns .column:first-child { flex: 0 0 220px; max-width: 220px; }
+.reveal .columns .column:first-child img { width: 220px; height: 275px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
 .reveal .columns .column:last-child { flex: 1; text-align: left; }
 .reveal .columns .column:last-child h3 { display: none; }
-.reveal .columns .column:last-child p { margin-bottom: 0.25rem; }
-.reveal .columns .column:last-child ul { font-size: 0.82rem; margin-top: 0.5rem; }
-.reveal .columns .column:last-child li { margin-bottom: 0.35rem; }
-.reveal section[data-slide-title] h2 { text-align: left; font-size: 1.5rem; margin-bottom: 0.15rem; }
-.reveal .bio-role { color: #d4a04a; font-size: 0.9rem; font-weight: 500; margin: 0; }
-.reveal .bio-dept { color: #a5a5b8; font-size: 0.82rem; margin: 0 0 0.5rem 0; }
+.reveal .columns .column:last-child p { margin-bottom: 0.3rem; }
+.reveal .columns .column:last-child ul { font-size: 1.05rem; margin-top: 0.6rem; }
+.reveal .columns .column:last-child li { margin-bottom: 0.5rem; line-height: 1.45; }
+.reveal section[data-slide-title] h2 { text-align: left; font-size: 1.6rem; margin-bottom: 0.2rem; }
+.reveal .bio-role { color: #d4a04a; font-size: 1.05rem; font-weight: 500; margin: 0; }
+.reveal .bio-dept { color: #a5a5b8; font-size: 0.95rem; margin: 0 0 0.6rem 0; }
 .reveal .agency-count { color: #65657a; font-size: 0.85rem; }
 .reveal .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; text-align: left; margin: 1.5rem 0; }
 .reveal .overview-stat { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 1.1rem; border-left: 3px solid #d4a04a; }
 .reveal .overview-stat .num { font-size: 1.8rem; font-weight: 700; color: #4a9eff; display: block; }
-.reveal .overview-stat .label { color: #a5a5b8; font-size: 0.82rem; }
+.reveal .overview-stat .label { color: #a5a5b8; font-size: 0.9rem; }
 .reveal .leader-card { text-align: left; background: rgba(255,255,255,0.04); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; border-left: 3px solid #d4a04a; }
-.reveal .leader-card strong { color: #f2f2f8; font-size: 1rem; }
-.reveal .leader-card .role { color: #d4a04a; font-size: 0.82rem; display: block; margin-bottom: 0.25rem; }
-.reveal .leader-card .detail { color: #a5a5b8; font-size: 0.78rem; margin: 0; }
+.reveal .leader-card strong { color: #f2f2f8; font-size: 1.05rem; }
+.reveal .leader-card .role { color: #d4a04a; font-size: 0.9rem; display: block; margin-bottom: 0.25rem; }
+.reveal .leader-card .detail { color: #a5a5b8; font-size: 0.85rem; margin: 0; }
+.reveal .agency-roster { text-align: left; margin: 1.5rem 0; }
+.reveal .agency-roster table { width: 100%; border-collapse: collapse; }
+.reveal .agency-roster th { text-align: left; color: #65657a; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.reveal .agency-roster td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+.reveal .agency-roster td:first-child { color: #f2f2f8; font-weight: 500; }
+.reveal .agency-roster td:last-child { color: #a5a5b8; }
+.reveal .closing-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; text-align: center; }
+.reveal .closing-stat { background: rgba(255,255,255,0.04); border-radius: 12px; padding: 1.5rem 1rem; border-top: 3px solid #d4a04a; }
+.reveal .closing-stat .num { font-size: 2.5rem; font-weight: 700; color: #4a9eff; display: block; line-height: 1.2; }
+.reveal .closing-stat .label { color: #a5a5b8; font-size: 0.9rem; margin-top: 0.25rem; display: block; }
+.reveal .closing-tagline { font-size: 1.2rem; color: #a5a5b8; margin: 1.5rem 0; }
+.reveal .closing-eo { display: inline-block; background: rgba(212, 160, 74, 0.15); color: #d4a04a; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600; font-size: 1rem; margin-top: 0.5rem; }
 </style>
 
 ## Program Overview
 
-**21** Senior Fellows · **9** Agencies · **15** Departments
+<div class="overview-grid">
+<div class="overview-stat"><span class="num">21</span><span class="label">Senior Fellows</span></div>
+<div class="overview-stat"><span class="num">9</span><span class="label">Agencies</span></div>
+<div class="overview-stat"><span class="num">15</span><span class="label">Departments</span></div>
+<div class="overview-stat"><span class="num">2026</span><span class="label">Cohort 1 · Inaugural Class</span></div>
+</div>
 
-Established under **Executive Order N-30-25** to modernize California state government through internal talent — practitioners embedded across agencies to drive measurable outcomes.
+Established under **Executive Order N-30-25** to modernize California state government through internal talent — practitioners embedded across agencies to drive measurable outcomes in efficiency, service delivery, and customer experience.
 
 ## Health & Human Services Agency
 
-3 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Henri Aghaei Baradaran</td><td>Dept. of Developmental Services</td></tr>
+<tr><td>Bryanna McAdams</td><td>Dept. of Child Support Services</td></tr>
+<tr><td>Kattya Trinh</td><td>Office of Technology & Solutions Integration</td></tr>
+</table></div>
 
 ## Henri Aghaei Baradaran
 
@@ -82,7 +104,11 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## Natural Resources Agency
 
-2 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Elizabeth Betancourt</td><td>Dept. of Water Resources</td></tr>
+<tr><td>Nikki Hatcher</td><td>Dept. of Water Resources</td></tr>
+</table></div>
 
 ## Elizabeth Betancourt
 
@@ -116,7 +142,12 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## Transportation Agency
 
-3 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Ben Bressette</td><td>Caltrans, Research Division</td></tr>
+<tr><td>Liyuan Guo</td><td>Dept. of Motor Vehicles</td></tr>
+<tr><td>Lt. Marc Peachey</td><td>California Highway Patrol</td></tr>
+</table></div>
 
 ## Ben Bressette
 
@@ -165,7 +196,12 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## Government Operations Agency
 
-3 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Lorna Brisco</td><td>Dept. of General Services</td></tr>
+<tr><td>Jennifer Uyeda Issertell</td><td>Dept. of Technology</td></tr>
+<tr><td>Jeremiah Oakden</td><td>Dept. of Tax & Fee Administration</td></tr>
+</table></div>
 
 ## Lorna Brisco
 
@@ -214,7 +250,12 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## Environmental Protection Agency
 
-3 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Kannan Krishnan</td><td>OEHHA</td></tr>
+<tr><td>Christina Marin-Fitzhugh</td><td>Air Resources Board</td></tr>
+<tr><td>Brent Vanderburgh</td><td>State Water Resources Control Board</td></tr>
+</table></div>
 
 ## Kannan Krishnan
 
@@ -263,7 +304,12 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## Military Department
 
-3 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>SMSgt Blake E. Carter</td><td>CA Air National Guard</td></tr>
+<tr><td>Jai London</td><td>California Military Department</td></tr>
+<tr><td>SSgt Kelton Pisano</td><td>California Military Department</td></tr>
+</table></div>
 
 ## SMSgt Blake E. Carter
 
@@ -312,7 +358,11 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## Corrections & Rehabilitation
 
-2 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Samantha Kissane</td><td>CDCR — Office of Internal Affairs</td></tr>
+<tr><td>Chris Siino</td><td>CDCR — Facility Operations</td></tr>
+</table></div>
 
 ## Samantha Kissane
 
@@ -346,7 +396,11 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## Governor's Office Entities
 
-2 Fellows
+<div class="agency-roster"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Molly Linares</td><td>California Volunteers</td></tr>
+<tr><td>Will Robinson</td><td>Office of Land Use & Climate Innovation</td></tr>
+</table></div>
 
 ## Molly Linares
 
@@ -400,8 +454,14 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 ## 21 Fellows. 9 Agencies. One Mission.
 
-Modernizing California state government through the people who know it best.
+<div class="closing-stats">
+<div class="closing-stat"><span class="num">21</span><span class="label">Senior Fellows</span></div>
+<div class="closing-stat"><span class="num">9</span><span class="label">Agencies</span></div>
+<div class="closing-stat"><span class="num">15</span><span class="label">Departments</span></div>
+</div>
 
-**Executive Order N-30-25**
+<p class="closing-tagline">Modernizing California state government through the people who know it best.</p>
 
-*Governor's Innovation Fellowship — Cohort 1*
+<div style="text-align: center;"><span class="closing-eo">Executive Order N-30-25</span></div>
+
+*Governor's Innovation Fellowship — Cohort 1 · February 2026*

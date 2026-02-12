@@ -1224,10 +1224,9 @@ tr:hover td {
    ============================================ */
 
 /* Title slide background with ghosted California seal */
-.reveal .slides section:first-of-type,
-.reveal .slides [data-slide-index="0"] {
-  position: relative;
-}
+/* NOTE: Do NOT set position:relative here — Reveal.js requires position:absolute
+   on all sections for slide transitions. The section is already a positioned
+   ancestor (absolute), so ::before with position:absolute works fine. */
 
 .reveal .slides section:first-of-type::before,
 .reveal .slides [data-slide-index="0"]::before {
@@ -3600,40 +3599,62 @@ section:first-of-type .slide-footer {
 <h1>Cohort 1 Senior Fellows</h1>
 <p>Governor&#39;s Innovation Fellowship · February 2026</p>
 <style>
-.reveal .columns { gap: 1.5rem; align-items: flex-start; }
-.reveal .columns .column:first-child { flex: 0 0 200px; max-width: 200px; }
-.reveal .columns .column:first-child img { width: 200px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+.reveal .columns { gap: 2rem; align-items: flex-start; }
+.reveal .columns .column:first-child { flex: 0 0 220px; max-width: 220px; }
+.reveal .columns .column:first-child img { width: 220px; height: 275px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
 .reveal .columns .column:last-child { flex: 1; text-align: left; }
 .reveal .columns .column:last-child h3 { display: none; }
-.reveal .columns .column:last-child p { margin-bottom: 0.25rem; }
-.reveal .columns .column:last-child ul { font-size: 0.82rem; margin-top: 0.5rem; }
-.reveal .columns .column:last-child li { margin-bottom: 0.35rem; }
-.reveal section[data-slide-title] h2 { text-align: left; font-size: 1.5rem; margin-bottom: 0.15rem; }
-.reveal .bio-role { color: #d4a04a; font-size: 0.9rem; font-weight: 500; margin: 0; }
-.reveal .bio-dept { color: #a5a5b8; font-size: 0.82rem; margin: 0 0 0.5rem 0; }
+.reveal .columns .column:last-child p { margin-bottom: 0.3rem; }
+.reveal .columns .column:last-child ul { font-size: 1.05rem; margin-top: 0.6rem; }
+.reveal .columns .column:last-child li { margin-bottom: 0.5rem; line-height: 1.45; }
+.reveal section[data-slide-title] h2 { text-align: left; font-size: 1.6rem; margin-bottom: 0.2rem; }
+.reveal .bio-role { color: #d4a04a; font-size: 1.05rem; font-weight: 500; margin: 0; }
+.reveal .bio-dept { color: #a5a5b8; font-size: 0.95rem; margin: 0 0 0.6rem 0; }
 .reveal .agency-count { color: #65657a; font-size: 0.85rem; }
 .reveal .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; text-align: left; margin: 1.5rem 0; }
 .reveal .overview-stat { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 1.1rem; border-left: 3px solid #d4a04a; }
 .reveal .overview-stat .num { font-size: 1.8rem; font-weight: 700; color: #4a9eff; display: block; }
-.reveal .overview-stat .label { color: #a5a5b8; font-size: 0.82rem; }
+.reveal .overview-stat .label { color: #a5a5b8; font-size: 0.9rem; }
 .reveal .leader-card { text-align: left; background: rgba(255,255,255,0.04); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; border-left: 3px solid #d4a04a; }
-.reveal .leader-card strong { color: #f2f2f8; font-size: 1rem; }
-.reveal .leader-card .role { color: #d4a04a; font-size: 0.82rem; display: block; margin-bottom: 0.25rem; }
-.reveal .leader-card .detail { color: #a5a5b8; font-size: 0.78rem; margin: 0; }
+.reveal .leader-card strong { color: #f2f2f8; font-size: 1.05rem; }
+.reveal .leader-card .role { color: #d4a04a; font-size: 0.9rem; display: block; margin-bottom: 0.25rem; }
+.reveal .leader-card .detail { color: #a5a5b8; font-size: 0.85rem; margin: 0; }
+.reveal .agency-roster { text-align: left; margin: 1.5rem 0; }
+.reveal .agency-roster table { width: 100%; border-collapse: collapse; }
+.reveal .agency-roster th { text-align: left; color: #65657a; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.reveal .agency-roster td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+.reveal .agency-roster td:first-child { color: #f2f2f8; font-weight: 500; }
+.reveal .agency-roster td:last-child { color: #a5a5b8; }
+.reveal .closing-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; text-align: center; }
+.reveal .closing-stat { background: rgba(255,255,255,0.04); border-radius: 12px; padding: 1.5rem 1rem; border-top: 3px solid #d4a04a; }
+.reveal .closing-stat .num { font-size: 2.5rem; font-weight: 700; color: #4a9eff; display: block; line-height: 1.2; }
+.reveal .closing-stat .label { color: #a5a5b8; font-size: 0.9rem; margin-top: 0.25rem; display: block; }
+.reveal .closing-tagline { font-size: 1.2rem; color: #a5a5b8; margin: 1.5rem 0; }
+.reveal .closing-eo { display: inline-block; background: rgba(212, 160, 74, 0.15); color: #d4a04a; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600; font-size: 1rem; margin-top: 0.5rem; }
 </style>
 </section>
 
 <section data-slide-index="1" data-slide-title="Program Overview">
 <h2>Program Overview</h2>
-<p><strong>21</strong> Senior Fellows · <strong>9</strong> Agencies · <strong>15</strong> Departments</p>
-<p>Established under <strong>Executive Order N-30-25</strong> to modernize California state government through internal talent — practitioners embedded across agencies to drive measurable outcomes.</p>
+<div class="overview-grid">
+<div class="overview-stat"><span class="num">21</span><span class="label">Senior Fellows</span></div>
+<div class="overview-stat"><span class="num">9</span><span class="label">Agencies</span></div>
+<div class="overview-stat"><span class="num">15</span><span class="label">Departments</span></div>
+<div class="overview-stat"><span class="num">2026</span><span class="label">Cohort 1 · Inaugural Class</span></div>
+</div>
+
+<p>Established under <strong>Executive Order N-30-25</strong> to modernize California state government through internal talent — practitioners embedded across agencies to drive measurable outcomes in efficiency, service delivery, and customer experience.</p>
 
 </section>
 
 <section data-slide-index="2" data-slide-title="Health &amp; Human Services Agency">
 <h2>Health &amp; Human Services Agency</h2>
-<p>3 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Henri Aghaei Baradaran</td><td>Dept. of Developmental Services</td></tr>
+<tr><td>Bryanna McAdams</td><td>Dept. of Child Support Services</td></tr>
+<tr><td>Kattya Trinh</td><td>Office of Technology & Solutions Integration</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="3" data-slide-title="Henri Aghaei Baradaran">
@@ -3683,8 +3704,11 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="6" data-slide-title="Natural Resources Agency">
 <h2>Natural Resources Agency</h2>
-<p>2 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Elizabeth Betancourt</td><td>Dept. of Water Resources</td></tr>
+<tr><td>Nikki Hatcher</td><td>Dept. of Water Resources</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="7" data-slide-title="Elizabeth Betancourt">
@@ -3719,8 +3743,12 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="9" data-slide-title="Transportation Agency">
 <h2>Transportation Agency</h2>
-<p>3 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Ben Bressette</td><td>Caltrans, Research Division</td></tr>
+<tr><td>Liyuan Guo</td><td>Dept. of Motor Vehicles</td></tr>
+<tr><td>Lt. Marc Peachey</td><td>California Highway Patrol</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="10" data-slide-title="Ben Bressette">
@@ -3770,8 +3798,12 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="13" data-slide-title="Government Operations Agency">
 <h2>Government Operations Agency</h2>
-<p>3 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Lorna Brisco</td><td>Dept. of General Services</td></tr>
+<tr><td>Jennifer Uyeda Issertell</td><td>Dept. of Technology</td></tr>
+<tr><td>Jeremiah Oakden</td><td>Dept. of Tax & Fee Administration</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="14" data-slide-title="Lorna Brisco">
@@ -3821,8 +3853,12 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="17" data-slide-title="Environmental Protection Agency">
 <h2>Environmental Protection Agency</h2>
-<p>3 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Kannan Krishnan</td><td>OEHHA</td></tr>
+<tr><td>Christina Marin-Fitzhugh</td><td>Air Resources Board</td></tr>
+<tr><td>Brent Vanderburgh</td><td>State Water Resources Control Board</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="18" data-slide-title="Kannan Krishnan">
@@ -3872,8 +3908,12 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="21" data-slide-title="Military Department">
 <h2>Military Department</h2>
-<p>3 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>SMSgt Blake E. Carter</td><td>CA Air National Guard</td></tr>
+<tr><td>Jai London</td><td>California Military Department</td></tr>
+<tr><td>SSgt Kelton Pisano</td><td>California Military Department</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="22" data-slide-title="SMSgt Blake E. Carter">
@@ -3923,8 +3963,11 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="25" data-slide-title="Corrections &amp; Rehabilitation">
 <h2>Corrections &amp; Rehabilitation</h2>
-<p>2 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Samantha Kissane</td><td>CDCR — Office of Internal Affairs</td></tr>
+<tr><td>Chris Siino</td><td>CDCR — Facility Operations</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="26" data-slide-title="Samantha Kissane">
@@ -3959,8 +4002,11 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="28" data-slide-title="Governor&#039;s Office Entities">
 <h2>Governor&#39;s Office Entities</h2>
-<p>2 Fellows</p>
-
+<div class="agency-roster"><div class="table-wrapper"><table>
+<tr><th>Fellow</th><th>Department</th></tr>
+<tr><td>Molly Linares</td><td>California Volunteers</td></tr>
+<tr><td>Will Robinson</td><td>Office of Land Use & Climate Innovation</td></tr>
+</table></div></div>
 </section>
 
 <section data-slide-index="29" data-slide-title="Molly Linares">
@@ -4016,9 +4062,17 @@ section:first-of-type .slide-footer {
 
 <section data-slide-index="32" data-slide-title="21 Fellows. 9 Agencies. One Mission.">
 <h2>21 Fellows. 9 Agencies. One Mission.</h2>
-<p>Modernizing California state government through the people who know it best.</p>
-<p><strong>Executive Order N-30-25</strong></p>
-<p><em>Governor&#39;s Innovation Fellowship — Cohort 1</em></p>
+<div class="closing-stats">
+<div class="closing-stat"><span class="num">21</span><span class="label">Senior Fellows</span></div>
+<div class="closing-stat"><span class="num">9</span><span class="label">Agencies</span></div>
+<div class="closing-stat"><span class="num">15</span><span class="label">Departments</span></div>
+</div>
+
+<p class="closing-tagline">Modernizing California state government through the people who know it best.</p>
+
+<div style="text-align: center;"><span class="closing-eo">Executive Order N-30-25</span></div>
+
+<p><em>Governor&#39;s Innovation Fellowship — Cohort 1 · February 2026</em></p>
 
 </section>
         </div>
@@ -4183,20 +4237,20 @@ section:first-of-type .slide-footer {
   {
     "index": 0,
     "title": "Cohort 1 Senior Fellows",
-    "content": "Cohort 1 Senior Fellows Governor's Innovation Fellowship · February 2026 <style> .reveal .columns { gap: 1.5rem; align-items: flex-start; } .reveal .columns .column:first-child { flex: 0 0 200px; max-width: 200px; } .reveal .columns .column:first-child img { width: 200px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); } .reveal .columns .column:last-child { flex: 1; text-align: left; } .reveal .columns .column:last-child h3 { display: none; } .reveal .columns .column:last-child p { margin-bottom: 0.25rem; } .reveal .columns .column:last-child ul { font-size: 0.82rem; margin-top: 0.5rem; } .reveal .columns .column:last-child li { margin-bottom: 0.35rem; } .reveal section[data-slide-title] h2 { text-align: left; font-size: 1.5rem; margin-bottom: 0.15rem; } .reveal .bio-role { color: #d4a04a; font-size: 0.9rem; font-weight: 500; margin: 0; } .reveal .bio-dept { color: #a5a5b8; font-size: 0.82rem; margin: 0 0 0.5rem 0; } .reveal .agency-count { color: #65657a; font-size: 0.85rem; } .reveal .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; text-align: left; margin: 1.5rem 0; } .reveal .overview-stat { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 1.1rem; border-left: 3px solid #d4a04a; } .reveal .overview-stat .num { font-size: 1.8rem; font-weight: 700; color: #4a9eff; display: block; } .reveal .overview-stat .label { color: #a5a5b8; font-size: 0.82rem; } .reveal .leader-card { text-align: left; background: rgba(255,255,255,0.04); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; border-left: 3px solid #d4a04a; } .reveal .leader-card strong { color: #f2f2f8; font-size: 1rem; } .reveal .leader-card .role { color: #d4a04a; font-size: 0.82rem; display: block; margin-bottom: 0.25rem; } .reveal .leader-card .detail { color: #a5a5b8; font-size: 0.78rem; margin: 0; } </style>",
-    "excerpt": "Cohort 1 Senior Fellows Governor's Innovation Fellowship · February 2026 <style> .reveal .columns { gap: 1.5rem; align-items: flex-start; } .reveal .c..."
+    "content": "Cohort 1 Senior Fellows Governor's Innovation Fellowship · February 2026 <style> .reveal .columns { gap: 2rem; align-items: flex-start; } .reveal .columns .column:first-child { flex: 0 0 220px; max-width: 220px; } .reveal .columns .column:first-child img { width: 220px; height: 275px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); } .reveal .columns .column:last-child { flex: 1; text-align: left; } .reveal .columns .column:last-child h3 { display: none; } .reveal .columns .column:last-child p { margin-bottom: 0.3rem; } .reveal .columns .column:last-child ul { font-size: 1.05rem; margin-top: 0.6rem; } .reveal .columns .column:last-child li { margin-bottom: 0.5rem; line-height: 1.45; } .reveal section[data-slide-title] h2 { text-align: left; font-size: 1.6rem; margin-bottom: 0.2rem; } .reveal .bio-role { color: #d4a04a; font-size: 1.05rem; font-weight: 500; margin: 0; } .reveal .bio-dept { color: #a5a5b8; font-size: 0.95rem; margin: 0 0 0.6rem 0; } .reveal .agency-count { color: #65657a; font-size: 0.85rem; } .reveal .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; text-align: left; margin: 1.5rem 0; } .reveal .overview-stat { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 1.1rem; border-left: 3px solid #d4a04a; } .reveal .overview-stat .num { font-size: 1.8rem; font-weight: 700; color: #4a9eff; display: block; } .reveal .overview-stat .label { color: #a5a5b8; font-size: 0.9rem; } .reveal .leader-card { text-align: left; background: rgba(255,255,255,0.04); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; border-left: 3px solid #d4a04a; } .reveal .leader-card strong { color: #f2f2f8; font-size: 1.05rem; } .reveal .leader-card .role { color: #d4a04a; font-size: 0.9rem; display: block; margin-bottom: 0.25rem; } .reveal .leader-card .detail { color: #a5a5b8; font-size: 0.85rem; margin: 0; } .reveal .agency-roster { text-align: left; margin: 1.5rem 0; } .reveal .agency-roster table { width: 100%; border-collapse: collapse; } .reveal .agency-roster th { text-align: left; color: #65657a; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.1); } .reveal .agency-roster td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; } .reveal .agency-roster td:first-child { color: #f2f2f8; font-weight: 500; } .reveal .agency-roster td:last-child { color: #a5a5b8; } .reveal .closing-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; text-align: center; } .reveal .closing-stat { background: rgba(255,255,255,0.04); border-radius: 12px; padding: 1.5rem 1rem; border-top: 3px solid #d4a04a; } .reveal .closing-stat .num { font-size: 2.5rem; font-weight: 700; color: #4a9eff; display: block; line-height: 1.2; } .reveal .closing-stat .label { color: #a5a5b8; font-size: 0.9rem; margin-top: 0.25rem; display: block; } .reveal .closing-tagline { font-size: 1.2rem; color: #a5a5b8; margin: 1.5rem 0; } .reveal .closing-eo { display: inline-block; background: rgba(212, 160, 74, 0.15); color: #d4a04a; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600; font-size: 1rem; margin-top: 0.5rem; } </style>",
+    "excerpt": "Cohort 1 Senior Fellows Governor's Innovation Fellowship · February 2026 <style> .reveal .columns { gap: 2rem; align-items: flex-start; } .reveal .col..."
   },
   {
     "index": 1,
     "title": "Program Overview",
-    "content": "Program Overview 21 Senior Fellows · 9 Agencies · 15 Departments Established under Executive Order N-30-25 to modernize California state government through internal talent — practitioners embedded across agencies to drive measurable outcomes.",
-    "excerpt": "Program Overview 21 Senior Fellows · 9 Agencies · 15 Departments Established under Executive Order N-30-25 to modernize California state government th..."
+    "content": "Program Overview <div class=\"overview-grid\"> <div class=\"overview-stat\"><span class=\"num\">21</span><span class=\"label\">Senior Fellows</span></div> <div class=\"overview-stat\"><span class=\"num\">9</span><span class=\"label\">Agencies</span></div> <div class=\"overview-stat\"><span class=\"num\">15</span><span class=\"label\">Departments</span></div> <div class=\"overview-stat\"><span class=\"num\">2026</span><span class=\"label\">Cohort 1 · Inaugural Class</span></div> </div> Established under Executive Order N-30-25 to modernize California state government through internal talent — practitioners embedded across agencies to drive measurable outcomes in efficiency, service delivery, and customer experience.",
+    "excerpt": "Program Overview <div class=\"overview-grid\"> <div class=\"overview-stat\"><span class=\"num\">21</span><span class=\"label\">Senior Fellows</span></div> <di..."
   },
   {
     "index": 2,
     "title": "Health & Human Services Agency",
-    "content": "Health & Human Services Agency 3 Fellows",
-    "excerpt": "Health & Human Services Agency 3 Fellows"
+    "content": "Health & Human Services Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Henri Aghaei Baradaran</td><td>Dept. of Developmental Services</td></tr> <tr><td>Bryanna McAdams</td><td>Dept. of Child Support Services</td></tr> <tr><td>Kattya Trinh</td><td>Office of Technology & Solutions Integration</td></tr> </table></div>",
+    "excerpt": "Health & Human Services Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Henri Aghaei Baradaran</td><td>D..."
   },
   {
     "index": 3,
@@ -4219,8 +4273,8 @@ section:first-of-type .slide-footer {
   {
     "index": 6,
     "title": "Natural Resources Agency",
-    "content": "Natural Resources Agency 2 Fellows",
-    "excerpt": "Natural Resources Agency 2 Fellows"
+    "content": "Natural Resources Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Elizabeth Betancourt</td><td>Dept. of Water Resources</td></tr> <tr><td>Nikki Hatcher</td><td>Dept. of Water Resources</td></tr> </table></div>",
+    "excerpt": "Natural Resources Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Elizabeth Betancourt</td><td>Dept. of..."
   },
   {
     "index": 7,
@@ -4237,8 +4291,8 @@ section:first-of-type .slide-footer {
   {
     "index": 9,
     "title": "Transportation Agency",
-    "content": "Transportation Agency 3 Fellows",
-    "excerpt": "Transportation Agency 3 Fellows"
+    "content": "Transportation Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Ben Bressette</td><td>Caltrans, Research Division</td></tr> <tr><td>Liyuan Guo</td><td>Dept. of Motor Vehicles</td></tr> <tr><td>Lt. Marc Peachey</td><td>California Highway Patrol</td></tr> </table></div>",
+    "excerpt": "Transportation Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Ben Bressette</td><td>Caltrans, Research..."
   },
   {
     "index": 10,
@@ -4261,8 +4315,8 @@ section:first-of-type .slide-footer {
   {
     "index": 13,
     "title": "Government Operations Agency",
-    "content": "Government Operations Agency 3 Fellows",
-    "excerpt": "Government Operations Agency 3 Fellows"
+    "content": "Government Operations Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Lorna Brisco</td><td>Dept. of General Services</td></tr> <tr><td>Jennifer Uyeda Issertell</td><td>Dept. of Technology</td></tr> <tr><td>Jeremiah Oakden</td><td>Dept. of Tax & Fee Administration</td></tr> </table></div>",
+    "excerpt": "Government Operations Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Lorna Brisco</td><td>Dept. of Gene..."
   },
   {
     "index": 14,
@@ -4285,8 +4339,8 @@ section:first-of-type .slide-footer {
   {
     "index": 17,
     "title": "Environmental Protection Agency",
-    "content": "Environmental Protection Agency 3 Fellows",
-    "excerpt": "Environmental Protection Agency 3 Fellows"
+    "content": "Environmental Protection Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Kannan Krishnan</td><td>OEHHA</td></tr> <tr><td>Christina Marin-Fitzhugh</td><td>Air Resources Board</td></tr> <tr><td>Brent Vanderburgh</td><td>State Water Resources Control Board</td></tr> </table></div>",
+    "excerpt": "Environmental Protection Agency <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Kannan Krishnan</td><td>OEHHA</..."
   },
   {
     "index": 18,
@@ -4309,8 +4363,8 @@ section:first-of-type .slide-footer {
   {
     "index": 21,
     "title": "Military Department",
-    "content": "Military Department 3 Fellows",
-    "excerpt": "Military Department 3 Fellows"
+    "content": "Military Department <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>SMSgt Blake E. Carter</td><td>CA Air National Guard</td></tr> <tr><td>Jai London</td><td>California Military Department</td></tr> <tr><td>SSgt Kelton Pisano</td><td>California Military Department</td></tr> </table></div>",
+    "excerpt": "Military Department <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>SMSgt Blake E. Carter</td><td>CA Air Nation..."
   },
   {
     "index": 22,
@@ -4333,8 +4387,8 @@ section:first-of-type .slide-footer {
   {
     "index": 25,
     "title": "Corrections & Rehabilitation",
-    "content": "Corrections & Rehabilitation 2 Fellows",
-    "excerpt": "Corrections & Rehabilitation 2 Fellows"
+    "content": "Corrections & Rehabilitation <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Samantha Kissane</td><td>CDCR — Office of Internal Affairs</td></tr> <tr><td>Chris Siino</td><td>CDCR — Facility Operations</td></tr> </table></div>",
+    "excerpt": "Corrections & Rehabilitation <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Samantha Kissane</td><td>CDCR — Of..."
   },
   {
     "index": 26,
@@ -4351,8 +4405,8 @@ section:first-of-type .slide-footer {
   {
     "index": 28,
     "title": "Governor's Office Entities",
-    "content": "Governor's Office Entities 2 Fellows",
-    "excerpt": "Governor's Office Entities 2 Fellows"
+    "content": "Governor's Office Entities <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Molly Linares</td><td>California Volunteers</td></tr> <tr><td>Will Robinson</td><td>Office of Land Use & Climate Innovation</td></tr> </table></div>",
+    "excerpt": "Governor's Office Entities <div class=\"agency-roster\"><table> <tr><th>Fellow</th><th>Department</th></tr> <tr><td>Molly Linares</td><td>California Vol..."
   },
   {
     "index": 29,
@@ -4375,8 +4429,8 @@ section:first-of-type .slide-footer {
   {
     "index": 32,
     "title": "21 Fellows. 9 Agencies. One Mission.",
-    "content": "21 Fellows. 9 Agencies. One Mission. Modernizing California state government through the people who know it best. Executive Order N-30-25 Governor's Innovation Fellowship — Cohort 1",
-    "excerpt": "21 Fellows. 9 Agencies. One Mission. Modernizing California state government through the people who know it best. Executive Order N-30-25 Governor's I..."
+    "content": "21 Fellows. 9 Agencies. One Mission. <div class=\"closing-stats\"> <div class=\"closing-stat\"><span class=\"num\">21</span><span class=\"label\">Senior Fellows</span></div> <div class=\"closing-stat\"><span class=\"num\">9</span><span class=\"label\">Agencies</span></div> <div class=\"closing-stat\"><span class=\"num\">15</span><span class=\"label\">Departments</span></div> </div> <p class=\"closing-tagline\">Modernizing California state government through the people who know it best.</p> <div style=\"text-align: center;\"><span class=\"closing-eo\">Executive Order N-30-25</span></div> Governor's Innovation Fellowship — Cohort 1 · February 2026",
+    "excerpt": "21 Fellows. 9 Agencies. One Mission. <div class=\"closing-stats\"> <div class=\"closing-stat\"><span class=\"num\">21</span><span class=\"label\">Senior Fello..."
   }
 ];
 
