@@ -147,6 +147,27 @@
       opacity: 0.6;
     }
 
+    a.resource-card {
+      opacity: 1;
+      text-decoration: none;
+      color: inherit;
+      border-left: 3px solid var(--accent-gold);
+      transition: all 0.2s ease;
+    }
+
+    a.resource-card:hover {
+      border-color: var(--accent-blue);
+      border-left-color: var(--accent-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(74, 158, 255, 0.15);
+    }
+
+    a.resource-card .card-link {
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+      font-weight: 500;
+    }
+
     .resource-card h3 {
       font-size: 1rem;
       font-weight: 600;
@@ -206,11 +227,11 @@
       <h2>Background</h2>
       <p>Foundational context for the Governor's Innovation Fellowship.</p>
       <div class="resource-grid">
-        <div class="resource-card">
+        <a href="../decks/cohort1-senior-fellows-bios-2026-02.html" class="resource-card">
           <h3>Fellow Bios</h3>
           <p class="resource-description">Meet the Cohort 1 fellows and their agency assignments.</p>
-          <span class="coming-soon-label">Coming Soon</span>
-        </div>
+          <span class="card-link">33 slides &rarr;</span>
+        </a>
         <div class="resource-card">
           <h3>Charter</h3>
           <p class="resource-description">The fellowship charter: mission, scope, and operating principles.</p>
