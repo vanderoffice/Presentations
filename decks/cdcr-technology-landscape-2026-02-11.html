@@ -2084,7 +2084,7 @@ tr:hover td {
   display: flex; flex-direction: column; justify-content: center;
   align-items: center; text-align: center; min-height: 100%;
 }
-.title-slide .title-content { max-width: 800px; }
+.title-slide .title-content { position: relative; z-index: 2; }
 .title-slide h1 {
   font-size: 3.5rem; margin-bottom: 1rem; color: #d8d8e8; letter-spacing: -0.03em;
 }
@@ -2188,7 +2188,7 @@ tr:hover td {
           <section class="title-slide">
   <div class="title-content">
     <h1>CDCR Technology Landscape</h1>
-    <p class="subtitle">Systems Inventory &amp; Cohort 2 Orientation</p>
+    <p class="subtitle">Systems Inventory</p>
     <div class="title-meta">
       <span>Governor's Innovation Fellows</span>
       <span>Executive Order N-30-25</span>
@@ -2206,12 +2206,12 @@ tr:hover td {
 <li><strong>BCG / Dept. of Finance</strong> — 3-month scoping contract evaluating HQ operations, contract management, overtime, and healthcare delivery; $20M follow-on requested for on-site implementation</li>
 <li><strong>California Breakthrough Project</strong> — tech industry task force (Snap, Instacart, Twilio, Anduril) advising on procurement modernization and AI strategy</li>
 </ul>
-<blockquote class="callout-note"><p><strong>Note:</strong> Full EO text: gov.ca.gov/wp-content/uploads/2025/07/2025-7-15.Efficient-and-Effective-Government-EO.FINAL_.signed-1.pdf</p></blockquote>
+<blockquote class="callout-note"><p><strong>Note:</strong> Full EO text: <a href="https://www.gov.ca.gov/wp-content/uploads/2025/07/2025-7-15.Efficient-and-Effective-Government-EO.FINAL_.signed-1.pdf" target="_blank">gov.ca.gov/wp-content/uploads/2025/07/2025-7-15.Efficient-and-Effective-Government-EO.FINAL_.signed-1.pdf</a></p></blockquote>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
   <h2>What Cohort 1 Discovered</h2>
-  <p>Two PODs worked August 2025 through February 2026 across <strong>~380 documents</strong> of discovery, interviews, and site visits:</p>
+  <p>Two PODs worked August 2025 through February 2026 across <strong>hundreds of documents</strong> of discovery, interviews, and site visits:</p>
 <ul>
 <li><strong>"Digitize Paper Records"</strong> — ducats, scheduling, movement passes</li>
 <li><strong>"Digitizing Internal Processes"</strong> — grievances, temperature monitoring, internal workflows</li>
@@ -2229,59 +2229,93 @@ tr:hover td {
 <section>
   <h2>The Landscape at a Glance</h2>
   <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-<div style="text-align: center;"><div class="big-number">39+</div><div class="metric-label">distinct systems and platforms identified</div></div>
-</div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-<div style="text-align: center;"><div class="big-number">42</div><div class="metric-label">eOMIS modules across the SOMS honeycomb</div></div>
-</div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-<div style="text-align: center;"><div class="big-number">18+</div><div class="metric-label">vendors in the ecosystem</div></div>
-</div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-<div style="text-align: center;"><div class="big-number">5</div><div class="metric-label">siloed Wi-Fi networks per institution</div></div>
-</div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-<div style="text-align: center;"><div class="big-number">12</div><div class="metric-label">paper forms targeted for digitization</div></div>
-</div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-<div style="text-align: center;"><div class="big-number">$189M</div><div class="metric-label">Securus IC+ tablet contract (through 2031)</div></div>
+<div style="text-align: center; padding: 1rem; background: rgba(26,26,40,0.6); border-radius: 12px; border: 1px solid #2a2a45;"><div class="big-number">39+</div><div class="metric-label">systems &amp; platforms</div></div>
+<div style="text-align: center; padding: 1rem; background: rgba(26,26,40,0.6); border-radius: 12px; border: 1px solid #2a2a45;"><div class="big-number">42</div><div class="metric-label">eOMIS modules</div></div>
+<div style="text-align: center; padding: 1rem; background: rgba(26,26,40,0.6); border-radius: 12px; border: 1px solid #2a2a45;"><div class="big-number">18+</div><div class="metric-label">vendors</div></div>
+<div style="text-align: center; padding: 1rem; background: rgba(26,26,40,0.6); border-radius: 12px; border: 1px solid #2a2a45;"><div class="big-number">5</div><div class="metric-label">siloed Wi-Fi networks per institution</div></div>
+<div style="text-align: center; padding: 1rem; background: rgba(26,26,40,0.6); border-radius: 12px; border: 1px solid #2a2a45;"><div class="big-number">12</div><div class="metric-label">paper forms targeted for digitization</div></div>
+<div style="text-align: center; padding: 1rem; background: rgba(26,26,40,0.6); border-radius: 12px; border: 1px solid #2a2a45;"><div class="big-number">$189M</div><div class="metric-label">Securus IC+ contract (through 2031)</div></div>
 </div>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
   <h2>The Modernization Ecosystem</h2>
-  <div class="diagram-placeholder"><div class="diagram-label">CDCR Modernization Ecosystem — Three Concurrent Tracks</div><div class="diagram-message">Interactive diagram placeholder</div><pre class="diagram-spec">CDCR Modernization Ecosystem — Three Concurrent Tracks
-
-Components:
-- GIF Fellows (Cohort 1 → Cohort 2): Bottom-up digital transformation — digitizing forms, building tablet apps, system integrations, POC development
-- BCG / Dept. of Finance: Top-down operational efficiency — HQ operations, contract management, overtime management, healthcare delivery ($20M follow-on)
-- California Breakthrough Project: Tech industry advisory — procurement modernization, AI strategy, cross-agency best practices
-
-Flow: All three tracks converge on CDCR EIS, which coordinates implementation across SOMS/eOMIS, Staff Tablets, Incarcerated Tablets, and CCHCS systems
-
-Key: GIF works from the field up. BCG works from HQ down. Breakthrough Project advises from the outside in.</pre></div>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; margin: 1rem 0;">
+    <div style="display: flex; gap: 1.5rem; width: 100%; justify-content: center;">
+      <div style="flex: 1; max-width: 30%; padding: 1rem; background: rgba(74,158,255,0.1); border: 1px solid #4a9eff; border-radius: 10px; text-align: center;">
+        <div style="font-weight: 700; color: #4a9eff; margin-bottom: 0.5rem; font-size: 0.95rem;">GIF Fellows</div>
+        <div style="font-size: 0.75rem; color: #a5a5b8; line-height: 1.4;">Bottom-up: digitizing forms, tablet apps, system integrations, POC development</div>
+      </div>
+      <div style="flex: 1; max-width: 30%; padding: 1rem; background: rgba(212,160,74,0.1); border: 1px solid #d4a04a; border-radius: 10px; text-align: center;">
+        <div style="font-weight: 700; color: #d4a04a; margin-bottom: 0.5rem; font-size: 0.95rem;">BCG / Dept. of Finance</div>
+        <div style="font-size: 0.75rem; color: #a5a5b8; line-height: 1.4;">Top-down: HQ operations, contract management, overtime, healthcare delivery</div>
+      </div>
+      <div style="flex: 1; max-width: 30%; padding: 1rem; background: rgba(74,154,122,0.1); border: 1px solid #4a9a7a; border-radius: 10px; text-align: center;">
+        <div style="font-weight: 700; color: #4a9a7a; margin-bottom: 0.5rem; font-size: 0.95rem;">Breakthrough Project</div>
+        <div style="font-size: 0.75rem; color: #a5a5b8; line-height: 1.4;">Outside-in: procurement modernization, AI strategy, cross-agency best practices</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.5rem; color: #65657a;">
+      <svg width="20" height="40" viewBox="0 0 20 40"><path d="M10 0 L10 30 L4 24 M10 30 L16 24" stroke="#65657a" fill="none" stroke-width="2"/></svg>
+      <svg width="20" height="40" viewBox="0 0 20 40"><path d="M10 0 L10 30 L4 24 M10 30 L16 24" stroke="#65657a" fill="none" stroke-width="2"/></svg>
+      <svg width="20" height="40" viewBox="0 0 20 40"><path d="M10 0 L10 30 L4 24 M10 30 L16 24" stroke="#65657a" fill="none" stroke-width="2"/></svg>
+    </div>
+    <div style="padding: 1rem 2rem; background: rgba(168,84,84,0.15); border: 2px solid #a85454; border-radius: 12px; text-align: center;">
+      <div style="font-weight: 700; color: #f2f2f8; font-size: 1.1rem; margin-bottom: 0.25rem;">CDCR EIS</div>
+      <div style="font-size: 0.8rem; color: #a5a5b8;">Coordinates implementation across all systems</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.5rem; color: #65657a;">
+      <svg width="20" height="30" viewBox="0 0 20 30"><path d="M10 0 L10 22 L4 16 M10 22 L16 16" stroke="#65657a" fill="none" stroke-width="2"/></svg>
+    </div>
+    <div style="display: flex; gap: 1rem; width: 100%; justify-content: center; flex-wrap: wrap;">
+      <div style="padding: 0.5rem 1rem; background: rgba(26,26,40,0.8); border: 1px solid #2a2a45; border-radius: 8px; font-size: 0.8rem; color: #a5a5b8;">SOMS / eOMIS</div>
+      <div style="padding: 0.5rem 1rem; background: rgba(26,26,40,0.8); border: 1px solid #2a2a45; border-radius: 8px; font-size: 0.8rem; color: #a5a5b8;">Staff Tablets</div>
+      <div style="padding: 0.5rem 1rem; background: rgba(26,26,40,0.8); border: 1px solid #2a2a45; border-radius: 8px; font-size: 0.8rem; color: #a5a5b8;">Incarcerated Tablets</div>
+      <div style="padding: 0.5rem 1rem; background: rgba(26,26,40,0.8); border: 1px solid #2a2a45; border-radius: 8px; font-size: 0.8rem; color: #a5a5b8;">CCHCS Systems</div>
+    </div>
+  </div>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
   <h2>System Architecture Overview</h2>
-  <div class="diagram-placeholder"><div class="diagram-label">CDCR Data Architecture — The Silo Problem</div><div class="diagram-message">Interactive diagram placeholder</div><pre class="diagram-spec">CDCR Data Architecture — The Silo Problem
-
-Components:
-- SOMS/eOMIS (42 modules, Marquis): Primary offender management system. ONE-WAY API — data out only, no writes back.
-- BIS (Business Information Systems): Legacy enterprise data. Does NOT talk to SAP or SOMS.
-- SAP/HANA: Enterprise resource planning. AASPS went live Jan 2026. Does NOT talk to BIS or SOMS.
-- CCHCS/EHRS: Completely separate healthcare IT — own network, own CIO, own ServiceNow.
-- Tablet Platforms: Securus IC+ (incarcerated) and Samsung Staff Tablets on separate Wi-Fi networks.
-- Snowflake (Proposed): Future centralized data warehouse — &quot;a few years down the road.&quot;
-
-Data flows:
-- SOMS → Tablets (one-way nightly batch at 2 AM)
-- SOMS → Power BI (reporting only)
-- No flow between BIS ↔ SAP ↔ SOMS
-- No flow between CDCR network ↔ CCHCS network
-- No flow between Staff Wi-Fi ↔ Inmate Tablet Wi-Fi
-
-Red X marks: BIS↔SAP, BIS↔SOMS, SAP↔SOMS, CDCR↔CCHCS, Staff↔Inmate networks, Tablets→SOMS (blocked)</pre></div>
+  <p style="text-align: center; color: #a5a5b8; margin-bottom: 1rem; font-size: 0.9rem;">CDCR Data Architecture — The Silo Problem</p>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 0 auto; max-width: 90%;">
+    <div style="padding: 0.8rem; background: rgba(74,158,255,0.1); border: 2px solid #4a9eff; border-radius: 10px; text-align: center;">
+      <div style="font-weight: 700; color: #4a9eff; font-size: 0.9rem;">SOMS / eOMIS</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.3rem;">42 modules, Marquis</div>
+      <div style="font-size: 0.65rem; color: #ff7878; margin-top: 0.3rem; font-weight: 600;">ONE-WAY API ONLY</div>
+    </div>
+    <div style="padding: 0.8rem; background: rgba(212,160,74,0.1); border: 2px solid #d4a04a; border-radius: 10px; text-align: center;">
+      <div style="font-weight: 700; color: #d4a04a; font-size: 0.9rem;">BIS</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.3rem;">Legacy enterprise data</div>
+    </div>
+    <div style="padding: 0.8rem; background: rgba(74,154,122,0.1); border: 2px solid #4a9a7a; border-radius: 10px; text-align: center;">
+      <div style="font-weight: 700; color: #4a9a7a; font-size: 0.9rem;">SAP / HANA</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.3rem;">ERP (AASPS live Jan 2026)</div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin: 0.5rem 0; align-items: center;">
+    <span style="color: #ff7878; font-size: 1.2rem; font-weight: 700;" title="No data flow">&#10060;</span>
+    <span style="color: #65657a; font-size: 0.75rem;">No data flows between these three systems</span>
+    <span style="color: #ff7878; font-size: 1.2rem; font-weight: 700;" title="No data flow">&#10060;</span>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 auto; max-width: 75%;">
+    <div style="padding: 0.8rem; background: rgba(168,84,84,0.1); border: 2px solid #a85454; border-radius: 10px; text-align: center;">
+      <div style="font-weight: 700; color: #c87070; font-size: 0.9rem;">CCHCS / EHRS</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.3rem;">Separate healthcare IT — own network, own ServiceNow</div>
+    </div>
+    <div style="padding: 0.8rem; background: rgba(144,100,255,0.1); border: 2px solid #9064ff; border-radius: 10px; text-align: center;">
+      <div style="font-weight: 700; color: #b090ff; font-size: 0.9rem;">Tablet Platforms</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.3rem;">Securus IC+ &amp; Samsung staff — separate Wi-Fi networks</div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center; gap: 1rem; margin: 0.75rem 0; align-items: center; font-size: 0.7rem; color: #65657a;">
+    <span>SOMS → Tablets: <strong style="color:#d4a04a;">nightly batch (2 AM)</strong></span>
+    <span style="color:#2a2a45;">|</span>
+    <span>SOMS → Power BI: <strong style="color:#d4a04a;">reporting only</strong></span>
+    <span style="color:#2a2a45;">|</span>
+    <span>Tablets → SOMS: <strong style="color:#ff7878;">blocked</strong></span>
+  </div>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
@@ -2361,7 +2395,24 @@ Red X marks: BIS↔SAP, BIS↔SOMS, SAP↔SOMS, CDCR↔CCHCS, Staff↔Inmate net
 </section>
 <section>
   <h2>eOMIS Module Status</h2>
-  <div class="chart-container"><div class="chart-wrapper"><canvas data-chart='{"type": "bar", "data": {"labels": ["Implemented", "Recently Added", "In Contract, Not Implemented", "Not In Contract"], "datasets": [{"data": [30, 4, 5, 3], "backgroundColor": ["#5c9eff", "#55f09a", "#ffcc35", "#ff7878"], "borderRadius": 6}]}, "options": {"responsive": true, "maintainAspectRatio": false, "indexAxis": "y", "plugins": {"legend": {"display": false}}, "scales": {"x": {"grid": {"color": "#2a2a45"}, "ticks": {"color": "#9090a0"}}, "y": {"grid": {"display": false}, "ticks": {"color": "#f2f2f8", "font": {"size": 13}}}}}}'></canvas></div></div>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0;">
+    <div style="text-align: center; padding: 1rem; border-radius: 10px; background: rgba(92,158,255,0.1); border: 1px solid #5c9eff;">
+      <div style="font-size: 2rem; font-weight: 700; color: #5c9eff;">30</div>
+      <div style="font-size: 0.75rem; color: #a5a5b8;">Implemented</div>
+    </div>
+    <div style="text-align: center; padding: 1rem; border-radius: 10px; background: rgba(85,240,154,0.1); border: 1px solid #55f09a;">
+      <div style="font-size: 2rem; font-weight: 700; color: #55f09a;">4</div>
+      <div style="font-size: 0.75rem; color: #a5a5b8;">Recently Added</div>
+    </div>
+    <div style="text-align: center; padding: 1rem; border-radius: 10px; background: rgba(255,204,53,0.1); border: 1px solid #ffcc35;">
+      <div style="font-size: 2rem; font-weight: 700; color: #ffcc35;">5</div>
+      <div style="font-size: 0.75rem; color: #a5a5b8;">In Contract, Not Implemented</div>
+    </div>
+    <div style="text-align: center; padding: 1rem; border-radius: 10px; background: rgba(255,120,120,0.1); border: 1px solid #ff7878;">
+      <div style="font-size: 2rem; font-weight: 700; color: #ff7878;">3</div>
+      <div style="font-size: 0.75rem; color: #a5a5b8;">Not In Contract</div>
+    </div>
+  </div>
 <div class="tabs"><div class="tab-list" role="tablist"><button class="tab-button" role="tab" aria-selected="true" aria-controls="tabpanel-1-0" tabindex="0">Implemented (30)</button>
 <button class="tab-button" role="tab" aria-selected="false" aria-controls="tabpanel-1-1" tabindex="-1">Recently Added (4)</button>
 <button class="tab-button" role="tab" aria-selected="false" aria-controls="tabpanel-1-2" tabindex="-1">In Contract, Not Implemented (5)</button>
@@ -2393,20 +2444,20 @@ Red X marks: BIS↔SAP, BIS↔SOMS, SAP↔SOMS, CDCR↔CCHCS, Staff↔Inmate net
 <p><strong>SAP / HANA</strong> — Enterprise resource planning. AASPS went live January 2026. Does not talk to BIS or SOMS.</p>
 <p><strong>SOMS</strong> — Offender management. Does not talk to BIS or SAP.</p>
 <p>Each product line manages its own infrastructure independently. No shared data layer.</p>
-<p><strong>Pentaho</strong> was purchased as an eOMIS analytics module but <strong>never deployed</strong>. Power BI is the active reporting tool.</p></div><div class="column"><h3>The Vision: Centralized Data</h3>
-<p><strong>Snowflake</strong> — Cloud data warehouse being evaluated to house all CDCR data in one location.</p>
+<p><strong>Pentaho</strong> was purchased as an eOMIS analytics module but <strong>never deployed</strong>. Power BI is the active reporting tool.</p></div><div class="column"><h3>The Vision: Unified Data Architecture</h3>
 <ul>
-<li>Single source of truth</li>
-<li>Cross-departmental API access</li>
-<li>Status: Being demoed. "A few years down the road."</li>
+<li><strong>Consolidated data warehouse</strong> — single source of truth replacing fragmented silos (Snowflake being evaluated; "a few years down the road")</li>
+<li><strong>Cross-system APIs</strong> — real-time data exchange between SOMS, SAP, BIS, and tablet platforms instead of nightly batch exports</li>
+<li><strong>System consolidation</strong> — reducing redundant platforms and eliminating manual re-entry across systems</li>
+<li><strong>Automated alerting</strong> — event-driven notifications replacing manual monitoring and paper-based escalation</li>
+<li><strong>Modern analytics</strong> — Power BI is already the de facto reporting layer; a unified data layer unlocks cross-departmental dashboards</li>
 </ul>
-<p><strong>Power BI</strong> — Already the de facto reporting layer across CDCR.</p>
-<p><strong>BCG's contract management review</strong> may surface additional enterprise system consolidation opportunities as part of the Department of Finance efficiency engagement.</p></div></div>
+<p><strong>BCG's efficiency review</strong> may surface additional consolidation opportunities as part of the Department of Finance engagement.</p></div></div>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
   <h2>Healthcare Systems (CCHCS)</h2>
-  <p>CCHCS operates <strong>completely separate IT infrastructure</strong> — own network, own ServiceNow instance, own CIO (Robert O'Brien).</p>
+  <p>CCHCS operates <strong>completely separate IT infrastructure</strong> — own network, own ServiceNow instance, own CIO.</p>
 <h3>Core Systems</h3>
 <ul>
 <li><strong>EHRS</strong> — Central electronic health record system</li>
@@ -2444,7 +2495,7 @@ Red X marks: BIS↔SAP, BIS↔SOMS, SAP↔SOMS, CDCR↔CCHCS, Staff↔Inmate net
 <p><strong>Samsung Hardware</strong></p>
 <ul>
 <li>~<strong>7,170 tablets</strong> deployed statewide (~$600/unit + $85 license)</li>
-<li><strong>Cell Search App</strong> — shipped statewide, built internally by EIS (3 hrs → 20 min)</li>
+<li><strong>Cell Search App</strong> — shipped statewide, built internally by EIS (reduced cell search documentation from ~3 hours to ~20 minutes)</li>
 <li><strong>Mental Health Checks</strong> — next app in the pipeline</li>
 <li>Progressive web app architecture</li>
 <li><strong>Meta Quest 3</strong> — Mixed reality headsets for immersive staff training (Sept 2025 tech fair)</li>
@@ -2454,25 +2505,39 @@ Red X marks: BIS↔SAP, BIS↔SOMS, SAP↔SOMS, CDCR↔CCHCS, Staff↔Inmate net
 </section>
 <section>
   <h2>The Wi-Fi Problem</h2>
-  <div class="diagram-placeholder"><div class="diagram-label">5 Siloed Wi-Fi Networks at Each CDCR Institution</div><div class="diagram-message">Interactive diagram placeholder</div><pre class="diagram-spec">5 Siloed Wi-Fi Networks at Each CDCR Institution
-
-Networks (none communicate with each other):
-1. CDCR (Staff) — managed by EIS, used for SOMS access and staff operations
-2. CCHCS (Healthcare) — managed by CCHCS IT, completely separate
-3. PIA (Prison Industry Authority) — prison industry operations
-4. Vendor/Securus (Inmate Tablets) — incarcerated person tablet connectivity
-5. Education/PSSP (Inmate Education) — educational tablet programs
-
-Key barriers:
-- No cross-network data exchange
-- Concrete wall signal degradation (facilities average 51 years old)
-- Folsom ducat pilot failed due to incomplete Wi-Fi coverage
-- Staff tablets store data locally, sync only when reconnecting to staff Wi-Fi
-- Inmate tablets receive SOMS data via nightly batch (2 AM), cannot send data back</pre></div>
+  <p style="text-align: center; color: #a5a5b8; margin-bottom: 1rem; font-size: 0.85rem;">5 siloed networks per institution — none communicate with each other</p>
+  <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+    <div style="padding: 0.6rem 1rem; background: rgba(74,158,255,0.15); border: 2px solid #4a9eff; border-radius: 8px; text-align: center; min-width: 140px;">
+      <div style="font-weight: 700; color: #4a9eff; font-size: 0.8rem;">CDCR (Staff)</div>
+      <div style="font-size: 0.65rem; color: #a5a5b8;">EIS managed, SOMS access</div>
+    </div>
+    <div style="padding: 0.6rem 1rem; background: rgba(168,84,84,0.15); border: 2px solid #a85454; border-radius: 8px; text-align: center; min-width: 140px;">
+      <div style="font-weight: 700; color: #c87070; font-size: 0.8rem;">CCHCS (Healthcare)</div>
+      <div style="font-size: 0.65rem; color: #a5a5b8;">CCHCS IT, fully separate</div>
+    </div>
+    <div style="padding: 0.6rem 1rem; background: rgba(212,160,74,0.15); border: 2px solid #d4a04a; border-radius: 8px; text-align: center; min-width: 140px;">
+      <div style="font-weight: 700; color: #d4a04a; font-size: 0.8rem;">PIA (Industry)</div>
+      <div style="font-size: 0.65rem; color: #a5a5b8;">Prison Industry Authority</div>
+    </div>
+    <div style="padding: 0.6rem 1rem; background: rgba(144,100,255,0.15); border: 2px solid #9064ff; border-radius: 8px; text-align: center; min-width: 140px;">
+      <div style="font-weight: 700; color: #b090ff; font-size: 0.8rem;">Vendor / Securus</div>
+      <div style="font-size: 0.65rem; color: #a5a5b8;">Incarcerated tablets</div>
+    </div>
+    <div style="padding: 0.6rem 1rem; background: rgba(74,154,122,0.15); border: 2px solid #4a9a7a; border-radius: 8px; text-align: center; min-width: 140px;">
+      <div style="font-weight: 700; color: #4a9a7a; font-size: 0.8rem;">Education / PSSP</div>
+      <div style="font-size: 0.65rem; color: #a5a5b8;">Educational programs</div>
+    </div>
+  </div>
+  <div style="display: flex; gap: 1.5rem; margin: 0.75rem 0; font-size: 0.75rem; color: #a5a5b8; justify-content: center; flex-wrap: wrap;">
+    <span><span style="color:#ff7878;">&#10060;</span> No cross-network data exchange</span>
+    <span><span style="color:#ff7878;">&#10060;</span> Concrete walls degrade signal (avg 51 yrs old)</span>
+    <span><span style="color:#ff7878;">&#10060;</span> Staff tablets sync only on staff Wi-Fi</span>
+  </div>
 <h3>Emerging Solutions</h3>
 <ul>
 <li><strong>Starlink</strong> — Satellite connectivity for conservation camps and remote facilities</li>
 <li><strong>WAN Transformation</strong> — Wide Area Network overhaul across institutions, in progress</li>
+<li><strong>LoRa (Long Range)</strong> — Low-power mesh networking for data coverage in areas where Wi-Fi cannot reach (thick concrete, outdoor yards, remote buildings)</li>
 </ul>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
@@ -2493,7 +2558,33 @@ Key barriers:
 </section>
 <section>
   <h2>Vendor Ecosystem</h2>
-  <div class="chart-container"><div class="chart-wrapper"><canvas data-chart='{"type": "doughnut", "data": {"labels": ["SOMS/eOMIS (Marquis + infra)", "Tablet/Communications (Securus)", "Healthcare Tech", "Microsoft Stack", "Temperature Monitoring", "Other"], "datasets": [{"data": [3, 4, 5, 4, 2, 5], "backgroundColor": ["#5c9eff", "#55f09a", "#ffcc35", "#ff7878", "#d090ff", "#40e0d0"], "borderWidth": 0, "hoverOffset": 8}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"position": "right", "labels": {"color": "#f2f2f8", "padding": 16, "font": {"size": 13}}}}}}'></canvas></div></div>
+  <p style="color: #a5a5b8; font-size: 0.9rem; margin-bottom: 1rem;">18+ vendors across six categories. The two largest contracts dominate the landscape:</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+    <div style="padding: 0.75rem; background: rgba(74,158,255,0.1); border-left: 3px solid #4a9eff; border-radius: 8px;">
+      <div style="font-weight: 700; color: #4a9eff; font-size: 0.85rem;">Marquis — SOMS/eOMIS</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.25rem;">Sole vendor, 42 modules, 3 infra partners</div>
+    </div>
+    <div style="padding: 0.75rem; background: rgba(85,240,154,0.1); border-left: 3px solid #55f09a; border-radius: 8px;">
+      <div style="font-weight: 700; color: #55f09a; font-size: 0.85rem;">Securus — IC+ Tablets</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.25rem;">$189M through 2031, tablets + comms + investigative</div>
+    </div>
+    <div style="padding: 0.75rem; background: rgba(212,160,74,0.1); border-left: 3px solid #d4a04a; border-radius: 8px;">
+      <div style="font-weight: 700; color: #d4a04a; font-size: 0.85rem;">Microsoft Stack</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.25rem;">Power Apps, Power BI, SharePoint, Power Automate</div>
+    </div>
+    <div style="padding: 0.75rem; background: rgba(168,84,84,0.1); border-left: 3px solid #a85454; border-radius: 8px;">
+      <div style="font-weight: 700; color: #c87070; font-size: 0.85rem;">Healthcare Tech</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.25rem;">Oracle, Ameelio, UniDoc, Cerner, SensoScientific</div>
+    </div>
+    <div style="padding: 0.75rem; background: rgba(144,100,255,0.1); border-left: 3px solid #9064ff; border-radius: 8px;">
+      <div style="font-weight: 700; color: #b090ff; font-size: 0.85rem;">Infrastructure</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.25rem;">Quest, Red River, Samsung, Verizon</div>
+    </div>
+    <div style="padding: 0.75rem; background: rgba(74,154,122,0.1); border-left: 3px solid #4a9a7a; border-radius: 8px;">
+      <div style="font-weight: 700; color: #4a9a7a; font-size: 0.85rem;">Advisory</div>
+      <div style="font-size: 0.7rem; color: #a5a5b8; margin-top: 0.25rem;">BCG ($20M follow-on requested), Breakthrough Project</div>
+    </div>
+  </div>
 <div class="collapsible"><div class="collapsible-header"><span class="collapsible-title">Key Contract Details</span><svg class="collapsible-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div><div class="collapsible-content"><div class="collapsible-body"><p><strong>Securus Technologies (IC+)</strong></p>
 <ul>
 <li>$189,360,000 through February 2031 (four 1-year extension options)</li>
@@ -2516,36 +2607,24 @@ Key barriers:
 </section>
 <section>
   <h2>Paper to Digital Pipeline</h2>
-  <div class="chart-container"><div class="chart-wrapper"><canvas data-chart='{"type": "bar", "data": {"labels": ["Pilot Replacement", "In Progress", "Not Started"], "datasets": [{"data": [3, 4, 3], "backgroundColor": ["#5c9eff", "#55f09a", "#ffcc35"], "borderRadius": 6}]}, "options": {"responsive": true, "maintainAspectRatio": false, "indexAxis": "y", "plugins": {"legend": {"display": false}}, "scales": {"x": {"grid": {"color": "#2a2a45"}, "ticks": {"color": "#9090a0"}}, "y": {"grid": {"display": false}, "ticks": {"color": "#f2f2f8", "font": {"size": 13}}}}}}'></canvas></div></div>
-<div class="tabs"><div class="tab-list" role="tablist"><button class="tab-button" role="tab" aria-selected="true" aria-controls="tabpanel-2-0" tabindex="0">Pilot Replacement (3)</button>
-<button class="tab-button" role="tab" aria-selected="false" aria-controls="tabpanel-2-1" tabindex="-1">In Progress (4)</button>
-<button class="tab-button" role="tab" aria-selected="false" aria-controls="tabpanel-2-2" tabindex="-1">Not Started (3)</button>
-</div><div class="tab-panels"><div class="tab-panel" id="tabpanel-2-0" role="tabpanel" aria-hidden="false">
-<p>Forms being replaced by the Temperature Log App pilot:</p>
-<ul>
-<li>CDCR 2030 (Outside Temperature Record)</li>
-<li>CDCR 2031 (Inside Temperature Record)</li>
-<li>Form 7711-1 (Heat Plan Monthly Summary — auto-populated)</li>
-</ul>
-</div>
-<div class="tab-panel" id="tabpanel-2-1" role="tabpanel" aria-hidden="true">
-<p>Active digitization targets:</p>
-<ul>
-<li>CDCR 602-1/1824 (Grievance / RA Request) → tablet submission</li>
-<li>GA-22 / Form 600 (Request for Assistance) → MVP Phase 3 pilot</li>
-<li>Form 601 (Local Staff Response) → paired with GA-22</li>
-<li>Ducat (Movement Pass) → central focus of "Digitize Paper Records"</li>
-</ul>
-</div>
-<div class="tab-panel" id="tabpanel-2-2" role="tabpanel" aria-hidden="true">
-<p>Identified during discovery, not yet prioritized:</p>
-<ul>
-<li>FLSA logs (Fair Labor Standards Act)</li>
-<li>CDCR 602 HC (Health Care Grievance)</li>
-<li>CDCR 602-2 / 602-3 (Appeal / Overdue Remedy)</li>
-</ul>
-</div>
-</div></div>
+  <p style="color: #a5a5b8; font-size: 0.85rem; margin-bottom: 1rem;">12 paper forms identified across discovery. Progress varies by complexity, governance requirements, and system dependencies.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
+    <thead><tr style="border-bottom: 2px solid #2a2a45;">
+      <th style="text-align: left; padding: 0.5rem; color: #a5a5b8;">Form</th>
+      <th style="text-align: left; padding: 0.5rem; color: #a5a5b8;">Status</th>
+      <th style="text-align: left; padding: 0.5rem; color: #a5a5b8;">Approach</th>
+    </tr></thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">CDCR 2030 / 2031 (Temp Records)</td><td style="padding: 0.4rem 0.5rem; color: #55f09a;">Pilot replacement</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Temperature Log App (Power Apps)</td></tr>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">Form 7711-1 (Heat Plan Summary)</td><td style="padding: 0.4rem 0.5rem; color: #55f09a;">Pilot replacement</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Auto-populated by Temp Log App</td></tr>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">CDCR 602-1/1824 (Grievance / RA)</td><td style="padding: 0.4rem 0.5rem; color: #ffcc35;">In progress</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Tablet submission → OGT auto-populate</td></tr>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">GA-22 / Form 600 (Request for Assistance)</td><td style="padding: 0.4rem 0.5rem; color: #ffcc35;">In progress</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Digital request workflow</td></tr>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">Form 601 (Local Staff Response)</td><td style="padding: 0.4rem 0.5rem; color: #ffcc35;">In progress</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Paired with GA-22 digitization</td></tr>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">Ducat (Movement Pass)</td><td style="padding: 0.4rem 0.5rem; color: #ffcc35;">In progress</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Barcode/RFID scanning at checkpoints</td></tr>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">FLSA logs</td><td style="padding: 0.4rem 0.5rem; color: #ff7878;">Not started</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Identified during discovery</td></tr>
+      <tr style="border-bottom: 1px solid #1a1a28;"><td style="padding: 0.4rem 0.5rem; color: #f2f2f8;">602 HC / 602-2 / 602-3 (Appeals)</td><td style="padding: 0.4rem 0.5rem; color: #ff7878;">Not started</td><td style="padding: 0.4rem 0.5rem; color: #a5a5b8;">Depends on 602-1 digitization</td></tr>
+    </tbody>
+  </table>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
@@ -2561,6 +2640,9 @@ Key barriers:
 </ol>
 <ol>
 <li><strong>Organizational Boundaries</strong> — EIS and CCHCS IT are completely separate organizations with separate infrastructure, governance, and compliance requirements (HIPAA). Cross-boundary work requires dual approval chains.</li>
+</ol>
+<ol>
+<li><strong>Union Resistance</strong> — Technology changes that affect staff workflows (digital ducats, tablet-based reporting, automated scheduling) can trigger union pushback if labor representatives are not engaged early. <em>Mitigation: Bring union stakeholders to the table during design, not after deployment. Frame changes as reducing administrative burden on officers, not replacing roles.</em></li>
 </ol>
 <blockquote class="callout-warning"><p><strong>Warning:</strong> SOMS is supported by only 5 FTE + 6 contractors for the entire platform. Any initiative touching SOMS competes for this scarce capacity.</p></blockquote>
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
@@ -2580,15 +2662,12 @@ Key barriers:
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
-  <h2>Companion Reference & Next Steps</h2>
-  <h3>Full Reference Document</h3>
-<p>The <strong>CDCR Data Systems & Technology Inventory</strong> contains detailed descriptions of all 39+ systems, 42 eOMIS modules, 18+ vendors, connectivity issues, and forms in scope. Keep it open alongside this deck.</p>
-<p><strong>Location:</strong> <code>CDCR-Data-Systems-Inventory.md</code> (provided with this presentation)</p>
-<h3>What's Already In Place</h3>
+  <h2>What's In Place & Next Steps</h2>
+  <h3>What's Already In Place</h3>
 <ul>
 <li><strong>Governance frameworks</strong> — Incarcerated Technology Governance Charter established</li>
 <li><strong>Steering committee</strong> — cadence already running with Directors-level participation</li>
-<li><strong>SME network</strong> — contacts preserved in Cohort 1 handoff documents (Amy Beckley/SOMS, CJ Gill/Data Governance, Robert O'Brien/CCHCS IT, and more)</li>
+<li><strong>Relationships</strong> — SME network and department contacts preserved in Cohort 1 handoff documents; Cohort 2 will not be first contact with key stakeholders</li>
 <li><strong>BCG engagement</strong> — $20M implementation phase may create parallel workstreams; coordinate early</li>
 </ul>
 <h3>The Model Going Forward</h3>
@@ -2596,7 +2675,7 @@ Key barriers:
   <div class="slide-footer"><span class="slide-footer-text">State of California</span></div>
 </section>
 <section>
-  <h2>Sources</h2>
+  <h2>External Sources</h2>
   <ol>
 <li><a href="https://calmatters.digitaldemocracy.org/hearings/259236" target="_blank">Senate Budget Subcommittee No. 5, May 20, 2025 (BCG engagement details)</a></li>
 <li><a href="https://www.cdcr.ca.gov/insidecdcr/2025/10/23/exploring-the-future-cdcr-and-cchcs-staff-experience-emerging-technologies/" target="_blank">CDCR Technology Fair, September 2025</a></li>
