@@ -1223,13 +1223,15 @@ tr:hover td {
    government presentation aesthetic.
    ============================================ */
 
-/* Title slide background with ghosted California seal */
-/* NOTE: Do NOT set position:relative on sections — Reveal.js requires
+/* Title slide background with California seal via ::before
+   NOTE: Do NOT set position:relative on sections — Reveal.js requires
    position:absolute on all sections for slide transitions. The section
-   is already a positioned ancestor (absolute), so ::before works fine. */
+   is already a positioned ancestor (absolute), so ::before works fine.
+   When .title-slide class is present, the .seal-bg div handles the seal
+   rendering instead, so suppress the ::before duplicate. */
 
-.reveal .slides section:first-of-type::before,
-.reveal .slides [data-slide-index="0"]::before {
+.reveal .slides section:first-of-type:not(.title-slide)::before,
+.reveal .slides [data-slide-index="0"]:not(.title-slide)::before {
   content: '';
   position: absolute;
   bottom: 8%;
@@ -1251,8 +1253,8 @@ tr:hover td {
   /* CLIP TO CIRCLE */
   border-radius: 50%;
 
-  /* Ghosted effect */
-  opacity: 0.5;
+  /* Vivid seal — matches .title-slide .seal-bg brightness */
+  filter: brightness(0.9);
 }
 
 /* Ensure title slide content stays above the background */
@@ -1272,24 +1274,20 @@ tr:hover td {
   min-height: 100vh;
 }
 
-/* Title slide headings - centered with more impact */
+/* Title slide headings - matches .title-slide h1 */
 .reveal .slides section:first-of-type h1 {
   font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--accent-blue-bright), var(--accent-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: none;
+  color: #d8d8e8;
 }
 
-/* Subtitle styling */
+/* Subtitle styling — gold accent, matches .title-slide .subtitle */
 .reveal .slides section:first-of-type h2 {
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: #d4a04a;
   margin-bottom: 2rem;
   border-bottom: none;
   padding-bottom: 0;
@@ -1302,7 +1300,7 @@ tr:hover td {
 /* Metadata on title slide */
 .reveal .slides section:first-of-type p {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-bottom: 0.5rem;
 }
 
@@ -1339,14 +1337,13 @@ tr:hover td {
   .reveal .slides section:first-of-type::before {
     width: 280px;
     height: 280px;
-    opacity: 0.3;
   }
 }
 
 /* Print - ensure seal is visible but subtle */
 @media print {
   .reveal .slides section:first-of-type::before {
-    opacity: 0.15;
+    filter: brightness(0.6);
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -3435,9 +3432,10 @@ section:first-of-type .slide-footer {
     <div class="deck-content">
       <div class="reveal">
         <div class="slides">
-          <section data-slide-index="0" data-slide-title="Perplexity AI for Government">
+          <section class="title-slide" data-slide-index="0" data-slide-title="Perplexity AI for Government">
+<div class="title-content">
 <h1>Perplexity AI for Government</h1>
-<p>AI-Powered Research for California State Employees</p>
+<p class="subtitle">AI-Powered Research for California State Employees</p>
 <p class="thesis"><strong>Core Thesis:</strong> Perplexity gives you research-grade answers with cited sources in seconds — and your .gov email gets you Pro access for free.</p>
 <p class="meta">February 2026</p>
 
@@ -3567,6 +3565,8 @@ section:first-of-type .slide-footer {
 }
 .feature-badge.gold { background: rgba(212,160,74,0.15); color: #d4a04a; }
 </style>
+<div class="seal-bg"></div>
+</div>
 </section>
 
 <section data-slide-index="1" data-slide-title="Why Perplexity?">
