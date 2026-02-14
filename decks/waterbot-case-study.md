@@ -437,39 +437,39 @@ Six systems cooperate in about 2-3 seconds. None are exotic — React, PostgreSQ
 <div class="flow-label">User Asks</div>
 <div class="flow-sublabel">React frontend</div>
 </div>
-<div class="flow-arrow fragment" data-fragment-index="1">→</div>
-<div class="flow-node fragment" data-fragment-index="1">
+<div class="flow-arrow">→</div>
+<div class="flow-node">
 <div class="flow-icon">🔗</div>
 <div class="flow-label">Webhook</div>
 <div class="flow-sublabel">n8n receives</div>
 </div>
-<div class="flow-arrow fragment" data-fragment-index="2">→</div>
-<div class="flow-node fragment" data-fragment-index="2">
+<div class="flow-arrow">→</div>
+<div class="flow-node">
 <div class="flow-icon">🔢</div>
 <div class="flow-label">Embed</div>
 <div class="flow-sublabel">OpenAI 1,536d</div>
 </div>
-<div class="flow-arrow fragment" data-fragment-index="3">→</div>
-<div class="flow-node fragment" data-fragment-index="3">
+<div class="flow-arrow">→</div>
+<div class="flow-node">
 <div class="flow-icon">🔍</div>
 <div class="flow-label">Search</div>
 <div class="flow-sublabel">pgvector top-8</div>
 </div>
-<div class="flow-arrow fragment" data-fragment-index="4">→</div>
-<div class="flow-node fragment" data-fragment-index="4">
+<div class="flow-arrow">→</div>
+<div class="flow-node">
 <div class="flow-icon">📋</div>
 <div class="flow-label">Prompt</div>
 <div class="flow-sublabel">Context + query</div>
 </div>
-<div class="flow-arrow fragment" data-fragment-index="5">→</div>
-<div class="flow-node gold fragment" data-fragment-index="5">
+<div class="flow-arrow">→</div>
+<div class="flow-node gold">
 <div class="flow-icon">🤖</div>
 <div class="flow-label">Response</div>
 <div class="flow-sublabel">Claude + citations</div>
 </div>
 </div>
 
-<div class="gov-callout blue fragment" data-fragment-index="6">
+<div class="gov-callout blue">
 <strong>Key insight:</strong> The AI (steps 5-6) is the simplest piece. 80% of the effort is in curating, embedding, and tuning retrieval.
 </div>
 
