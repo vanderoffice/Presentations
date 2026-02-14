@@ -300,7 +300,7 @@ California's water regulatory landscape: a maze of agencies, permits, and progra
 <div class="stat-card"><div class="stat-number">1</div><div class="stat-label">State Water Board</div></div>
 <div class="stat-card"><div class="stat-number">9</div><div class="stat-label">Regional Boards</div></div>
 <div class="stat-card gold"><div class="stat-number">100+</div><div class="stat-label">Permit Types</div></div>
-<div class="stat-card gold"><div class="stat-number">12+</div><div class="stat-label">Funding Programs</div></div>
+<div class="stat-card gold"><div class="stat-number">58</div><div class="stat-label">Funding Programs</div></div>
 </div>
 
 **What if we could give every Californian access to the equivalent of a water regulation expert, 24/7, for free?**
@@ -398,6 +398,43 @@ An interactive decision tree built from a 107KB JSON structure covering every pe
 
 ---
 
+## The Funding Navigator
+
+58 state and federal funding programs, matched by answering 5 plain-language questions — no AI hallucination risk.
+
+<div class="compare-grid">
+<div class="compare-card">
+<h4>How Most People Find Funding</h4>
+<ul>
+<li>Google scattered agency sites</li>
+<li>Read 200-page NOFAs</li>
+<li>Miss programs they qualify for</li>
+<li>Give up and hire a grant writer</li>
+</ul>
+</div>
+<div class="compare-card gold">
+<h4>How the Navigator Works</h4>
+<ul>
+<li>Answer 5 questions: org type, project, population, DAC status, matching funds</li>
+<li>Get tiered results: <strong>Eligible</strong>, <strong>Likely</strong>, <strong>May Qualify</strong></li>
+<li>Direct links to applications</li>
+<li>AI enriches results with tips — but matching is deterministic</li>
+</ul>
+</div>
+</div>
+
+<div class="stat-row">
+<div class="stat-card gold"><div class="stat-number">58</div><div class="stat-label">Programs Cataloged</div></div>
+<div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Questions Asked</div></div>
+<div class="stat-card green"><div class="stat-number">3</div><div class="stat-label">Eligibility Tiers</div></div>
+</div>
+
+<div class="gov-callout">
+<strong>Deterministic matching — no AI hallucination risk.</strong> Hard filters narrow the field; the AI only enriches results with application tips and deadline context.
+</div>
+
+---
+
 ## How It Actually Works: RAG
 
 <span class="section-tag">How It Works</span>
@@ -473,6 +510,10 @@ Six systems cooperate in about 2-3 seconds. None are exotic — React, PostgreSQ
 <strong>Key insight:</strong> The AI (steps 5-6) is the simplest piece. 80% of the effort is in curating, embedding, and tuning retrieval.
 </div>
 
+<div class="gov-callout">
+<strong>n8n gotchas:</strong> <code>alwaysOutputData: true</code> prevents silent pipeline death on zero results. <code>escapeBraces()</code> in prompt templates avoids n8n expression collisions. Top-K = 8 chunks.
+</div>
+
 ---
 
 ## The Stack
@@ -487,25 +528,6 @@ Every component is open-source or free-tier.
 <div class="tech-card"><div class="tech-icon">🤖</div><div class="tech-title">Claude (Anthropic)</div><div class="tech-desc">Response generation</div></div>
 <div class="tech-card gold"><div class="tech-icon">🐳</div><div class="tech-title">Docker on VPS</div><div class="tech-desc">Tailscale mesh networking</div></div>
 </div>
-
----
-
-## Inside the Orchestration Layer
-
-The n8n workflow connects the user's question to the knowledge base to the LLM — all without writing server code.
-
-<div class="gov-callout blue">
-<strong>Note:</strong> Screenshot of the n8n workflow editor will be added here. The workflow shows: Webhook Trigger → OpenAI Embedding → pgvector Query → Prompt Builder → Claude API → Response Formatter.
-</div>
-
-**Critical n8n patterns:**
-
-| Pattern | Why It Matters |
-|---------|---------------|
-| `alwaysOutputData: true` on vector search | Zero results silently kills the pipeline without it |
-| `escapeBraces()` in prompt templates | Content braces collide with n8n expression syntax |
-| Top-K = 8 chunks | Enough context without diluting relevance |
-| Similarity threshold ≥ 0.30 | Catches borderline relevant content |
 
 ---
 
@@ -719,16 +741,16 @@ The same architecture powers two other chatbots — proving the pattern is reusa
 <li>Same PostgreSQL + pgvector database</li>
 <li>Same n8n workflow pattern</li>
 <li>Same OpenAI embedding model</li>
-<li>Same React frontend framework</li>
+<li><strong>Shared component library</strong> — ChatMessage, DecisionTreeView, RAGButton all reused</li>
 </ul>
 </div>
 <div class="compare-card gold">
 <h4>Different Domains</h4>
 <ul>
-<li><strong>WaterBot</strong> — Water permits and regulations</li>
-<li><strong>BizBot</strong> — Business permits and licensing</li>
-<li><strong>KiddoBot</strong> — Childcare provider resources</li>
-<li>Each has its own KB, test suite, and prompt</li>
+<li><strong>WaterBot</strong> — Water regs + permits + funding navigator</li>
+<li><strong>BizBot</strong> — Business permits + license finder</li>
+<li><strong>KiddoBot</strong> — Childcare resources + program finder</li>
+<li>Each has its own KB, test suite, and specialized tools</li>
 </ul>
 </div>
 </div>

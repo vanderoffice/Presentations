@@ -2867,6 +2867,275 @@ tr:hover td {
   }
 }
 
+/* ============================================
+   Stat Cards (deck-components)
+   ============================================ */
+
+.stat-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-default);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.75rem;
+  text-align: center;
+  flex: 1;
+  min-width: 140px;
+  max-width: 220px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   Compare Grid (deck-components)
+   ============================================ */
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.compare-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-default);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.compare-panel h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.compare-left {
+  border-top: 3px solid var(--text-muted);
+}
+
+.compare-left h3 {
+  color: var(--text-secondary);
+}
+
+.compare-right {
+  border-top: 3px solid var(--accent-gold);
+}
+
+.compare-right h3 {
+  color: var(--accent-gold);
+}
+
+.compare-panel ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.compare-panel li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Step Sequence (deck-components)
+   ============================================ */
+
+.step-sequence {
+  margin: 1.5rem 0;
+  padding-left: 0.5rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 38px;
+  width: 2px;
+  height: calc(100% - 14px);
+  background: var(--line-default);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: #0a0a14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.step-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.step-description {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ============================================
+   Callout (deck-components)
+   ============================================ */
+
+.callout {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--accent-gold);
+  background: var(--bg-panel);
+}
+
+.callout-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.callout-content {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.callout-content p {
+  margin: 0;
+}
+
+.callout-info {
+  border-left-color: var(--accent-blue);
+}
+
+.callout-warning {
+  border-left-color: #e8a040;
+}
+
+.callout-tip {
+  border-left-color: var(--accent-gold);
+}
+
+.callout-quote {
+  border-left-color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ============================================
+   Timeline (deck-components)
+   ============================================ */
+
+.timeline {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--line-default);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 1.5rem 1.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1.625rem;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  border: 2px solid var(--bg-tertiary);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ============================================
+   Quote Block (deck-components)
+   ============================================ */
+
+.quote-block {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--accent-gold);
+  background: var(--bg-panel);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.quote-block blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.quote-attribution {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  font-style: normal;
+  font-weight: 500;
+}
+
 
 /* ============================================
    Deck Branding Styles
@@ -3350,11 +3619,19 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">How It Actually Works: RAG</span>
+    <span class="nav-text">The Funding Navigator</span>
   </a>
 </li>
 <li class="nav-section">
   <a href="#/7" onclick="deck.slide(7); return false;">
+    <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+    <span class="nav-text">How It Actually Works: RAG</span>
+  </a>
+</li>
+<li class="nav-section">
+  <a href="#/8" onclick="deck.slide(8); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <rect x="3" y="3" width="7" height="7"/>
       <rect x="14" y="3" width="7" height="7"/>
@@ -3365,19 +3642,11 @@ section:first-of-type .slide-footer {
   </a>
 </li>
 <li class="nav-section">
-  <a href="#/8" onclick="deck.slide(8); return false;">
-    <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-    <span class="nav-text">The Stack</span>
-  </a>
-</li>
-<li class="nav-section">
   <a href="#/9" onclick="deck.slide(9); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">Inside the Orchestration Layer</span>
+    <span class="nav-text">The Stack</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3828,7 +4097,7 @@ section:first-of-type .slide-footer {
 <div class="stat-card"><div class="stat-number">1</div><div class="stat-label">State Water Board</div></div>
 <div class="stat-card"><div class="stat-number">9</div><div class="stat-label">Regional Boards</div></div>
 <div class="stat-card gold"><div class="stat-number">100+</div><div class="stat-label">Permit Types</div></div>
-<div class="stat-card gold"><div class="stat-number">12+</div><div class="stat-label">Funding Programs</div></div>
+<div class="stat-card gold"><div class="stat-number">58</div><div class="stat-label">Funding Programs</div></div>
 </div>
 
 <p><strong>What if we could give every Californian access to the equivalent of a water regulation expert, 24/7, for free?</strong></p>
@@ -3916,7 +4185,42 @@ section:first-of-type .slide-footer {
 </div>
 </section>
 
-<section data-slide-index="6" data-slide-title="How It Actually Works: RAG">
+<section data-slide-index="6" data-slide-title="The Funding Navigator">
+<h2>The Funding Navigator</h2>
+<p>58 state and federal funding programs, matched by answering 5 plain-language questions — no AI hallucination risk.</p>
+<div class="compare-grid">
+<div class="compare-card">
+<h4>How Most People Find Funding</h4>
+<ul>
+<li>Google scattered agency sites</li>
+<li>Read 200-page NOFAs</li>
+<li>Miss programs they qualify for</li>
+<li>Give up and hire a grant writer</li>
+</ul>
+</div>
+<div class="compare-card gold">
+<h4>How the Navigator Works</h4>
+<ul>
+<li>Answer 5 questions: org type, project, population, DAC status, matching funds</li>
+<li>Get tiered results: <strong>Eligible</strong>, <strong>Likely</strong>, <strong>May Qualify</strong></li>
+<li>Direct links to applications</li>
+<li>AI enriches results with tips — but matching is deterministic</li>
+</ul>
+</div>
+</div>
+
+<div class="stat-row">
+<div class="stat-card gold"><div class="stat-number">58</div><div class="stat-label">Programs Cataloged</div></div>
+<div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Questions Asked</div></div>
+<div class="stat-card green"><div class="stat-number">3</div><div class="stat-label">Eligibility Tiers</div></div>
+</div>
+
+<div class="gov-callout">
+<strong>Deterministic matching — no AI hallucination risk.</strong> Hard filters narrow the field; the AI only enriches results with application tips and deadline context.
+</div>
+</section>
+
+<section data-slide-index="7" data-slide-title="How It Actually Works: RAG">
 <h2>How It Actually Works: RAG</h2>
 <p><span class="section-tag">How It Works</span></p>
 <p><strong>RAG — Retrieval-Augmented Generation.</strong> Think of it as giving the AI a research assistant who pulls the right files before speaking.</p>
@@ -3942,7 +4246,7 @@ section:first-of-type .slide-footer {
 </div>
 </section>
 
-<section data-slide-index="7" data-slide-title="The Full Architecture">
+<section data-slide-index="8" data-slide-title="The Full Architecture">
 <h2>The Full Architecture</h2>
 <p>Six systems cooperate in about 2-3 seconds. None are exotic — React, PostgreSQL, and webhook APIs.</p>
 <div class="flow-diagram">
@@ -3986,9 +4290,13 @@ section:first-of-type .slide-footer {
 <div class="gov-callout blue">
 <strong>Key insight:</strong> The AI (steps 5-6) is the simplest piece. 80% of the effort is in curating, embedding, and tuning retrieval.
 </div>
+
+<div class="gov-callout">
+<strong>n8n gotchas:</strong> <code>alwaysOutputData: true</code> prevents silent pipeline death on zero results. <code>escapeBraces()</code> in prompt templates avoids n8n expression collisions. Top-K = 8 chunks.
+</div>
 </section>
 
-<section data-slide-index="8" data-slide-title="The Stack">
+<section data-slide-index="9" data-slide-title="The Stack">
 <h2>The Stack</h2>
 <p>Every component is open-source or free-tier.</p>
 <div class="tech-grid">
@@ -3999,41 +4307,6 @@ section:first-of-type .slide-footer {
 <div class="tech-card"><div class="tech-icon">🤖</div><div class="tech-title">Claude (Anthropic)</div><div class="tech-desc">Response generation</div></div>
 <div class="tech-card gold"><div class="tech-icon">🐳</div><div class="tech-title">Docker on VPS</div><div class="tech-desc">Tailscale mesh networking</div></div>
 </div>
-</section>
-
-<section data-slide-index="9" data-slide-title="Inside the Orchestration Layer">
-<h2>Inside the Orchestration Layer</h2>
-<p>The n8n workflow connects the user&#39;s question to the knowledge base to the LLM — all without writing server code.</p>
-<div class="gov-callout blue">
-<strong>Note:</strong> Screenshot of the n8n workflow editor will be added here. The workflow shows: Webhook Trigger → OpenAI Embedding → pgvector Query → Prompt Builder → Claude API → Response Formatter.
-</div>
-
-<p><strong>Critical n8n patterns:</strong></p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>Why It Matters</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>alwaysOutputData: true</code> on vector search</td>
-<td>Zero results silently kills the pipeline without it</td>
-</tr>
-<tr>
-<td><code>escapeBraces()</code> in prompt templates</td>
-<td>Content braces collide with n8n expression syntax</td>
-</tr>
-<tr>
-<td>Top-K = 8 chunks</td>
-<td>Enough context without diluting relevance</td>
-</tr>
-<tr>
-<td>Similarity threshold ≥ 0.30</td>
-<td>Catches borderline relevant content</td>
-</tr>
-</tbody></table></div>
-
 </section>
 
 <section data-slide-index="10" data-slide-title="The Knowledge Base">
@@ -4276,16 +4549,16 @@ $1,200 for major facilities...</pre>
 <li>Same PostgreSQL + pgvector database</li>
 <li>Same n8n workflow pattern</li>
 <li>Same OpenAI embedding model</li>
-<li>Same React frontend framework</li>
+<li><strong>Shared component library</strong> — ChatMessage, DecisionTreeView, RAGButton all reused</li>
 </ul>
 </div>
 <div class="compare-card gold">
 <h4>Different Domains</h4>
 <ul>
-<li><strong>WaterBot</strong> — Water permits and regulations</li>
-<li><strong>BizBot</strong> — Business permits and licensing</li>
-<li><strong>KiddoBot</strong> — Childcare provider resources</li>
-<li>Each has its own KB, test suite, and prompt</li>
+<li><strong>WaterBot</strong> — Water regs + permits + funding navigator</li>
+<li><strong>BizBot</strong> — Business permits + license finder</li>
+<li><strong>KiddoBot</strong> — Childcare resources + program finder</li>
+<li>Each has its own KB, test suite, and specialized tools</li>
 </ul>
 </div>
 </div>
@@ -4521,7 +4794,7 @@ $1,200 for major facilities...</pre>
   {
     "index": 1,
     "title": "The Complexity Problem",
-    "content": "The Complexity Problem California's water regulatory landscape: a maze of agencies, permits, and programs that overwhelms the people who need it most. <div class=\"stat-row\"> <div class=\"stat-card\"><div class=\"stat-number\">1</div><div class=\"stat-label\">State Water Board</div></div> <div class=\"stat-card\"><div class=\"stat-number\">9</div><div class=\"stat-label\">Regional Boards</div></div> <div class=\"stat-card gold\"><div class=\"stat-number\">100+</div><div class=\"stat-label\">Permit Types</div></div> <div class=\"stat-card gold\"><div class=\"stat-number\">12+</div><div class=\"stat-label\">Funding Programs</div></div> </div> What if we could give every Californian access to the equivalent of a water regulation expert, 24/7, for free?",
+    "content": "The Complexity Problem California's water regulatory landscape: a maze of agencies, permits, and programs that overwhelms the people who need it most. <div class=\"stat-row\"> <div class=\"stat-card\"><div class=\"stat-number\">1</div><div class=\"stat-label\">State Water Board</div></div> <div class=\"stat-card\"><div class=\"stat-number\">9</div><div class=\"stat-label\">Regional Boards</div></div> <div class=\"stat-card gold\"><div class=\"stat-number\">100+</div><div class=\"stat-label\">Permit Types</div></div> <div class=\"stat-card gold\"><div class=\"stat-number\">58</div><div class=\"stat-label\">Funding Programs</div></div> </div> What if we could give every Californian access to the equivalent of a water regulation expert, 24/7, for free?",
     "excerpt": "The Complexity Problem California's water regulatory landscape: a maze of agencies, permits, and programs that overwhelms the people who need it most...."
   },
   {
@@ -4550,27 +4823,27 @@ $1,200 for major facilities...</pre>
   },
   {
     "index": 6,
+    "title": "The Funding Navigator",
+    "content": "The Funding Navigator 58 state and federal funding programs, matched by answering 5 plain-language questions — no AI hallucination risk. <div class=\"compare-grid\"> <div class=\"compare-card\"> <h4>How Most People Find Funding</h4> <ul> <li>Google scattered agency sites</li> <li>Read 200-page NOFAs</li> <li>Miss programs they qualify for</li> <li>Give up and hire a grant writer</li> </ul> </div> <div class=\"compare-card gold\"> <h4>How the Navigator Works</h4> <ul> <li>Answer 5 questions: org type, project, population, DAC status, matching funds</li> <li>Get tiered results: <strong>Eligible</strong>, <strong>Likely</strong>, <strong>May Qualify</strong></li> <li>Direct links to applications</li> <li>AI enriches results with tips — but matching is deterministic</li> </ul> </div> </div> <div class=\"stat-row\"> <div class=\"stat-card gold\"><div class=\"stat-number\">58</div><div class=\"stat-label\">Programs Cataloged</div></div> <div class=\"stat-card\"><div class=\"stat-number\">5</div><div class=\"stat-label\">Questions Asked</div></div> <div class=\"stat-card green\"><div class=\"stat-number\">3</div><div class=\"stat-label\">Eligibility Tiers</div></div> </div> <div class=\"gov-callout\"> <strong>Deterministic matching — no AI hallucination risk.</strong> Hard filters narrow the field; the AI only enriches results with application tips and deadline context. </div>",
+    "excerpt": "The Funding Navigator 58 state and federal funding programs, matched by answering 5 plain-language questions — no AI hallucination risk. <div class=\"c..."
+  },
+  {
+    "index": 7,
     "title": "How It Actually Works: RAG",
     "content": "How It Actually Works: RAG <span class=\"section-tag\">How It Works</span> RAG — Retrieval-Augmented Generation. Think of it as giving the AI a research assistant who pulls the right files before speaking. <div class=\"compare-grid\"> <div class=\"compare-card\"> <h4>Without RAG</h4> <ul> <li>AI answers from memory (training data)</li> <li>Can't cite specific sources</li> <li>Hallucinates confidently</li> <li>\"I think the permit fee is around...\"</li> </ul> </div> <div class=\"compare-card gold\"> <h4>With RAG</h4> <ul> <li>Searches a curated knowledge base first</li> <li>Every claim cites a real source</li> <li>Knowledge updates without retraining</li> <li>\"The CGP fee formula is $511 + ($54 × acres)\"</li> </ul> </div> </div>",
     "excerpt": "How It Actually Works: RAG <span class=\"section-tag\">How It Works</span> RAG — Retrieval-Augmented Generation. Think of it as giving the AI a research..."
   },
   {
-    "index": 7,
+    "index": 8,
     "title": "The Full Architecture",
-    "content": "The Full Architecture Six systems cooperate in about 2-3 seconds. None are exotic — React, PostgreSQL, and webhook APIs. <div class=\"flow-diagram\"> <div class=\"flow-node\"> <div class=\"flow-icon\">👤</div> <div class=\"flow-label\">User Asks</div> <div class=\"flow-sublabel\">React frontend</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">🔗</div> <div class=\"flow-label\">Webhook</div> <div class=\"flow-sublabel\">n8n receives</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">🔢</div> <div class=\"flow-label\">Embed</div> <div class=\"flow-sublabel\">OpenAI 1,536d</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">🔍</div> <div class=\"flow-label\">Search</div> <div class=\"flow-sublabel\">pgvector top-8</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">📋</div> <div class=\"flow-label\">Prompt</div> <div class=\"flow-sublabel\">Context + query</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node gold\"> <div class=\"flow-icon\">🤖</div> <div class=\"flow-label\">Response</div> <div class=\"flow-sublabel\">Claude + citations</div> </div> </div> <div class=\"gov-callout blue\"> <strong>Key insight:</strong> The AI (steps 5-6) is the simplest piece. 80% of the effort is in curating, embedding, and tuning retrieval. </div>",
+    "content": "The Full Architecture Six systems cooperate in about 2-3 seconds. None are exotic — React, PostgreSQL, and webhook APIs. <div class=\"flow-diagram\"> <div class=\"flow-node\"> <div class=\"flow-icon\">👤</div> <div class=\"flow-label\">User Asks</div> <div class=\"flow-sublabel\">React frontend</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">🔗</div> <div class=\"flow-label\">Webhook</div> <div class=\"flow-sublabel\">n8n receives</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">🔢</div> <div class=\"flow-label\">Embed</div> <div class=\"flow-sublabel\">OpenAI 1,536d</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">🔍</div> <div class=\"flow-label\">Search</div> <div class=\"flow-sublabel\">pgvector top-8</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node\"> <div class=\"flow-icon\">📋</div> <div class=\"flow-label\">Prompt</div> <div class=\"flow-sublabel\">Context + query</div> </div> <div class=\"flow-arrow\">→</div> <div class=\"flow-node gold\"> <div class=\"flow-icon\">🤖</div> <div class=\"flow-label\">Response</div> <div class=\"flow-sublabel\">Claude + citations</div> </div> </div> <div class=\"gov-callout blue\"> <strong>Key insight:</strong> The AI (steps 5-6) is the simplest piece. 80% of the effort is in curating, embedding, and tuning retrieval. </div> <div class=\"gov-callout\"> <strong>n8n gotchas:</strong> <code>alwaysOutputData: true</code> prevents silent pipeline death on zero results. <code>escapeBraces()</code> in prompt templates avoids n8n expression collisions. Top-K = 8 chunks. </div>",
     "excerpt": "The Full Architecture Six systems cooperate in about 2-3 seconds. None are exotic — React, PostgreSQL, and webhook APIs. <div class=\"flow-diagram\"> <d..."
   },
   {
-    "index": 8,
+    "index": 9,
     "title": "The Stack",
     "content": "The Stack Every component is open-source or free-tier. <div class=\"tech-grid\"> <div class=\"tech-card\"><div class=\"tech-icon\">⚛️</div><div class=\"tech-title\">React + Tailwind</div><div class=\"tech-desc\">Frontend UI</div></div> <div class=\"tech-card gold\"><div class=\"tech-icon\">🔄</div><div class=\"tech-title\">n8n</div><div class=\"tech-desc\">Workflow automation</div></div> <div class=\"tech-card\"><div class=\"tech-icon\">🧠</div><div class=\"tech-title\">OpenAI Embeddings</div><div class=\"tech-desc\">text-embedding-3-small</div></div> <div class=\"tech-card gold\"><div class=\"tech-icon\">🗄️</div><div class=\"tech-title\">PostgreSQL + pgvector</div><div class=\"tech-desc\">Vector database</div></div> <div class=\"tech-card\"><div class=\"tech-icon\">🤖</div><div class=\"tech-title\">Claude (Anthropic)</div><div class=\"tech-desc\">Response generation</div></div> <div class=\"tech-card gold\"><div class=\"tech-icon\">🐳</div><div class=\"tech-title\">Docker on VPS</div><div class=\"tech-desc\">Tailscale mesh networking</div></div> </div>",
     "excerpt": "The Stack Every component is open-source or free-tier. <div class=\"tech-grid\"> <div class=\"tech-card\"><div class=\"tech-icon\">⚛️</div><div class=\"tech-..."
-  },
-  {
-    "index": 9,
-    "title": "Inside the Orchestration Layer",
-    "content": "Inside the Orchestration Layer The n8n workflow connects the user's question to the knowledge base to the LLM — all without writing server code. <div class=\"gov-callout blue\"> <strong>Note:</strong> Screenshot of the n8n workflow editor will be added here. The workflow shows: Webhook Trigger → OpenAI Embedding → pgvector Query → Prompt Builder → Claude API → Response Formatter. </div> Critical n8n patterns: | Pattern | Why It Matters | |---------|---------------| | alwaysOutputData: true on vector search | Zero results silently kills the pipeline without it | | escapeBraces() in prompt templates | Content braces collide with n8n expression syntax | | Top-K = 8 chunks | Enough context without diluting relevance | | Similarity threshold ≥ 0.30 | Catches borderline relevant content |",
-    "excerpt": "Inside the Orchestration Layer The n8n workflow connects the user's question to the knowledge base to the LLM — all without writing server code. <div..."
   },
   {
     "index": 10,
@@ -4635,7 +4908,7 @@ $1,200 for major facilities...</pre>
   {
     "index": 20,
     "title": "One Pattern, Three Bots",
-    "content": "One Pattern, Three Bots The same architecture powers two other chatbots — proving the pattern is reusable. <div class=\"stat-row\"> <div class=\"stat-card\"><div class=\"stat-number\">179</div><div class=\"stat-label\">WaterBot Chunks</div></div> <div class=\"stat-card gold\"><div class=\"stat-number\">425</div><div class=\"stat-label\">BizBot Chunks</div></div> <div class=\"stat-card green\"><div class=\"stat-number\">1,402</div><div class=\"stat-label\">KiddoBot Chunks</div></div> </div> <div class=\"compare-grid\"> <div class=\"compare-card\"> <h4>Same Infrastructure</h4> <ul> <li>Same PostgreSQL + pgvector database</li> <li>Same n8n workflow pattern</li> <li>Same OpenAI embedding model</li> <li>Same React frontend framework</li> </ul> </div> <div class=\"compare-card gold\"> <h4>Different Domains</h4> <ul> <li><strong>WaterBot</strong> — Water permits and regulations</li> <li><strong>BizBot</strong> — Business permits and licensing</li> <li><strong>KiddoBot</strong> — Childcare provider resources</li> <li>Each has its own KB, test suite, and prompt</li> </ul> </div> </div>",
+    "content": "One Pattern, Three Bots The same architecture powers two other chatbots — proving the pattern is reusable. <div class=\"stat-row\"> <div class=\"stat-card\"><div class=\"stat-number\">179</div><div class=\"stat-label\">WaterBot Chunks</div></div> <div class=\"stat-card gold\"><div class=\"stat-number\">425</div><div class=\"stat-label\">BizBot Chunks</div></div> <div class=\"stat-card green\"><div class=\"stat-number\">1,402</div><div class=\"stat-label\">KiddoBot Chunks</div></div> </div> <div class=\"compare-grid\"> <div class=\"compare-card\"> <h4>Same Infrastructure</h4> <ul> <li>Same PostgreSQL + pgvector database</li> <li>Same n8n workflow pattern</li> <li>Same OpenAI embedding model</li> <li><strong>Shared component library</strong> — ChatMessage, DecisionTreeView, RAGButton all reused</li> </ul> </div> <div class=\"compare-card gold\"> <h4>Different Domains</h4> <ul> <li><strong>WaterBot</strong> — Water regs + permits + funding navigator</li> <li><strong>BizBot</strong> — Business permits + license finder</li> <li><strong>KiddoBot</strong> — Childcare resources + program finder</li> <li>Each has its own KB, test suite, and specialized tools</li> </ul> </div> </div>",
     "excerpt": "One Pattern, Three Bots The same architecture powers two other chatbots — proving the pattern is reusable. <div class=\"stat-row\"> <div class=\"stat-car..."
   },
   {
