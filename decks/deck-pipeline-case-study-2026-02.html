@@ -4071,38 +4071,22 @@ section:first-of-type .slide-footer {
 <div class="tabs" data-tabs-id="tabs-0">
 <ul class="tab-list" role="tablist">
 <li><button class="tab-button" role="tab" aria-selected="true" aria-controls="tabs-0-panel-0" tabindex="0">Markdown Input</button></li>
-<li><button class="tab-button" role="tab" aria-selected="false" aria-controls="tabs-0-panel-1" tabindex="-1">Key Findings</button></li>
-<li><button class="tab-button" role="tab" aria-selected="false" aria-controls="tabs-0-panel-2" tabindex="-1">What build.js Does</button></li>
-<li><button class="tab-button" role="tab" aria-selected="false" aria-controls="tabs-0-panel-3" tabindex="-1">HTML Output</button></li>
+<li><button class="tab-button" role="tab" aria-selected="false" aria-controls="tabs-0-panel-1" tabindex="-1">What build.js Does</button></li>
+<li><button class="tab-button" role="tab" aria-selected="false" aria-controls="tabs-0-panel-2" tabindex="-1">HTML Output</button></li>
 </ul>
 <div class="tab-panels">
-<div role="tabpanel" id="tabs-0-panel-0" class="tab-panel" aria-hidden="false" tabindex="0"><pre><code class="language-markdown">
-</code></pre>
-</div>
-<div role="tabpanel" id="tabs-0-panel-1" class="tab-panel" aria-hidden="true" tabindex="0"><p>The study found three critical factors:</p>
-<ul>
-<li><strong>Factor 1:</strong> Response accuracy improved 84%</li>
-<li><strong>Factor 2:</strong> Processing time dropped by half</li>
-<li><strong>Factor 3:</strong> User satisfaction reached 92%</li>
-</ul>
-<div class="collapsible">
-<div class="collapsible-header">
-<span class="collapsible-title">Supporting Data</span>
-<svg class="collapsible-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M6 9l6 6 6-6"/>
-</svg>
-</div>
-<div class="collapsible-content">
-<div class="collapsible-body">
-<p>Detailed methodology and raw numbers...</p>
+<div role="tabpanel" id="tabs-0-panel-0" class="tab-panel" aria-hidden="false" tabindex="0"><pre><code class="language-markdown">### Key Findings
 
-</div>
-</div>
-</div>
-<pre><code>
+The study found three critical factors:
+
+- **Factor 1:** Response accuracy improved 84%
+- **Factor 2:** Processing time dropped by half
+- **Factor 3:** User satisfaction reached 92%
+
+&gt; [!NOTE] These numbers are from the pilot study.
 </code></pre>
 </div>
-<div role="tabpanel" id="tabs-0-panel-2" class="tab-panel" aria-hidden="true" tabindex="0"><ol>
+<div role="tabpanel" id="tabs-0-panel-1" class="tab-panel" aria-hidden="true" tabindex="0"><ol>
 <li><strong>Parse</strong> — Read markdown, extract front matter and metadata</li>
 <li><strong>Split</strong> — Convert <code>##</code> headings into individual slides</li>
 <li><strong>Process blocks</strong> — Handle <code>:::collapse</code>, <code>:::tabs</code>, <code>:::columns</code>, <code>:::chart</code>, <code>:::diagram</code></li>
@@ -4111,7 +4095,7 @@ section:first-of-type .slide-footer {
 <li><strong>Output</strong> — Write a single standalone HTML file</li>
 </ol>
 </div>
-<div role="tabpanel" id="tabs-0-panel-3" class="tab-panel" aria-hidden="true" tabindex="0"><p>The result is a <strong>completely self-contained HTML file</strong>:</p>
+<div role="tabpanel" id="tabs-0-panel-2" class="tab-panel" aria-hidden="true" tabindex="0"><p>The result is a <strong>completely self-contained HTML file</strong>:</p>
 <ul>
 <li>All CSS inlined (no external stylesheets to break)</li>
 <li>Fonts and libraries loaded from CDN</li>
@@ -4628,7 +4612,7 @@ section:first-of-type .slide-footer {
   {
     "index": 6,
     "title": "Stage 2 — Markdown as Source of Truth",
-    "content": "Stage 2 — Markdown as Source of Truth Markdown is the native language of AI. Every major model reads and writes it. By using markdown as the source format, the pipeline speaks the same language as the tools that create content. collapse Supporting Data Detailed methodology and raw numbers... collapse, columns, diagram` 4. Generate nav — Build left-hand sidebar from slide titles 5. Inline assets — Embed all CSS, process images, assemble HTML template 6. Output — Write a single standalone HTML file HTML Output The result is a completely self-contained HTML file: - All CSS inlined (no external stylesheets to break) - Fonts and libraries loaded from CDN - Works offline once loaded - Typically 3,000–5,000 lines of HTML - Opens in any browser, any device :::",
+    "content": "Stage 2 — Markdown as Source of Truth Markdown is the native language of AI. Every major model reads and writes it. By using markdown as the source format, the pipeline speaks the same language as the tools that create content. collapse, columns, diagram` 4. Generate nav — Build left-hand sidebar from slide titles 5. Inline assets — Embed all CSS, process images, assemble HTML template 6. Output — Write a single standalone HTML file HTML Output The result is a completely self-contained HTML file: - All CSS inlined (no external stylesheets to break) - Fonts and libraries loaded from CDN - Works offline once loaded - Typically 3,000–5,000 lines of HTML - Opens in any browser, any device :::",
     "excerpt": "Stage 2 — Markdown as Source of Truth Markdown is the native language of AI. Every major model reads and writes it. By using markdown as the source fo..."
   },
   {

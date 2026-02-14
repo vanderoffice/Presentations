@@ -308,7 +308,7 @@ Markdown is the native language of AI. Every major model reads and writes it. By
 :::tabs
 ## Markdown Input
 ```markdown
-## Key Findings
+### Key Findings
 
 The study found three critical factors:
 
@@ -316,9 +316,7 @@ The study found three critical factors:
 - **Factor 2:** Processing time dropped by half
 - **Factor 3:** User satisfaction reached 92%
 
-:::collapse Supporting Data
-Detailed methodology and raw numbers...
-:::
+> [!NOTE] These numbers are from the pilot study.
 ```
 
 ## What build.js Does
