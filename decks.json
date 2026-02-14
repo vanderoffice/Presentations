@@ -32,6 +32,13 @@
   ],
   "recentlyAdded": [
     {
+      "href": "decks/deck-pipeline-case-study-2026-02.html",
+      "title": "Building a Presentation Pipeline with AI",
+      "date": "Feb 14, 2026",
+      "tag": "Training",
+      "tagClass": "training"
+    },
+    {
       "href": "decks/waterbot-case-study-2026-02.html",
       "title": "WaterBot: Building a Gov AI Assistant",
       "date": "Feb 13, 2026",
@@ -153,6 +160,15 @@
         "href": "decks/waterbot-case-study-2026-02.html",
         "description": "Case study of building a production RAG chatbot for California Water Boards. Covers architecture, knowledge curation, semantic chunking, adversarial QA testing, and a replicable blueprint.",
         "meta": "23 slides",
+        "comingSoon": false
+      },
+      {
+        "number": 8,
+        "title": "Building a Presentation Pipeline with AI",
+        "slug": "deck-pipeline-case-study",
+        "href": "decks/deck-pipeline-case-study-2026-02.html",
+        "description": "How a Claude Code custom skill turns markdown into standalone Reveal.js HTML presentations. Covers the 3-stage pipeline, component library, design system, and a reproducible MVP recipe.",
+        "meta": "19 slides",
         "comingSoon": false
       }
     ]
