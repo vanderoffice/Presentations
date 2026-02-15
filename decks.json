@@ -32,6 +32,13 @@
   ],
   "recentlyAdded": [
     {
+      "href": "decks/production-hardening-gov.html",
+      "title": "Production Hardening for Government Web Services",
+      "date": "Feb 15, 2026",
+      "tag": "Training",
+      "tagClass": "training"
+    },
+    {
       "href": "decks/deck-pipeline-case-study-2026-02.html",
       "title": "Building a Presentation Pipeline with AI",
       "date": "Feb 14, 2026",
@@ -51,13 +58,6 @@
       "date": "Feb 12, 2026",
       "tag": "FellowOps",
       "tagClass": "fellowops"
-    },
-    {
-      "href": "decks/cdcr-technology-landscape-2026-02-11.html",
-      "title": "CDCR Technology Landscape",
-      "date": "Feb 11, 2026",
-      "tag": "Briefings",
-      "tagClass": ""
     }
   ],
   "briefings": [
@@ -169,6 +169,15 @@
         "href": "decks/deck-pipeline-case-study-2026-02.html",
         "description": "How a Claude Code custom skill turns markdown into standalone Reveal.js HTML presentations. Covers the 3-stage pipeline, component library, design system, and a reproducible MVP recipe.",
         "meta": "19 slides",
+        "comingSoon": false
+      },
+      {
+        "number": 9,
+        "title": "Production Hardening for Government Web Services",
+        "slug": "production-hardening-gov",
+        "href": "decks/production-hardening-gov.html",
+        "description": "Real metrics from a 6-phase hardening pipeline: rate limiting, memory caps, Redis caching, Cloudflare edge protection, and k6 load testing — all at $0 cost. 50+ verified before/after metrics.",
+        "meta": "20 slides",
         "comingSoon": false
       }
     ]
