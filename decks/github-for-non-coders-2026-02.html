@@ -2867,6 +2867,275 @@ tr:hover td {
   }
 }
 
+/* ============================================
+   Stat Cards (deck-components)
+   ============================================ */
+
+.stat-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-default);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.75rem;
+  text-align: center;
+  flex: 1;
+  min-width: 140px;
+  max-width: 220px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   Compare Grid (deck-components)
+   ============================================ */
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.compare-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-default);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.compare-panel h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.compare-left {
+  border-top: 3px solid var(--text-muted);
+}
+
+.compare-left h3 {
+  color: var(--text-secondary);
+}
+
+.compare-right {
+  border-top: 3px solid var(--accent-gold);
+}
+
+.compare-right h3 {
+  color: var(--accent-gold);
+}
+
+.compare-panel ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.compare-panel li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Step Sequence (deck-components)
+   ============================================ */
+
+.step-sequence {
+  margin: 1.5rem 0;
+  padding-left: 0.5rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 38px;
+  width: 2px;
+  height: calc(100% - 14px);
+  background: var(--line-default);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  color: #0a0a14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.step-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.step-description {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ============================================
+   Callout (deck-components)
+   ============================================ */
+
+.callout {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--accent-gold);
+  background: var(--bg-panel);
+}
+
+.callout-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.callout-content {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.callout-content p {
+  margin: 0;
+}
+
+.callout-info {
+  border-left-color: var(--accent-blue);
+}
+
+.callout-warning {
+  border-left-color: #e8a040;
+}
+
+.callout-tip {
+  border-left-color: var(--accent-gold);
+}
+
+.callout-quote {
+  border-left-color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ============================================
+   Timeline (deck-components)
+   ============================================ */
+
+.timeline {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--line-default);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 1.5rem 1.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1.625rem;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  border: 2px solid var(--bg-tertiary);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ============================================
+   Quote Block (deck-components)
+   ============================================ */
+
+.quote-block {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--accent-gold);
+  background: var(--bg-panel);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.quote-block blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.quote-attribution {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  font-style: normal;
+  font-weight: 500;
+}
+
 
 /* ============================================
    Deck Branding Styles
@@ -3404,6 +3673,11 @@ section:first-of-type .slide-footer {
       </ul>
 
       <div class="nav-footer">
+        <a class="nav-action" href="../training/" aria-label="Back to library" title="Back to library">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1"/>
+          </svg>
+        </a>
         <button class="nav-action" aria-label="Search" onclick="openSearch()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"/>
