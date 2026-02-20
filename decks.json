@@ -32,6 +32,13 @@
   ],
   "recentlyAdded": [
     {
+      "href": "decks/senior-fellows-charter-2026-02.html",
+      "title": "Senior Fellows Charter",
+      "date": "Feb 19, 2026",
+      "tag": "FellowOps",
+      "tagClass": "fellowops"
+    },
+    {
       "href": "decks/production-hardening-gov.html",
       "title": "Production Hardening for Government Web Services",
       "date": "Feb 15, 2026",
@@ -198,7 +205,9 @@
         {
           "title": "Charter",
           "description": "The fellowship charter: mission, scope, and operating principles.",
-          "comingSoon": true
+          "href": "decks/senior-fellows-charter-2026-02.html",
+          "slides": "11 slides &rarr;",
+          "comingSoon": false
         }
       ]
     },
