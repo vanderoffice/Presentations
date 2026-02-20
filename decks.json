@@ -217,11 +217,6 @@
       "description": "Recurring meeting formats, agendas, and communication decks prepared for ODI leadership.",
       "cards": [
         {
-          "title": "Weekly Standup",
-          "description": "Standing agenda, format, and notes template for weekly cohort syncs.",
-          "comingSoon": true
-        },
-        {
           "title": "Monthly Report-Back",
           "description": "Slide deck template and format for monthly ODI progress updates.",
           "comingSoon": true
@@ -234,50 +229,6 @@
         {
           "title": "ODI Briefing Decks",
           "description": "Presentation materials prepared for ODI leadership on fellowship activities and outcomes.",
-          "comingSoon": true
-        }
-      ]
-    },
-    {
-      "type": "ops-section",
-      "title": "Artifacts & Deliverables",
-      "description": "Templates and examples of the deliverables Cohort 1 produces for agency partners.",
-      "cards": [
-        {
-          "title": "Agency Assessment Template",
-          "description": "Standard format for evaluating an agency's technology landscape and modernization readiness.",
-          "comingSoon": true
-        },
-        {
-          "title": "Implementation Roadmap",
-          "description": "How to structure a phased modernization plan for an agency engagement.",
-          "comingSoon": true
-        },
-        {
-          "title": "Project Briefs",
-          "description": "One-page summaries of active fellowship projects — scope, status, and next steps.",
-          "comingSoon": true
-        }
-      ]
-    },
-    {
-      "type": "ops-section",
-      "title": "Operations",
-      "description": "Processes, access guides, and institutional knowledge for fellowship operations.",
-      "cards": [
-        {
-          "title": "Access & Onboarding",
-          "description": "Systems access, accounts, and first-week setup for new fellows joining the program.",
-          "comingSoon": true
-        },
-        {
-          "title": "Procurement & Tooling",
-          "description": "How to request tools, software, and services through state procurement.",
-          "comingSoon": true
-        },
-        {
-          "title": "Handoff Playbook",
-          "description": "How to document work, transfer relationships, and set up the next cohort for success.",
           "comingSoon": true
         },
         {
