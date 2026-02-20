@@ -99,7 +99,7 @@
 
     .presentation-wrapper {
       display: flex;
-      width: 100vw;
+      width: 100%;
       height: 100vh;
       overflow: hidden;
     }
@@ -109,8 +109,11 @@
        ============================================ */
 
     .left-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 280px;
-      min-width: 280px;
+      height: 100vh;
       background: var(--nav-bg);
       border-right: 1px solid var(--nav-border);
       display: flex;
@@ -223,6 +226,8 @@
 
     .reveal-container {
       flex: 1;
+      height: 100vh;
+      margin-left: 280px;
       position: relative;
       overflow: hidden;
     }
@@ -238,10 +243,12 @@
 
     .reveal .slides {
       text-align: left;
+      overflow: visible !important;
     }
 
     .reveal .slides section {
       padding: 2.5rem 3.5rem;
+      box-sizing: border-box;
       background-color: var(--bg-primary);
       height: auto !important;
       min-height: 100%;
@@ -721,19 +728,24 @@
     .title-content {
       position: relative;
       z-index: 2;
+      text-align: center;
+      width: 100%;
     }
 
-    .thesis {
+    .title-slide .thesis {
       font-size: 1.125rem;
       color: var(--text-secondary);
-      max-width: 700px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
       line-height: 1.6;
     }
 
-    .meta {
+    .title-slide .meta {
       font-size: 0.9375rem;
       color: var(--text-muted);
-      margin-top: 2rem;
+      max-width: 600px;
+      margin: 2rem auto 0;
     }
 
     .title-slide .seal-bg {
@@ -1026,7 +1038,9 @@
     @media (max-width: 1200px) {
       .left-nav {
         width: 240px;
-        min-width: 240px;
+      }
+      .reveal-container {
+        margin-left: 240px;
       }
     }
 
@@ -1034,7 +1048,9 @@
       .left-nav {
         display: none;
       }
-
+      .reveal-container {
+        margin-left: 0;
+      }
       .reveal .slides section {
         padding: 2rem;
       }
@@ -2351,9 +2367,10 @@
     const deck = new Reveal({
       hash: true,
       history: true,
-      controls: true,
+      controls: false,
       progress: false,
       center: false,
+      embedded: true,
       transition: 'fade',
       transitionSpeed: 'fast',
       width: '100%',
