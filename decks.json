@@ -32,6 +32,13 @@
   ],
   "recentlyAdded": [
     {
+      "href": "decks/agentic-engineering-civil-service-2026-02-22.html",
+      "title": "Agentic Engineering for California State Government",
+      "date": "Feb 22, 2026",
+      "tag": "Briefing",
+      "tagClass": "briefings"
+    },
+    {
       "href": "decks/senior-fellows-charter-2026-02.html",
       "title": "Senior Fellows Charter",
       "date": "Feb 19, 2026",
@@ -68,6 +75,13 @@
     }
   ],
   "briefings": [
+    {
+      "title": "Agentic Engineering for California State Government",
+      "href": "decks/agentic-engineering-civil-service-2026-02-22.html",
+      "slides": "18 slides",
+      "date": "Feb 2026",
+      "description": "Executive briefing on adopting agentic engineering in state government. Covers the vibe coding vs agentic engineering distinction, IT force multiplication, business staff productivity spectrum, governance framework, economics, and recommended next steps."
+    },
     {
       "title": "California Enterprise Modernization Plan",
       "href": "decks/ca-enterprise-modernization-govoffice-2026-01.html",
