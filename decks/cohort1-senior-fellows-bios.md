@@ -106,14 +106,14 @@ Established under **Executive Order N-30-25** to modernize California state gove
 
 <div class="agency-roster"><table>
 <tr><th>Fellow</th><th>Department</th></tr>
-<tr><td>Elizabeth Betancourt</td><td>Dept. of Water Resources</td></tr>
+<tr><td>Elizabeth Betancourt</td><td>Natural Resources Agency</td></tr>
 <tr><td>Nikki Hatcher</td><td>Dept. of Water Resources</td></tr>
 </table></div>
 
 ## Elizabeth Betancourt
 
 <p class="bio-role">Natural and Working Lands Policy Advisor</p>
-<p class="bio-dept">Dept. of Water Resources · Natural Resources</p>
+<p class="bio-dept">Natural Resources Agency · Natural Resources</p>
 
 :::columns
 ![Elizabeth Betancourt](/Users/slate/presentations/img/fellows/elizabeth-betancourt.jpg)
