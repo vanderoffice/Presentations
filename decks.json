@@ -1,10 +1,10 @@
 {
   "site": {
-    "title": "Innovation Fellowship Library",
+    "title": "VanderDev Presentations",
     "headerIcon": "🏛️",
-    "heading": "Governor's Innovation Fellowship",
-    "hubTitle": "Fellowship Operations",
-    "subtitle": "Resources for California's Modernization Initiatives",
+    "heading": "VanderDev Presentations",
+    "hubTitle": "HTML Decks for Days",
+    "subtitle": "Modernizing government operations",
     "github": "https://github.com/vanderoffice/presentations"
   },
   "categories": [
@@ -18,7 +18,7 @@
     {
       "id": "training",
       "icon": "📚",
-      "title": "Training",
+      "title": "Trainings",
       "description": "Structured learning paths for state employees. Complete modules in order to build practical AI and technology skills.",
       "path": "training/"
     },
