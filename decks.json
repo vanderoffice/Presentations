@@ -32,6 +32,20 @@
   ],
   "recentlyAdded": [
     {
+      "href": "decks/prompt-context-engineering-gov-2026-02.html",
+      "title": "Prompt & Context Engineering for Government Work",
+      "date": "Feb 25, 2026",
+      "tag": "Training",
+      "tagClass": "training"
+    },
+    {
+      "href": "decks/dmv-ai-innovation-blueprint-2026-02.html",
+      "title": "DMV AI Innovation: A Blueprint for California State Government",
+      "date": "Feb 24, 2026",
+      "tag": "Training",
+      "tagClass": "training"
+    },
+    {
       "href": "decks/agentic-engineering-civil-service-2026-02-22.html",
       "title": "Agentic Engineering for California State Government",
       "date": "Feb 22, 2026",
@@ -153,10 +167,12 @@
       },
       {
         "number": 4,
-        "title": "Prompt Engineering for Government Work",
-        "description": "Writing effective prompts for policy analysis, drafting, and decision support.",
-        "meta": "Coming Soon",
-        "comingSoon": true
+        "title": "Prompt & Context Engineering for Government Work",
+        "slug": "prompt-context-engineering-gov",
+        "href": "decks/prompt-context-engineering-gov-2026-02.html",
+        "description": "Master the fundamentals of prompting and context engineering. Covers prompt anatomy, context windows, RAG, agentic AI, CDT compliance (SAM 4986), and practical workflows for policy memos, research, and data analysis.",
+        "meta": "23 slides",
+        "comingSoon": false
       },
       {
         "number": 5,
@@ -199,6 +215,15 @@
         "href": "decks/production-hardening-gov.html",
         "description": "Real metrics from a 6-phase hardening pipeline: rate limiting, memory caps, Redis caching, Cloudflare edge protection, and k6 load testing — all at $0 cost. 50+ verified before/after metrics.",
         "meta": "20 slides",
+        "comingSoon": false
+      },
+      {
+        "number": 10,
+        "title": "DMV AI Innovation: A Blueprint for State Government",
+        "slug": "dmv-ai-innovation-blueprint",
+        "href": "decks/dmv-ai-innovation-blueprint-2026-02.html",
+        "description": "Analysis of DMV's 6 AI systems in production — RADV document verification, Miles chatbot, Service Advisor search, MyDMV identity, disaster recovery, and GenAI plate review. Maps transferable patterns to 15 Fellowship departments with a proposed meeting structure.",
+        "meta": "24 slides",
         "comingSoon": false
       }
     ]
