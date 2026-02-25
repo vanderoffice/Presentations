@@ -173,24 +173,24 @@ From Good Questions to Great AI Output
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
-  margin: 1rem 0;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
   flex-wrap: wrap;
 }
 .flow-step {
   background: rgba(255,255,255,0.04);
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
   text-align: center;
-  font-size: 0.8rem;
-  border-top: 2px solid #4a9eff;
-  min-width: 80px;
+  font-size: 0.92rem;
+  border-top: 3px solid #4a9eff;
+  min-width: 110px;
 }
 .flow-step.gold { border-top-color: #d4a04a; }
 .flow-step.teal { border-top-color: #4a9a7a; }
 .flow-arrow {
   color: #65657a;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
 }
 
@@ -369,16 +369,16 @@ All of this competes for space in a fixed-size **context window** — AI's worki
 A context window is the total amount of text an AI model can "see" at once. Think of it as a desk — everything needs to fit on the desk, or the AI simply can't see it.
 
 <div class="stat-row">
-<div class="stat-card"><div class="stat-value">200K</div><div class="stat-label">Claude's context<br>(~150K words)</div></div>
-<div class="stat-card"><div class="stat-value">128K</div><div class="stat-label">GPT-4o's context<br>(~96K words)</div></div>
-<div class="stat-card gold"><div class="stat-value">2M</div><div class="stat-label">Gemini 1.5 Pro<br>(~1.5M words)</div></div>
+<div class="stat-card"><div class="stat-value">200K–1M</div><div class="stat-label">Claude Opus 4.6<br>(1M beta)</div></div>
+<div class="stat-card"><div class="stat-value">400K</div><div class="stat-label">GPT-5.2<br>(~300K words)</div></div>
+<div class="stat-card gold"><div class="stat-value">1M</div><div class="stat-label">Gemini 3.1 Pro<br>(~750K words)</div></div>
 </div>
 
-**What 200K tokens looks like in practice:**
+**Context windows have exploded — even open-source models like Llama 4 Scout now offer 10M tokens.** Here's what today's windows look like in practice:
 
-- 8 average-length novels
-- A 500-page policy manual + your conversation history
-- 5 years of text messages
+- **200K tokens** (Claude standard) ≈ 500 pages — a full policy manual + conversation history
+- **400K tokens** (GPT-5.2) ≈ 1,000 pages — an entire agency's annual report suite
+- **1M tokens** (Claude/Gemini) ≈ 2,500 pages — multiple codebases or years of legislation
 
 <div class="context-window">
 <div class="ctx-section ctx-system"><div class="ctx-label">System Prompt</div><div class="ctx-detail">Behavior rules, role definition, constraints (~100-1,000 tokens)</div></div>
@@ -389,7 +389,7 @@ A context window is the total amount of text an AI model can "see" at once. Thin
 </div>
 
 <div class="gov-callout">
-<strong>Why this matters:</strong> Your prompt is just one piece of what the AI sees. A well-structured prompt in a poorly managed context window will still produce poor results. Think about the <em>whole desk</em>, not just the note you're handing over.
+<strong>Why this matters:</strong> Even with million-token windows, your prompt is just one piece of what the AI sees. A well-structured prompt in a poorly managed context window will still produce poor results. Bigger desks don't help if they're covered in irrelevant paper — think about the <em>whole desk</em>, not just the note you're handing over.
 </div>
 
 ---
@@ -479,6 +479,87 @@ Draft a public-facing FAQ (5 questions) about our department's new AI-assisted c
 
 ---
 
+## Prompt Library: Ready-to-Use Templates
+
+Copy, adapt, and use these prompts for common government tasks. Each one uses the five-component structure.
+
+<div class="prompt-box good">
+<div class="prompt-label">Meeting Prep</div>
+<strong>Role:</strong> You are my executive assistant.<br>
+<strong>Context:</strong> I have a 30-minute briefing with [Deputy Director / stakeholder name] about [topic]. They care most about [budget impact / timeline / staffing].<br>
+<strong>Task:</strong> Create a 1-page briefing sheet with: (1) 3 key talking points, (2) Anticipated questions with suggested responses, (3) One clear ask or decision I need from them.<br>
+<strong>Format:</strong> Bullet points. Keep it to one page. Bold the ask.<br>
+<strong>Constraints:</strong> No jargon. Assume the audience has 5 minutes to read this before the meeting.
+</div>
+
+<div class="prompt-box good">
+<div class="prompt-label">Email Drafter</div>
+<strong>Role:</strong> You are a senior state employee writing to [audience: team / executive / external stakeholder].<br>
+<strong>Task:</strong> Draft an email about [topic]. The purpose is to [inform / request action / provide an update].<br>
+<strong>Key points to include:</strong> [list 2-3 bullets]<br>
+<strong>Tone:</strong> Professional but approachable. Keep it under 200 words.<br>
+<strong>Constraints:</strong> Do not include any PII. End with a clear next step or call to action.
+</div>
+
+:::collapse More Ready-to-Use Templates
+
+**Comparing Options / Alternatives Analysis**
+
+<div class="prompt-box good">
+<div class="prompt-label">Options Analysis</div>
+<strong>Role:</strong> You are a policy analyst at [Department].<br>
+<strong>Context:</strong> We need to decide between [Option A] and [Option B] for [project/initiative]. Budget is [amount]. Timeline is [deadline].<br>
+<strong>Task:</strong> Create a comparison table with columns for: Option, Pros, Cons, Estimated Cost, Risk Level, Recommendation.<br>
+<strong>Format:</strong> Markdown table followed by a 2-sentence recommendation with justification.<br>
+<strong>Constraints:</strong> Be objective. Flag any assumptions you're making.
+</div>
+
+**Writing Procedures / SOPs**
+
+<div class="prompt-box good">
+<div class="prompt-label">Standard Operating Procedure</div>
+<strong>Role:</strong> You are a process improvement specialist in state government.<br>
+<strong>Task:</strong> Write a step-by-step SOP for [process, e.g., "onboarding a new hire to our team's AI tools"].<br>
+<strong>Format:</strong> Numbered steps. Each step should include: the action, who is responsible, and any tools/forms needed. Add a "Common Mistakes" section at the end.<br>
+<strong>Constraints:</strong> Assume the reader has never done this before. Reference SAM 4986 where relevant to AI tool access.
+</div>
+
+**Summarizing Long Documents**
+
+<div class="prompt-box good">
+<div class="prompt-label">Document Summary</div>
+I'm attaching [document name — a 45-page audit report / legislative analysis / policy manual].<br><br>
+<strong>Task:</strong> Provide a 3-level summary:<br>
+1. <strong>Executive Summary</strong> (3 sentences max — what a CIO needs to know)<br>
+2. <strong>Key Findings</strong> (5-7 bullet points with page references)<br>
+3. <strong>Action Items</strong> (what our department needs to do in response)<br><br>
+<strong>Constraints:</strong> Use the document's own terminology. Do not infer or add information not in the document. Flag anything that seems ambiguous.
+</div>
+
+**Editing & Tone Adjustment**
+
+<div class="prompt-box good">
+<div class="prompt-label">Tone Rewrite</div>
+Here is a draft [memo / email / report section] I wrote:<br><br>
+[paste your draft]<br><br>
+<strong>Task:</strong> Rewrite this for [audience]. Adjust the tone to be [more formal / more accessible / more concise / more data-driven]. Keep all factual content intact.<br>
+<strong>Format:</strong> Show me the rewritten version, then list the 3 biggest changes you made and why.
+</div>
+
+**Creating Training Materials**
+
+<div class="prompt-box good">
+<div class="prompt-label">Training Content</div>
+<strong>Role:</strong> You are an instructional designer for state employee training.<br>
+<strong>Context:</strong> I need to train [audience, e.g., "program managers with 10+ years experience but minimal AI exposure"] on [topic].<br>
+<strong>Task:</strong> Create a 15-minute training outline with: learning objectives, 3 key concepts with real-world government examples, a hands-on exercise, and assessment questions.<br>
+<strong>Constraints:</strong> Reading level should be accessible to non-technical staff. Include at least one California-specific example.
+</div>
+
+:::
+
+---
+
 ## Prompting Techniques That Work
 
 Different tasks call for different approaches. Here are the three you'll use most often.
@@ -520,7 +601,7 @@ Now format these 50 entries the same way..."
 <strong>Counterintuitive finding:</strong> Chain-of-thought can actually <em>hurt</em> performance on simple tasks — research shows a <strong>36.3% drop</strong> when forcing step-by-step reasoning on tasks that don't need it. Match the technique to the task complexity.
 </div>
 
-> **When in doubt:** Start with zero-shot. If the output isn't right, add examples (few-shot). If the task requires reasoning, add "think through this step by step" (chain-of-thought).
+> **When in doubt:** Start with zero-shot. If the output isn't right, add examples (few-shot). If the task requires reasoning, add "think through this step by step" (chain-of-thought). Note: the latest models (Claude Opus 4.6, GPT-5.2, Gemini 3.1) have **adaptive thinking** built in — they can dynamically decide when to reason deeper. But explicit CoT in your prompt still helps when you want to *see* the reasoning or control the analysis structure.
 
 ---
 
@@ -583,7 +664,7 @@ Here's a counterintuitive finding from <a href="https://direct.mit.edu/tacl/arti
 - If you're analyzing a specific section, **extract and paste just that section** rather than uploading the entire 200-page document
 - More context isn't always better — **curated context beats massive context**
 
-> **In research terms:** GPT-3.5 actually performed *worse* when given documents with relevant info buried in the middle than with *no documents at all*. Bigger context with poor positioning actively hurts performance.
+> **In research terms:** The Stanford/MIT study found models actually performed *worse* when given documents with relevant info buried in the middle than with *no documents at all*. This pattern persists even in today's million-token models — bigger context with poor positioning actively hurts performance.
 
 ---
 
@@ -908,9 +989,9 @@ Great AI output almost never comes from a single prompt. It comes from **iterati
 <p><strong>Fix:</strong> Extract the relevant section. Put key info at the beginning or end. Be specific.</p>
 </div>
 <div class="compare-card warn">
-<h4>The Shadow IT</h4>
-<p>Using personal AI accounts (consumer ChatGPT, Gemini) for state work.</p>
-<p><strong>Fix:</strong> Use only state-approved tools on state equipment. SAM 4986.12 is clear on this.</p>
+<h4>The Copy-Paste Zombie</h4>
+<p>Taking AI output and pasting it into three different documents without adapting it for each audience.</p>
+<p><strong>Fix:</strong> Each audience needs a different version. Ask the AI to rewrite for each context: "Now rewrite this for [audience] with [tone]."</p>
 </div>
 </div>
 
@@ -936,9 +1017,9 @@ Different tools for different jobs. Know when to reach for each one.
 <h4>Claude (Anthropic)</h4>
 <p><strong>Best for:</strong> Writing, analysis, long-document processing, nuanced reasoning</p>
 <ul>
-<li>200K token context (largest mainstream window)</li>
-<li>Excels at nuanced, careful responses</li>
-<li>Strong on safety and reducing harmful output</li>
+<li>Opus 4.6 / Sonnet 4.6 — 200K standard, 1M beta context</li>
+<li>Adaptive thinking with configurable effort levels</li>
+<li>Strong on safety — constitutional AI with reason-based alignment</li>
 <li>Projects feature for persistent context</li>
 </ul>
 <p><a href="https://claude.ai" target="_blank">claude.ai</a></p>

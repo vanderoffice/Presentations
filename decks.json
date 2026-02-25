@@ -171,7 +171,7 @@
         "slug": "prompt-context-engineering-gov",
         "href": "decks/prompt-context-engineering-gov-2026-02.html",
         "description": "Master the fundamentals of prompting and context engineering. Covers prompt anatomy, context windows, RAG, agentic AI, CDT compliance (SAM 4986), and practical workflows for policy memos, research, and data analysis.",
-        "meta": "23 slides",
+        "meta": "24 slides",
         "comingSoon": false
       },
       {
