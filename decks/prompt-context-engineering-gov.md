@@ -330,7 +330,9 @@ The field has moved fast. What worked in 2023 is already outdated.
 </div>
 </div>
 
-> **Key Insight:** The best prompt in the world won't help if the AI doesn't have the right context. In 2026, **what you feed the AI matters more than how you ask.**
+> **Andrej Karpathy** (OpenAI cofounder): *"Context engineering is the delicate art and science of filling the context window with just the right information for the next step."*
+
+> **Tobi Lutke** (Shopify CEO): *"I prefer the term context engineering over prompt engineering. It describes the core skill better: the art of providing all the context for the task to be plausibly solvable by the LLM."*
 
 ---
 
@@ -512,6 +514,10 @@ Now format these 50 entries the same way..."
 </div>
 <p><span class="feature-badge">Best for:</span> Policy analysis, complex comparisons, multi-step reasoning, audit reviews</p>
 </div>
+</div>
+
+<div class="gov-callout">
+<strong>Counterintuitive finding:</strong> Chain-of-thought can actually <em>hurt</em> performance on simple tasks — research shows a <strong>36.3% drop</strong> when forcing step-by-step reasoning on tasks that don't need it. Match the technique to the task complexity.
 </div>
 
 > **When in doubt:** Start with zero-shot. If the output isn't right, add examples (few-shot). If the task requires reasoning, add "think through this step by step" (chain-of-thought).
@@ -863,7 +869,7 @@ Great AI output almost never comes from a single prompt. It comes from **iterati
 <div class="step-card"><div class="step-label">Missing Detail</div><p>"Add a section on fiscal impact. Include estimated costs using CalHR salary data."</p></div>
 <div class="step-card"><div class="step-label">Wrong Format</div><p>"Convert this narrative into a comparison table with columns for: Current Policy, Proposed Change, Impact."</p></div>
 
-> **Mindset shift:** Don't treat AI like a search engine (one query, one answer). Treat it like a **conversation with a capable colleague** — you'd naturally ask follow-up questions, request revisions, and steer the work toward what you need.
+> **Mindset shift:** Anthropic's own guide says to *"think of Claude as a brilliant but new employee who lacks context on your norms."* You'd never hand a new hire a task with zero context. Give the AI the same courtesy — and iterate like you would with a colleague.
 
 ---
 
@@ -985,10 +991,13 @@ Different tools for different jobs. Know when to reach for each one.
 - <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB1008" target="_blank">AB 1008</a> — CCPA AI Amendment (effective Jan 2025)
 - <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB2885" target="_blank">AB 2885</a> — Uniform AI definition across CA law
 
-**Prompt Engineering Guides**
+**Prompt & Context Engineering Guides**
+- <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank">Anthropic: Effective Context Engineering for AI Agents</a>
 - <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">Anthropic Prompt Engineering Guide</a>
 - <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank">OpenAI Prompt Engineering Guide</a>
-- <a href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long" target="_blank">"Lost in the Middle" (Stanford/MIT research)</a>
+- <a href="https://cloud.google.com/discover/what-is-prompt-engineering" target="_blank">Google Cloud Prompt Engineering Guide</a>
+- <a href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long" target="_blank">"Lost in the Middle" (Stanford/MIT research paper)</a>
+- <a href="https://www.promptingguide.ai" target="_blank">Prompting Guide</a> (community reference with 58 techniques)
 
 **Training Tools**
 - <a href="https://www.perplexity.ai" target="_blank">Perplexity AI</a> (free Pro for .gov emails)
