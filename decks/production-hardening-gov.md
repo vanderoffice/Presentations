@@ -524,7 +524,7 @@ This hardening covers **10-50 concurrent unauthenticated users** — the demo-da
 ## Resources
 
 **From this project:**
-- [Verification Matrix](https://github.com/vanderoffice/CA-DevStacks) — 50+ metrics with before/after values
+- [Verification Matrix](https://github.com/vanderoffice/gov-devstacks) — 50+ metrics with before/after values
 - [Innovation Fellowship Library](https://vanderoffice.github.io/presentations/) — all training decks
 
 **Tools used (all free tier):**
