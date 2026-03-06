@@ -97,17 +97,6 @@
       "description": "Executive briefing on adopting agentic engineering in state government. Covers the vibe coding vs agentic engineering distinction, IT force multiplication, business staff productivity spectrum, governance framework, economics, and recommended next steps."
     },
     {
-      "title": "California Enterprise Modernization Plan",
-      "href": "decks/ca-enterprise-modernization-govoffice-2026-01.html",
-      "slides": "26 + 35 slides",
-      "date": "Jan 2026",
-      "description": "Governor's Office briefing on the comprehensive state IT modernization strategy. Covers E3 accountability model, Technical Executive Assignment framework, data governance, $100M Breakthrough Fund, and procurement reform.",
-      "secondary": {
-        "href": "../decks/ca-enterprise-modernization-appendix-2026-01.html",
-        "label": "View Appendix →"
-      }
-    },
-    {
       "title": "Claude Code Deployment at SWRCB",
       "href": "decks/claude-code-deployment-swrcb-2026-01-24.html",
       "slides": "14 slides",
