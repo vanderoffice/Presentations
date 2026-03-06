@@ -42,8 +42,8 @@
       "href": "decks/dmv-ai-innovation-blueprint-2026-02.html",
       "title": "DMV AI Innovation: A Blueprint for California State Government",
       "date": "Feb 24, 2026",
-      "tag": "Training",
-      "tagClass": "training"
+      "tag": "Briefing",
+      "tagClass": "briefings"
     },
     {
       "href": "decks/agentic-engineering-civil-service-2026-02-22.html",
@@ -116,6 +116,13 @@
       "slides": "16 slides",
       "date": "Feb 2026",
       "description": "Current state of technology at CDCR. Maps existing systems, infrastructure challenges, and modernization opportunities across California's correctional institutions."
+    },
+    {
+      "title": "DMV AI Innovation: A Blueprint for State Government",
+      "href": "decks/dmv-ai-innovation-blueprint-2026-02.html",
+      "slides": "23 slides",
+      "date": "Feb 2026",
+      "description": "Analysis of DMV's 6 AI systems in production — RADV document verification, Miles chatbot, Service Advisor search, MyDMV identity, disaster recovery, and GenAI plate review. Maps transferable patterns to 15 Fellowship departments with a proposed meeting structure."
     }
   ],
   "training": {
@@ -197,15 +204,6 @@
         "href": "decks/production-hardening-gov.html",
         "description": "Real metrics from a 6-phase hardening pipeline: rate limiting, memory caps, Redis caching, Cloudflare edge protection, and k6 load testing — all at $0 cost. 50+ verified before/after metrics.",
         "meta": "20 slides",
-        "comingSoon": false
-      },
-      {
-        "number": 10,
-        "title": "DMV AI Innovation: A Blueprint for State Government",
-        "slug": "dmv-ai-innovation-blueprint",
-        "href": "decks/dmv-ai-innovation-blueprint-2026-02.html",
-        "description": "Analysis of DMV's 6 AI systems in production — RADV document verification, Miles chatbot, Service Advisor search, MyDMV identity, disaster recovery, and GenAI plate review. Maps transferable patterns to 15 Fellowship departments with a proposed meeting structure.",
-        "meta": "23 slides",
         "comingSoon": false
       }
     ]
