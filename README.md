@@ -1,11 +1,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Deployed: GitHub Pages](https://img.shields.io/badge/Deployed-GitHub_Pages-brightgreen.svg)](https://vanderoffice.github.io/presentations/)
+[![Deployed: GitHub Pages](https://img.shields.io/badge/Deployed-GitHub_Pages-brightgreen.svg)](https://govfellows.github.io/presentations/)
 
 # Innovation Fellowship Presentation Library
 
 Interactive presentation decks for California's government modernization initiatives.
 
-**Live →** [vanderoffice.github.io/presentations](https://vanderoffice.github.io/presentations/)
+**Live →** [govfellows.github.io/presentations](https://govfellows.github.io/presentations/)
 
 ---
 
