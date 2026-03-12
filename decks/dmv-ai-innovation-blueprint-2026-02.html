@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Deck Pipeline">
   <meta name="color-scheme" content="dark">
-  <title>DMV AI Innovation: A Blueprint for California State Government</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>{{FAVICON}}</text></svg>">
+  <title>DMV AI in Production: What Could Your Department Do With These Tools?</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
 
   <!-- Reveal.js Core -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -249,6 +249,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   color: var(--text-primary);
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 h1 {
@@ -281,6 +282,12 @@ p {
   margin-bottom: 1.125rem;
   color: var(--text-secondary);
   line-height: 1.65;
+  text-wrap: pretty;
+}
+
+em {
+  color: var(--text-accent);
+  font-style: italic;
 }
 
 a {
@@ -456,14 +463,14 @@ strong {
 }
 
 .reveal h1 {
-  font-size: 2.75rem;
+  font-size: clamp(1.5rem, 4.5vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
 /* H2 with gold accent underline - key visual element */
 .reveal h2 {
-  font-size: 1.875rem;
+  font-size: clamp(1.25rem, 3.2vw, 1.875rem);
   font-weight: 600;
   padding-bottom: 0.75rem;
   margin-bottom: 1.75rem;
@@ -485,7 +492,7 @@ strong {
 }
 
 .reveal h3 {
-  font-size: 1.375rem;
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   font-weight: 500;
   color: var(--text-accent);
 }
@@ -500,6 +507,7 @@ strong {
   margin-bottom: 0.625rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  text-wrap: pretty;
 }
 
 .reveal li::marker {
@@ -579,6 +587,13 @@ code {
   font-size: 0.875em;
   color: var(--accent-gold-bright);
   border: 1px solid var(--code-border);
+}
+
+td code, th code {
+  padding: 0.1em 0.3em;
+  font-size: 0.82em;
+  border: none;
+  white-space: nowrap;
 }
 
 pre {
@@ -799,6 +814,7 @@ th, td {
   text-align: left;
   padding: 0.875rem 1.125rem;
   border-bottom: 1px solid var(--line-default);
+  font-feature-settings: "tnum";
 }
 
 th {
@@ -834,7 +850,7 @@ tr:hover td {
    ============================================ */
 
 .big-number {
-  font-size: 4rem;
+  font-size: clamp(1.75rem, 6vw, 5rem);
   font-weight: 700;
   background: linear-gradient(135deg, var(--accent-gold-bright), var(--accent-gold));
   -webkit-background-clip: text;
@@ -843,7 +859,8 @@ tr:hover td {
   line-height: 1;
   margin-bottom: 0.625rem;
   letter-spacing: -0.03em;
-  text-shadow: 0 0 40px rgba(212, 160, 74, 0.2);
+  filter: drop-shadow(0 0 40px rgba(212, 160, 74, 0.2));
+  font-feature-settings: "tnum";
 }
 
 .metric-label {
@@ -852,6 +869,7 @@ tr:hover td {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 500;
+  font-feature-settings: "tnum";
 }
 
 
@@ -1008,9 +1026,6 @@ tr:hover td {
     padding: 3rem 5rem;
   }
 
-  .big-number {
-    font-size: 5rem;
-  }
 }
 
 /* Tablet (768px - 1024px) */
@@ -1025,14 +1040,6 @@ tr:hover td {
 
   .reveal .slides section {
     padding: 2rem 2.5rem;
-  }
-
-  h1 { font-size: 2.25rem; }
-  h2 { font-size: 1.625rem; }
-  h3 { font-size: 1.25rem; }
-
-  .big-number {
-    font-size: 3rem;
   }
 
   .chart-wrapper {
@@ -1066,17 +1073,13 @@ tr:hover td {
     padding: 1.25rem 1.5rem;
   }
 
-  h1 { font-size: 1.875rem; margin-bottom: 1rem; }
-  h2 { font-size: 1.5rem; margin-bottom: 0.875rem; }
-  h3 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+  h1 { margin-bottom: 1rem; }
+  h2 { margin-bottom: 0.875rem; }
+  h3 { margin-bottom: 0.75rem; }
 
   .reveal h2::after {
     width: 60px;
     height: 2px;
-  }
-
-  .big-number {
-    font-size: 2.5rem;
   }
 
   .metric-label {
@@ -1123,13 +1126,6 @@ tr:hover td {
 
   .reveal .slides section {
     padding: 0.875rem 1rem;
-  }
-
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.25rem; }
-
-  .big-number {
-    font-size: 1.75rem;
   }
 
   .table-wrapper {
@@ -1182,7 +1178,7 @@ tr:hover td {
     background: none;
     -webkit-text-fill-color: var(--accent-gold);
     color: var(--accent-gold);
-    text-shadow: none;
+    filter: none;
   }
 
   a {
@@ -2628,14 +2624,14 @@ tr:hover td {
 .mermaid-svg .nodeLabel,
 .mermaid-svg .label {
   font-weight: 600 !important;
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
 }
 
 /* Cluster/subgraph labels */
 .mermaid .cluster-label,
 .mermaid-svg .cluster-label {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -2896,6 +2892,7 @@ tr:hover td {
   color: var(--accent-gold);
   line-height: 1.2;
   margin-bottom: 0.25rem;
+  font-feature-settings: "tnum";
 }
 
 .stat-label {
@@ -3098,6 +3095,7 @@ tr:hover td {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.25rem;
+  font-feature-settings: "tnum";
 }
 
 .timeline-description {
@@ -3548,7 +3546,7 @@ section:first-of-type .slide-footer {
     <!-- Left Navigation -->
     <nav class="deck-nav" aria-label="Presentation navigation">
       <div class="nav-header">
-        <h1 class="nav-title nav-text">DMV AI Innovation: A Blueprint for California State Government</h1>
+        <h1 class="nav-title nav-text">DMV AI in Production: What Could Your Department Do With These Tools?</h1>
         <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 6h16M4 12h16M4 18h16"/>
@@ -3561,7 +3559,7 @@ section:first-of-type .slide-footer {
           <div class="nav-progress-fill" style="--progress: 0%"></div>
         </div>
         <div class="nav-progress-text nav-text">
-          <span class="current-slide">1</span> of <span class="total-slides">23</span>
+          <span class="current-slide">1</span> of <span class="total-slides">25</span>
         </div>
       </div>
 
@@ -3571,7 +3569,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">DMV AI Innovation: A Blueprint for California State Government</span>
+    <span class="nav-text">DMV AI in Production: What Could Your Department Do With These Tools?</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3579,7 +3577,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">Why This Matters</span>
+    <span class="nav-text">Before You Read: How to Use This Deck</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3587,7 +3585,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">The 6 AI Systems in Production</span>
+    <span class="nav-text">Why This Matters</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3595,7 +3593,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">System 1: RADV — Real ID Automated Document Verification</span>
+    <span class="nav-text">3 Focus Areas for March 20</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3603,7 +3601,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">RADV: Automation Rate Climbing Year Over Year</span>
+    <span class="nav-text">The Master Pattern: AI Assists, Humans Decide</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3611,7 +3609,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">System 2: Miles Chatbot — Voice &amp; Chat AI</span>
+    <span class="nav-text">The 6 AI Systems in Production</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3619,7 +3617,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">Miles Chatbot: Evolution Roadmap</span>
+    <span class="nav-text">Focus 1: Miles Chatbot — Voice &amp; Chat AI</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3627,15 +3625,15 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">System 3: Service Advisor — AI-Driven Web Search</span>
+    <span class="nav-text">Miles Chatbot: Evolution Roadmap</span>
   </a>
 </li>
 <li class="nav-section">
   <a href="#/8" onclick="deck.slide(8); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-    </svg>
-    <span class="nav-text">Service Advisor: Key Capabilities</span>
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+    <span class="nav-text">Focus 2: RADV — Real ID Automated Document Verification</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3643,7 +3641,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">System 4: MyDMV — Identity Management &amp; Automation</span>
+    <span class="nav-text">RADV: Automation Rate Climbing Year Over Year</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3651,7 +3649,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">System 5: Disaster Recovery App — Mobile Field Investigation</span>
+    <span class="nav-text">Focus 3: MyDMV — Identity Management &amp; Automation</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3659,7 +3657,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">System 6: GenAI + Intelligent Automation for Personalized Plates</span>
+    <span class="nav-text">Your Department at a Glance — GovOps Agency</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3667,7 +3665,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">Personalized Plates: The AI Solution</span>
+    <span class="nav-text">Your Department at a Glance — Health &amp; Human Services</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3675,15 +3673,15 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">The Master Pattern: Human in the Loop</span>
+    <span class="nav-text">Your Department at a Glance — Transportation Agency</span>
   </a>
 </li>
 <li class="nav-section">
   <a href="#/14" onclick="deck.slide(14); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-    <span class="nav-text">6 Transferable Patterns for State Government</span>
+      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+    </svg>
+    <span class="nav-text">Your Department at a Glance — Natural Resources &amp; Environment</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3691,7 +3689,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">Pattern A: Document Verification (RADV Model)</span>
+    <span class="nav-text">Your Department at a Glance — Military, Corrections &amp; Other</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3699,7 +3697,7 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">Pattern B: AI Chatbot (Miles Model)</span>
+    <span class="nav-text">Questions to Bring to the March 20 Meeting</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3707,31 +3705,31 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">Pattern C: AI-Driven Search (Service Advisor Model)</span>
+    <span class="nav-text">What Happens Next</span>
   </a>
 </li>
 <li class="nav-section">
   <a href="#/18" onclick="deck.slide(18); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-    <span class="nav-text">Pattern D: GenAI Content Review (Plates Model)</span>
+      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+    </svg>
+    <span class="nav-text">Additional Reference: Service Advisor — AI-Driven Web Search</span>
   </a>
 </li>
 <li class="nav-section">
   <a href="#/19" onclick="deck.slide(19); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-    <span class="nav-text">Pattern E: Mobile Field App (Disaster Recovery Model)</span>
+      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>
+    <span class="nav-text">Service Advisor: Key Capabilities</span>
   </a>
 </li>
 <li class="nav-section">
   <a href="#/20" onclick="deck.slide(20); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-    <span class="nav-text">Pattern F: Identity Verification (MyDMV Model)</span>
+      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+    </svg>
+    <span class="nav-text">Additional Reference: GenAI + Intelligent Automation for Personalized Plates</span>
   </a>
 </li>
 <li class="nav-section">
@@ -3739,11 +3737,27 @@ section:first-of-type .slide-footer {
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <circle cx="12" cy="12" r="3"/>
   </svg>
-    <span class="nav-text">DMV Contacts &amp; Your Internal Bridge</span>
+    <span class="nav-text">Personalized Plates: The AI Solution</span>
   </a>
 </li>
 <li class="nav-section">
   <a href="#/22" onclick="deck.slide(22); return false;">
+    <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+    </svg>
+    <span class="nav-text">Additional Reference: Disaster Recovery App — Mobile Field Investigation</span>
+  </a>
+</li>
+<li class="nav-section">
+  <a href="#/23" onclick="deck.slide(23); return false;">
+    <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+    <span class="nav-text">DMV Contacts &amp; Your Internal Bridge</span>
+  </a>
+</li>
+<li class="nav-section">
+  <a href="#/24" onclick="deck.slide(24); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
     </svg>
@@ -3786,18 +3800,32 @@ section:first-of-type .slide-footer {
     <div class="deck-content">
       <div class="reveal">
         <div class="slides">
-          <section class="title-slide" data-slide-index="0" data-slide-title="DMV AI Innovation: A Blueprint for California State Government">
+          <section class="title-slide" data-slide-index="0" data-slide-title="DMV AI in Production: What Could Your Department Do With These Tools?">
 <div class="title-content">
-<h1>DMV AI Innovation: A Blueprint for California State Government</h1>
+<h1>DMV AI in Production: What Could Your Department Do With These Tools?</h1>
 <p class="subtitle">Governor&#39;s Innovation Fellows Program</p>
-<p><strong>Core Thesis:</strong> DMV has 6 AI systems in production — with RADV alone saving 22,000+ staff hours/year. Every Fellowship department can adopt at least one of these patterns without starting from scratch.</p>
-<p>February 2026 | Based on DMV Innovation Tour, January 30, 2026</p>
+<p><strong>Core Thesis:</strong> DMV has 6 AI systems in production saving thousands of staff hours annually. Every Fellowship department has problems these proven patterns already solve — the question is which ones fit your shop.</p>
+<p>March 2026 | Based on DMV Innovation Tour, January 30, 2026</p>
 
 <div class="seal-bg"></div>
 </div>
 </section>
 
-<section data-slide-index="1" data-slide-title="Why This Matters">
+<section data-slide-index="1" data-slide-title="Before You Read: How to Use This Deck">
+<h2>Before You Read: How to Use This Deck</h2>
+<p>This deck is <strong>prep material for the March 20 Fellows meeting.</strong> Here&#39;s the plan:</p>
+<ol>
+<li><strong>Now</strong> — Read this deck. Find your department. Look at which DMV tools apply.</li>
+<li><strong>Before March 20</strong> — Have one conversation with someone in your shop. Ask: &quot;If we had this, what would change?&quot;</li>
+<li><strong>March 20 meeting</strong> — Bring your ideas. We&#39;ll discuss as a group.</li>
+<li><strong>After the meeting</strong> — A formal survey will capture everyone&#39;s ideas in writing.</li>
+</ol>
+<p>This deck includes AI-generated suggestions for how DMV&#39;s tools might apply at each department. <strong>Some will be on target; others will miss the mark entirely.</strong> Only you and your department know where these patterns actually fit. That&#39;s the point — we need your expertise, not more AI guesswork.</p>
+<p><strong>Skip to your department:</strong> Use the left-hand navigation to jump to &quot;Your Department at a Glance.&quot;</p>
+
+</section>
+
+<section data-slide-index="2" data-slide-title="Why This Matters">
 <h2>Why This Matters</h2>
 <p>California DMV is running <strong>six distinct AI/automation systems</strong> in production — more than most state departments have even piloted.</p>
 <p>The critical pattern: DMV uses AI as a <strong>decision-support layer</strong> (human stays in the loop), not full automation. This approach:</p>
@@ -3806,11 +3834,61 @@ section:first-of-type .slide-footer {
 <li>Has survived legal challenge (Personalized Plates: zero lawsuits since GenAI implementation)</li>
 <li>Produces measurable, auditable results</li>
 </ul>
-<p>The <a href="https://innovation.ca.gov/">Governor&#39;s Innovation Fellows Program</a> puts 21 Fellows across <strong>15 departments in 9 agencies</strong> — every one of which has a direct transfer opportunity from DMV&#39;s playbook.</p>
+<p>The <a href="https://innovation.ca.gov/">Governor&#39;s Innovation Fellows Program</a> puts 21 Fellows across <strong>15 departments in 9 agencies</strong> — every one of which has a direct opportunity to benefit from DMV&#39;s proven approach.</p>
 
 </section>
 
-<section data-slide-index="2" data-slide-title="The 6 AI Systems in Production">
+<section data-slide-index="3" data-slide-title="3 Focus Areas for March 20">
+<h2>3 Focus Areas for March 20</h2>
+<p>For this meeting, we&#39;re focusing on the <strong>three DMV systems with the broadest applicability</strong> across Fellowship departments:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Focus Area</th>
+<th>What DMV Built</th>
+<th>Why It Matters to You</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles Chatbot</strong></td>
+<td>Voice &amp; chat AI handling <strong>13.77M calls/year</strong> — 49% now fully self-service</td>
+<td>Every department has a call center or help desk. What would <em>your</em> Miles answer?</td>
+</tr>
+<tr>
+<td><strong>RADV Document Verification</strong></td>
+<td>OCR + ML auto-verifies <strong>62% of documents</strong> — saving <strong>22,050 hours/year</strong> (28 FTE)</td>
+<td>Every department processes paper. Which forms eat the most staff time?</td>
+</tr>
+<tr>
+<td><strong>MyDMV Identity Verification</strong></td>
+<td>Multi-tier identity proofing at <strong>90-95% success</strong> (up from 35-40%)</td>
+<td>Every department with online accounts needs identity verification. Where does proving identity create friction?</td>
+</tr>
+</tbody></table></div>
+<p>DMV also has 3 additional systems covered later in this deck: Service Advisor (AI web search), Disaster Recovery App (mobile field ops), and GenAI for Personalized Plates (content review). Browse those for additional ideas.</p>
+
+</section>
+
+<section data-slide-index="4" data-slide-title="The Master Pattern: AI Assists, Humans Decide">
+<h2>The Master Pattern: AI Assists, Humans Decide</h2>
+<p>Every one of DMV&#39;s 6 AI systems follows the same architecture:</p>
+<ol>
+<li><strong>AI processes</strong> — Extracts, classifies, recommends, routes</li>
+<li><strong>Human decides</strong> — Reviews flagged items, makes final call</li>
+<li><strong>Automation executes</strong> — Carries out the approved action</li>
+</ol>
+<p>This isn&#39;t a coincidence. It&#39;s a deliberate design choice that:</p>
+<ul>
+<li><strong>Satisfies legal requirements</strong> — Human accountability for decisions</li>
+<li><strong>Builds staff trust</strong> — AI augments, doesn&#39;t replace</li>
+<li><strong>Survives scrutiny</strong> — Personalized Plates has had zero lawsuits since implementation</li>
+<li><strong>Improves over time</strong> — ML learns from human corrections</li>
+</ul>
+<p><strong>This is the pattern other departments should look at.</strong> Not &quot;AI replaces workers&quot; — but &quot;AI handles the 60-90% that&#39;s routine so workers can focus on the cases that actually need judgment.&quot;</p>
+
+</section>
+
+<section data-slide-index="5" data-slide-title="The 6 AI Systems in Production">
 <h2>The 6 AI Systems in Production</h2>
 <div class="table-wrapper"><table>
 <thead>
@@ -3824,92 +3902,59 @@ section:first-of-type .slide-footer {
 </thead>
 <tbody><tr>
 <td>1</td>
-<td><strong>RADV</strong> — Document Verification</td>
-<td>OCR/ICR + ML</td>
-<td>2020</td>
-<td>5.4M docs/year, 62% automated</td>
-</tr>
-<tr>
-<td>2</td>
 <td><strong>Miles Chatbot</strong> — Voice &amp; Chat</td>
 <td>NLP → GenAI</td>
 <td>Ongoing</td>
 <td>13.77M calls/year handled</td>
 </tr>
 <tr>
-<td>3</td>
-<td><strong>Service Advisor</strong> — Web Search</td>
-<td>Semantic Search</td>
-<td>Active</td>
-<td>1M+ queries/year</td>
+<td>2</td>
+<td><strong>RADV</strong> — Document Verification</td>
+<td>OCR/ICR + ML</td>
+<td>2020</td>
+<td>5.4M docs/year, 62% automated</td>
 </tr>
 <tr>
-<td>4</td>
+<td>3</td>
 <td><strong>MyDMV</strong> — Identity Verification</td>
 <td>Multi-tier Auth + Biometrics</td>
 <td>Active</td>
 <td>90-95% verification success</td>
 </tr>
 <tr>
-<td>5</td>
-<td><strong>Disaster Recovery App</strong> — Field Ops</td>
-<td>GIS Mobile App</td>
+<td>4</td>
+<td><strong>Service Advisor</strong> — Web Search</td>
+<td>Semantic Search</td>
 <td>Active</td>
-<td>195 vehicles mapped (Sacramento region)</td>
+<td>1M+ queries/year</td>
 </tr>
 <tr>
-<td>6</td>
+<td>5</td>
 <td><strong>GenAI Plates</strong> — Content Review</td>
 <td>GenAI + RPA</td>
 <td>Nov 2022</td>
 <td>90% auto-processed, 0 lawsuits</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Disaster Recovery App</strong> — Field Ops</td>
+<td>GIS Mobile App</td>
+<td>Active</td>
+<td>195 vehicles mapped (Sacramento region)</td>
 </tr>
 </tbody></table></div>
 <p>Each system follows the same philosophy: <strong>AI assists, humans decide.</strong></p>
 
 </section>
 
-<section data-slide-index="3" data-slide-title="System 1: RADV — Real ID Automated Document Verification">
-<h2>System 1: RADV — Real ID Automated Document Verification</h2>
-<p><strong>Presenter:</strong> Adrian Monteon | <strong>Technology:</strong> <a href="https://www.abbyy.com/">ABBYY</a> OCR/ICR + Machine Learning</p>
-<h3>How It Works</h3>
-<p>Citizens upload identity documents (birth certificates, passports, EAD cards, I-94s) through the <a href="https://www.dmv.ca.gov/portal/">online portal</a>. The ABBYY engine:</p>
-<ol>
-<li><strong>Extracts</strong> printed text and handwritten entries via OCR/ICR</li>
-<li><strong>Validates</strong> extracted data against DMV&#39;s database</li>
-<li><strong>Auto-approves</strong> documents that pass (~62%)</li>
-<li><strong>Routes failures</strong> to a human technician for manual review</li>
-</ol>
-<h3>Five-Year Average Savings</h3>
-<ul>
-<li><strong>Time saved:</strong> 22,050 hours/year</li>
-<li><strong>Staff equivalent:</strong> 28 FTE/year</li>
-<li><strong>Documents processed:</strong> Millions monthly</li>
-</ul>
-
-</section>
-
-<section data-slide-index="4" data-slide-title="RADV: Automation Rate Climbing Year Over Year">
-<h2>RADV: Automation Rate Climbing Year Over Year</h2>
-<div class="chart-container">
-  <div class="chart-title">Automated</div>
-  <div class="chart-wrapper">
-    <canvas id="chart-0" data-chart='{"type":"bar","data":{"labels":["2021","2022","2023","2024","2025"],"datasets":[{"label":"Automated","data":[2.9,2.6,3.1,2.8,3.3],"backgroundColor":"#F5C54A","borderColor":"#F5C54A","borderWidth":1,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F5C54A"},{"label":"Human Touch","data":[2.5,2.1,2.2,1.7,2.1],"backgroundColor":"#F09030","borderColor":"#F09030","borderWidth":1,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F09030"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"display":true,"position":"bottom","labels":{"color":"#c8ccd8","padding":16}},"tooltip":{"backgroundColor":"#0b0e16","titleColor":"#e4e4eb","bodyColor":"#9090a0","borderColor":"#1a2030","borderWidth":1}},"scales":{"x":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"}},"y":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"},"beginAtZero":true}}}}'></canvas>
-  </div>
-</div>
-
-<p>Automation rate rose from <strong>53% in 2021 to 62% in 2025</strong> — driven by machine learning improvements, not just volume growth. The Digital Imaging and Archiving extension reached <strong>75% automation</strong> for internal form processing (309K docs in 2025).</p>
-
-</section>
-
-<section data-slide-index="5" data-slide-title="System 2: Miles Chatbot — Voice &amp; Chat AI">
-<h2>System 2: Miles Chatbot — Voice &amp; Chat AI</h2>
+<section data-slide-index="6" data-slide-title="Focus 1: Miles Chatbot — Voice &amp; Chat AI">
+<h2>Focus 1: Miles Chatbot — Voice &amp; Chat AI</h2>
 <p><strong>Presenter:</strong> Sonia Huestis | <strong>Technology:</strong> NLP chatbot evolving toward GenAI conversational bot</p>
 <h3>Scale: 13.77 Million Calls in 2025</h3>
 <div class="chart-container">
   <div class="chart-title">Calls (M)</div>
   <div class="chart-wrapper">
-    <canvas id="chart-1" data-chart='{"type":"doughnut","data":{"labels":["Self-Service","Requested Agent","Full Message"],"datasets":[{"label":"Calls (M)","data":[6.8,5.6,1.4],"backgroundColor":["#F5C54A","#F09030","#4DD8F0","#E8A020","#F07848","#60D4A0","#FF9040","#5CA8FF","#E85858"],"borderColor":"#0a0d14","borderWidth":2,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F5C54A"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"display":true,"position":"bottom","labels":{"color":"#c8ccd8","padding":16}},"tooltip":{"backgroundColor":"#0b0e16","titleColor":"#e4e4eb","bodyColor":"#9090a0","borderColor":"#1a2030","borderWidth":1}}}}'></canvas>
+    <canvas id="chart-0" data-chart='{"type":"doughnut","data":{"labels":["Self-Service","Requested Agent","Full Message"],"datasets":[{"label":"Calls (M)","data":[6.8,5.6,1.4],"backgroundColor":["#F5C54A","#F09030","#4DD8F0","#E8A020","#F07848","#60D4A0","#FF9040","#5CA8FF","#E85858"],"borderColor":"#0a0d14","borderWidth":2,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F5C54A"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"display":true,"position":"bottom","labels":{"color":"#c8ccd8","padding":16}},"tooltip":{"backgroundColor":"#0b0e16","titleColor":"#e4e4eb","bodyColor":"#9090a0","borderColor":"#1a2030","borderWidth":1}}}}'></canvas>
   </div>
 </div>
 
@@ -3918,7 +3963,7 @@ section:first-of-type .slide-footer {
 
 </section>
 
-<section data-slide-index="6" data-slide-title="Miles Chatbot: Evolution Roadmap">
+<section data-slide-index="7" data-slide-title="Miles Chatbot: Evolution Roadmap">
 <h2>Miles Chatbot: Evolution Roadmap</h2>
 <p>The roadmap shows a clear pattern from <strong>rule-based → semantic → generative → predictive:</strong></p>
 <div class="table-wrapper"><table>
@@ -3969,39 +4014,41 @@ section:first-of-type .slide-footer {
 
 </section>
 
-<section data-slide-index="7" data-slide-title="System 3: Service Advisor — AI-Driven Web Search">
-<h2>System 3: Service Advisor — AI-Driven Web Search</h2>
-<p><strong>Presenter:</strong> Randolph L. Fernandez-Gonzalez | <strong>Technology:</strong> Semantic search + guided form-filling assistant</p>
-<p>Integrated into <a href="https://www.dmv.ca.gov/">dmv.ca.gov</a> at the <strong>three highest-traffic touchpoints:</strong> homepage search, site-wide search, and the <a href="https://www.dmv.ca.gov/portal/appointments/">appointments page</a>.</p>
+<section data-slide-index="8" data-slide-title="Focus 2: RADV — Real ID Automated Document Verification">
+<h2>Focus 2: RADV — Real ID Automated Document Verification</h2>
+<p><strong>Presenter:</strong> Adrian Monteon | <strong>Technology:</strong> <a href="https://www.abbyy.com/">ABBYY</a> OCR/ICR + Machine Learning</p>
+<h3>How It Works</h3>
+<p>Citizens upload identity documents (birth certificates, passports, EAD cards, I-94s) through the <a href="https://www.dmv.ca.gov/portal/">online portal</a>. The ABBYY engine:</p>
+<ol>
+<li><strong>Extracts</strong> printed text and handwritten entries via OCR/ICR</li>
+<li><strong>Validates</strong> extracted data against DMV&#39;s database</li>
+<li><strong>Auto-approves</strong> documents that pass (~62%)</li>
+<li><strong>Routes failures</strong> to a human technician for manual review</li>
+</ol>
+<h3>Five-Year Average Savings</h3>
+<ul>
+<li><strong>Time saved:</strong> 22,050 hours/year</li>
+<li><strong>Staff equivalent:</strong> 28 FTE/year</li>
+<li><strong>Documents processed:</strong> Millions monthly</li>
+</ul>
+
+</section>
+
+<section data-slide-index="9" data-slide-title="RADV: Automation Rate Climbing Year Over Year">
+<h2>RADV: Automation Rate Climbing Year Over Year</h2>
 <div class="chart-container">
-  <div class="chart-title">Queries (K)</div>
+  <div class="chart-title">Automated</div>
   <div class="chart-wrapper">
-    <canvas id="chart-2" data-chart='{"type":"bar","data":{"labels":["Real ID","Driver Permits","Release of Liability","Change of Address","Title Transfers","Registration","Appointments"],"datasets":[{"label":"Queries (K)","data":[258,209,155,143,121,109,102],"backgroundColor":"#F5C54A","borderColor":"#F5C54A","borderWidth":1,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F5C54A"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"display":false,"position":"bottom","labels":{"color":"#c8ccd8","padding":16}},"tooltip":{"backgroundColor":"#0b0e16","titleColor":"#e4e4eb","bodyColor":"#9090a0","borderColor":"#1a2030","borderWidth":1}},"scales":{"x":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"}},"y":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"},"beginAtZero":true}}}}'></canvas>
+    <canvas id="chart-1" data-chart='{"type":"bar","data":{"labels":["2021","2022","2023","2024","2025"],"datasets":[{"label":"Automated","data":[2.9,2.6,3.1,2.8,3.3],"backgroundColor":"#F5C54A","borderColor":"#F5C54A","borderWidth":1,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F5C54A"},{"label":"Human Touch","data":[2.5,2.1,2.2,1.7,2.1],"backgroundColor":"#F09030","borderColor":"#F09030","borderWidth":1,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F09030"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"display":true,"position":"bottom","labels":{"color":"#c8ccd8","padding":16}},"tooltip":{"backgroundColor":"#0b0e16","titleColor":"#e4e4eb","bodyColor":"#9090a0","borderColor":"#1a2030","borderWidth":1}},"scales":{"x":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"}},"y":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"},"beginAtZero":true}}}}'></canvas>
   </div>
 </div>
-</section>
 
-<section data-slide-index="8" data-slide-title="Service Advisor: Key Capabilities">
-<h2>Service Advisor: Key Capabilities</h2>
-<h3>Not Just Search — It&#39;s an AI Assistant</h3>
-<ul>
-<li><p><strong>Contextual answers</strong> — Returns structured guidance, not just links. Searching &quot;statement of facts&quot; identifies the exact form (REG 256), explains all 6 uses, and offers a guided Form Filler.</p>
-</li>
-<li><p><strong>Form Filler integration</strong> — Walks users step-by-step through DMV forms. Enter your license plate, answer questions, and it generates a completed PDF.</p>
-</li>
-<li><p><strong>Scam detection</strong> — Recognizes known scam reference numbers and <em>immediately</em> surfaces fraud alerts: &quot;The DMV will never ask for personal or financial information by text.&quot;</p>
-</li>
-<li><p><strong><a href="https://www.dmv.ca.gov/portal/ca-dmv-wallet/">mDL</a> Q&amp;A assistant</strong> — Handles mobile driver&#39;s license questions with corrective actions when something goes wrong (e.g., &quot;What do I do if my mDL request is rejected?&quot;).</p>
-</li>
-<li><p><strong>Adaptable</strong> — Same interface handles procedural guidance (Notice of Transfer walkthrough) and real-time crisis response (scam alerts).</p>
-</li>
-</ul>
-<p><strong>This is the most universally transferable pattern.</strong> Every department has a website. Every website has a &quot;How do I...?&quot; problem.</p>
+<p>Automation rate rose from <strong>53% in 2021 to 62% in 2025</strong> — driven by machine learning improvements, not just volume growth. The Digital Imaging and Archiving extension reached <strong>75% automation</strong> for internal form processing (309K docs in 2025).</p>
 
 </section>
 
-<section data-slide-index="9" data-slide-title="System 4: MyDMV — Identity Management &amp; Automation">
-<h2>System 4: MyDMV — Identity Management &amp; Automation</h2>
+<section data-slide-index="10" data-slide-title="Focus 3: MyDMV — Identity Management &amp; Automation">
+<h2>Focus 3: MyDMV — Identity Management &amp; Automation</h2>
 <p><strong>Presenter:</strong> Stefan Schoy | <strong>Technology:</strong> Multi-tier automated identity verification via <a href="https://mydmv.dmv.ca.gov/">MyDMV</a> + biometric exploration</p>
 <h3>The Problem → The Fix</h3>
 <div class="table-wrapper"><table>
@@ -4040,25 +4087,397 @@ section:first-of-type .slide-footer {
 
 </section>
 
-<section data-slide-index="10" data-slide-title="System 5: Disaster Recovery App — Mobile Field Investigation">
-<h2>System 5: Disaster Recovery App — Mobile Field Investigation</h2>
-<p><strong>Presenter:</strong> Amy Burks | <strong>Technology:</strong> GIS-based mobile application for field data collection</p>
-<h3>Real-World Application</h3>
-<p>Used by DMV investigators to locate and document vehicles destroyed in wildfires and other natural disasters. The mobile app:</p>
-<ul>
-<li>Maps investigation clusters using GIS (195 vehicles in Sacramento region alone)</li>
-<li>Enables on-site data collection via iPad</li>
-<li>Tracks investigation status in real-time</li>
-<li>Syncs field data with central databases</li>
-</ul>
-<h3>Field Operations</h3>
-<p>Investigators physically locate burned vehicles at disaster sites — crawling under wreckage to read VINs, photographing damage, recording GPS coordinates — all feeding back through the app.</p>
-<p>Less &quot;AI&quot; in the traditional sense, more <strong>intelligent field data collection</strong> — but the GIS clustering, mobile-first workflow, and real-time sync represent a model for any department with field operations.</p>
+<section data-slide-index="11" data-slide-title="Your Department at a Glance — GovOps Agency">
+<h2>Your Department at a Glance — GovOps Agency</h2>
+<h3>CDT (Dept of Technology) — Jennifer Uyeda Issertell</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Statewide IT help desk bot — password resets, service tickets, system status. CDT&#39;s ServiceNow platform already has structured data; a bot layer on top could deflect 40%+ of routine calls.</td>
+</tr>
+<tr>
+<td><strong>Identity Verification</strong></td>
+<td>CDT could offer identity proofing as a <strong>shared service</strong> for all state departments. One implementation, every department benefits. The EDD fraud crisis proved what happens without this.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>CDT serves every department in the state. If you could automate the top 5 help desk requests, what would they be? And what would a statewide identity verification service save your department users?</em></p>
+<h3>DGS (General Services) — Lorna Brisco</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Procurement support bot — vendor bid status, contract questions. DGS handles thousands of &quot;Where&#39;s my PO?&quot; inquiries; a status-check bot could deflect significant volume.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What are the top 5 questions vendors and departments ask DGS over and over? Those are your Miles candidates.</em></p>
+<h3>CDTFA (Tax &amp; Fee Admin) — Jeremiah Oakden</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Taxpayer inquiries — &quot;When is my return due?&quot; &quot;What&#39;s my balance?&quot; These are the exact same query types Miles handles for DMV, just with tax data.</td>
+</tr>
+<tr>
+<td><strong>Document Verification</strong></td>
+<td>Tax return processing — sales tax returns, exemption certificates. CDTFA already digitizes returns; adding ML validation could flag mismatches before they reach auditors.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What percentage of CDTFA call center volume is simple status checks? And which return types have the most data-entry errors that auditors catch manually?</em></p>
 
 </section>
 
-<section data-slide-index="11" data-slide-title="System 6: GenAI + Intelligent Automation for Personalized Plates">
-<h2>System 6: GenAI + Intelligent Automation for Personalized Plates</h2>
+<section data-slide-index="12" data-slide-title="Your Department at a Glance — Health &amp; Human Services">
+<h2>Your Department at a Glance — Health &amp; Human Services</h2>
+<h3>DDS (Developmental Services) — Henri Aghaei Baradaran</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Document Verification</strong></td>
+<td>Regional center intake — ~460K clients submit eligibility paperwork. Automated verification could speed intake from weeks to days for standardized forms.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>How long does intake document processing take at regional centers today? Which document types cause the most rework?</em></p>
+<h3>DCSS (Child Support) — Bryanna McAdams</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>DCSS already has &quot;Customer Connect 24/7&quot; — but DMV&#39;s semantic search + GenAI roadmap shows the upgrade path to context-aware responses.</td>
+</tr>
+<tr>
+<td><strong>Document Verification</strong></td>
+<td>Child support order verification — income declarations across 47 county agencies. Each county submits slightly different formats; ML normalization is the high-value target.</td>
+</tr>
+<tr>
+<td><strong>Identity Verification</strong></td>
+<td>Parent identity verification for the child support portal. DCSS serves 1.2M cases across 47 counties — reliable identity proofing reduces fraud and call center burden.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What&#39;s the most common reason a parent contacts DCSS? And across 47 counties, how much staff time goes to reconciling different document formats?</em></p>
+<h3>OTSI/CalHHS — Kattya Trinh</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Medi-Cal questions, benefit status, provider lookup. CalHHS serves millions — a chatbot reduces the burden on county eligibility workers.</td>
+</tr>
+<tr>
+<td><strong>Identity Verification</strong></td>
+<td>Medi-Cal eligibility verification for 14M+ beneficiaries. CalHHS already partners with Login.gov; DMV&#39;s two-tier model would add a state-specific fallback layer.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>How many Medi-Cal eligibility calls could be handled by a bot that can authenticate and return status? Where does identity verification create the most friction for beneficiaries?</em></p>
+
+</section>
+
+<section data-slide-index="13" data-slide-title="Your Department at a Glance — Transportation Agency">
+<h2>Your Department at a Glance — Transportation Agency</h2>
+<h3>CHP (Highway Patrol) — Lt. Marc Peachey</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Accident report status, permit questions, commercial vehicle requirements. CHP handles significant public-facing call volume — status checks are prime bot territory.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What are CHP&#39;s top 10 public call reasons? How many are simple status checks or FAQ lookups that don&#39;t require an officer?</em></p>
+<h3>Caltrans — Ben Bressette</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Project status, encroachment permits, traffic data inquiries. Caltrans.ca.gov is one of the state&#39;s highest-traffic sites — an AI search layer would serve millions of visitors.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What are the top queries on caltrans.ca.gov? How much call center time goes to project status checks or permit questions that have straightforward answers?</em></p>
+
+</section>
+
+<section data-slide-index="14" data-slide-title="Your Department at a Glance — Natural Resources &amp; Environment">
+<h2>Your Department at a Glance — Natural Resources &amp; Environment</h2>
+<h3>DWR (Water Resources) — Nikki Hatcher</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Document Verification</strong></td>
+<td>Water right applications involve massive paper submissions. DWR has 7M+ historical documents — automated extraction could feed directly into CalWATRS.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>How many water right applications does DWR process annually? Which document types in those applications are most standardized (best candidates for automation)?</em></p>
+<h3>SWRCB (Water Board) — Brent Vanderburgh</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Document Verification</strong></td>
+<td>Water rights division has paper records dating to the 1800s. The UPWARD initiative ($60M) is digitizing; AI verification is the next step in that chain.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>Which water rights forms have the highest error rates? Where in the UPWARD digitization pipeline would automated verification create the most value?</em></p>
+<h3>OEHHA — Kannan Krishnan</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Proposition 65 chemical hazard lookup — businesses search the Prop 65 list thousands of times daily. An AI search that interprets plain-English queries (&quot;Is BPA in baby bottles covered?&quot;) instead of requiring exact chemical names.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>How many Prop 65 inquiries does OEHHA handle? What are the most common questions businesses ask that have clear, lookup-based answers?</em></p>
+<h3>CARB (Air Resources) — Christina Marin-Fitzhugh</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>ZEV compliance, emission regulations, Cap-and-Invest program questions. Fleet operators need to understand complex compliance pathways — a guided advisor replaces the &quot;call us&quot; experience.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What are the top compliance questions CARB receives from fleet operators and businesses? How much staff time goes to answering questions that have standardized answers?</em></p>
+<h3>Natural Resources Agency — Elizabeth Betancourt</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Document Verification</strong></td>
+<td>Environmental review document screening — EIRs can run 500+ pages. AI-assisted summarization and issue flagging could dramatically reduce reviewer workload.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>How many environmental review documents does your team process annually? What&#39;s the average review time, and which sections consume the most attention?</em></p>
+
+</section>
+
+<section data-slide-index="15" data-slide-title="Your Department at a Glance — Military, Corrections &amp; Other">
+<h2>Your Department at a Glance — Military, Corrections &amp; Other</h2>
+<h3>CDCR (Corrections) — Samantha Kissane &amp; Chris Siino</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Document Verification</strong></td>
+<td>Inmate records, transfer paperwork, parole documentation — CDCR processes thousands of classification chronos (Form 128-B) monthly, many still handwritten.</td>
+</tr>
+<tr>
+<td><strong>Identity Verification</strong></td>
+<td>Inmate and officer identification at kiosks. DMV&#39;s biometric approach could transform check-in/check-out processes across facilities.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>Which CDCR forms are still handwritten? What&#39;s the volume of classification documents processed monthly? Where would faster identity verification — for staff or inmates — have the biggest operational impact?</em></p>
+<h3>CMD (Military Dept) — Jai London &amp; SSgt Kelton Pisano</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Document Verification</strong></td>
+<td>Personnel action forms, deployment orders. Military paperwork is highly standardized (DD-214s, SF-180s) — ideal for automated verification with near-zero customization needed.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>Which personnel or deployment forms are the most time-consuming to process? Where do document errors cause the most downstream delays?</em></p>
+<h3>CA Air National Guard — SMSgt Blake Carter</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Document Verification</strong></td>
+<td>Personnel action forms and deployment orders. The A1 Connect platform already handles some document workflows — AI verification could extend its capabilities.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What document processing does A1 Connect handle today, and where are the gaps? Which forms still require manual review that could be automated?</em></p>
+<h3>LCI (Land Use &amp; Climate) — Will Robinson</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>CEQA guidance is notoriously complex. An AI advisor for CEQA requirements, housing element compliance, and climate adaptation resources could cut the learning curve for project applicants.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>What are the most common CEQA questions LCI receives? How many hours per week does staff spend answering questions that have standard, policy-based answers?</em></p>
+<h3>CA Volunteers — Molly Linares</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>DMV Tool</th>
+<th>What This Could Look Like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Miles-style Chatbot</strong></td>
+<td>Volunteer matching and program questions. The ServiceForce database + chatbot = self-service volunteer placement. Lower call volume makes this a natural low-risk pilot environment.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Your question:</strong> <em>How do volunteers currently find opportunities — and where does that process break down? What are the top 5 questions volunteers or organizations ask?</em></p>
+
+</section>
+
+<section data-slide-index="16" data-slide-title="Questions to Bring to the March 20 Meeting">
+<h2>Questions to Bring to the March 20 Meeting</h2>
+<p>Before the meeting, try to find out:</p>
+<ol>
+<li><p><strong>If your department had a Miles, what would people ask it?</strong> Think about your call center, help desk, or front counter — what are the top 5 questions that come in over and over?</p>
+</li>
+<li><p><strong>What&#39;s your department&#39;s highest-volume paper form?</strong> Roughly how many per month? Is it still partially handwritten or fully digital? How much staff time goes to processing it?</p>
+</li>
+<li><p><strong>Where does proving identity create friction?</strong> For the public trying to access your services online — or for staff logging into systems. Where do people get stuck?</p>
+</li>
+<li><p><strong>If you could automate one repetitive review or intake task, what would it be?</strong> The one where staff look at the same kind of document hundreds of times and make the same determination.</p>
+</li>
+</ol>
+<p>You don&#39;t need formal answers. A five-minute conversation with the right person in your shop will surface more than a week of desk research.</p>
+
+</section>
+
+<section data-slide-index="17" data-slide-title="What Happens Next">
+<h2>What Happens Next</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>What</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Prep</strong></td>
+<td>Read this deck, talk to your department</td>
+<td>Now through March 20</td>
+</tr>
+<tr>
+<td><strong>Discuss</strong></td>
+<td>Group discussion at monthly meeting</td>
+<td>March 20</td>
+</tr>
+<tr>
+<td><strong>Capture</strong></td>
+<td>Formal survey to memorialize ideas</td>
+<td>After the meeting</td>
+</tr>
+<tr>
+<td><strong>Discover</strong></td>
+<td>Deep-dive session with DMV subject matter experts</td>
+<td>TBD based on survey results</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>IT, security, costs, and implementation planning</td>
+<td>After discovery — not before</td>
+</tr>
+</tbody></table></div>
+<p>We&#39;re deliberately keeping the conversation at the <strong>business-need level</strong> for now. The technical details, security reviews, and cost estimates come later — once we know which patterns have the strongest fit across departments. First we figure out <em>what</em>, then we figure out <em>how</em>.</p>
+
+</section>
+
+<section data-slide-index="18" data-slide-title="Additional Reference: Service Advisor — AI-Driven Web Search">
+<h2>Additional Reference: Service Advisor — AI-Driven Web Search</h2>
+<p><strong>Presenter:</strong> Randolph L. Fernandez-Gonzalez | <strong>Technology:</strong> Semantic search + guided form-filling assistant</p>
+<p>Integrated into <a href="https://www.dmv.ca.gov/">dmv.ca.gov</a> at the <strong>three highest-traffic touchpoints:</strong> homepage search, site-wide search, and the <a href="https://www.dmv.ca.gov/portal/appointments/">appointments page</a>.</p>
+<div class="chart-container">
+  <div class="chart-title">Queries (K)</div>
+  <div class="chart-wrapper">
+    <canvas id="chart-2" data-chart='{"type":"bar","data":{"labels":["Real ID","Driver Permits","Release of Liability","Change of Address","Title Transfers","Registration","Appointments"],"datasets":[{"label":"Queries (K)","data":[258,209,155,143,121,109,102],"backgroundColor":"#F5C54A","borderColor":"#F5C54A","borderWidth":1,"tension":0.3,"fill":false,"pointRadius":0,"pointBackgroundColor":"#F5C54A"}]},"options":{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"display":false,"position":"bottom","labels":{"color":"#c8ccd8","padding":16}},"tooltip":{"backgroundColor":"#0b0e16","titleColor":"#e4e4eb","bodyColor":"#9090a0","borderColor":"#1a2030","borderWidth":1}},"scales":{"x":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"}},"y":{"grid":{"color":"#1a2030"},"ticks":{"color":"#c8ccd8"},"beginAtZero":true}}}}'></canvas>
+  </div>
+</div>
+</section>
+
+<section data-slide-index="19" data-slide-title="Service Advisor: Key Capabilities">
+<h2>Service Advisor: Key Capabilities</h2>
+<h3>Not Just Search — It&#39;s an AI Assistant</h3>
+<ul>
+<li><p><strong>Contextual answers</strong> — Returns structured guidance, not just links. Searching &quot;statement of facts&quot; identifies the exact form (REG 256), explains all 6 uses, and offers a guided Form Filler.</p>
+</li>
+<li><p><strong>Form Filler integration</strong> — Walks users step-by-step through DMV forms. Enter your license plate, answer questions, and it generates a completed PDF.</p>
+</li>
+<li><p><strong>Scam detection</strong> — Recognizes known scam reference numbers and <em>immediately</em> surfaces fraud alerts: &quot;The DMV will never ask for personal or financial information by text.&quot;</p>
+</li>
+<li><p><strong><a href="https://www.dmv.ca.gov/portal/ca-dmv-wallet/">mDL</a> Q&amp;A assistant</strong> — Handles mobile driver&#39;s license questions with corrective actions when something goes wrong.</p>
+</li>
+<li><p><strong>Adaptable</strong> — Same interface handles procedural guidance (Notice of Transfer walkthrough) and real-time crisis response (scam alerts).</p>
+</li>
+</ul>
+<p><strong>This is the most universally transferable pattern.</strong> Every department has a website. Every website has a &quot;How do I...?&quot; problem.</p>
+
+</section>
+
+<section data-slide-index="20" data-slide-title="Additional Reference: GenAI + Intelligent Automation for Personalized Plates">
+<h2>Additional Reference: GenAI + Intelligent Automation for Personalized Plates</h2>
 <p><strong>Presenter:</strong> Angela Marbray | <strong>Technology:</strong> Generative AI (content review) + RPA (plate assignment)</p>
 <h3>The Origin Story</h3>
 <p>A 2020 lawsuit (<a href="https://casetext.com/case/ogilvie-v-gordon-3"><em>Ogilvie v. Steve Gordon</em></a>) exposed that plate configuration decisions were <strong>subjective and inconsistent</strong> across reviewers. The numbers told the story:</p>
@@ -4072,7 +4491,7 @@ section:first-of-type .slide-footer {
 
 </section>
 
-<section data-slide-index="12" data-slide-title="Personalized Plates: The AI Solution">
+<section data-slide-index="21" data-slide-title="Personalized Plates: The AI Solution">
 <h2>Personalized Plates: The AI Solution</h2>
 <h3>Two-Part Fix</h3>
 <ol>
@@ -4113,399 +4532,24 @@ section:first-of-type .slide-footer {
 
 </section>
 
-<section data-slide-index="13" data-slide-title="The Master Pattern: Human in the Loop">
-<h2>The Master Pattern: Human in the Loop</h2>
-<p>Every one of DMV&#39;s 6 AI systems follows the same architecture:</p>
-<ol>
-<li><strong>AI processes</strong> — Extracts, classifies, recommends, routes</li>
-<li><strong>Human decides</strong> — Reviews flagged items, makes final call</li>
-<li><strong>Automation executes</strong> — Carries out the approved action</li>
-</ol>
-<p>This isn&#39;t a coincidence. It&#39;s a deliberate design choice that:</p>
+<section data-slide-index="22" data-slide-title="Additional Reference: Disaster Recovery App — Mobile Field Investigation">
+<h2>Additional Reference: Disaster Recovery App — Mobile Field Investigation</h2>
+<p><strong>Presenter:</strong> Amy Burks | <strong>Technology:</strong> GIS-based mobile application for field data collection</p>
+<h3>Real-World Application</h3>
+<p>Used by DMV investigators to locate and document vehicles destroyed in wildfires and other natural disasters. The mobile app:</p>
 <ul>
-<li><strong>Satisfies legal requirements</strong> — Human accountability for decisions</li>
-<li><strong>Builds staff trust</strong> — AI augments, doesn&#39;t replace</li>
-<li><strong>Survives scrutiny</strong> — Personalized Plates has had zero lawsuits since implementation</li>
-<li><strong>Improves over time</strong> — ML learns from human corrections</li>
+<li>Maps investigation clusters using GIS (195 vehicles in Sacramento region alone)</li>
+<li>Enables on-site data collection via iPad</li>
+<li>Tracks investigation status in real-time</li>
+<li>Syncs field data with central databases</li>
 </ul>
-<p><strong>This is the pattern other departments should adopt.</strong> Not &quot;AI replaces workers&quot; — but &quot;AI handles the 60-90% that&#39;s routine so workers can focus on the cases that actually need judgment.&quot;</p>
+<h3>Field Operations</h3>
+<p>Investigators physically locate burned vehicles at disaster sites — crawling under wreckage to read VINs, photographing damage, recording GPS coordinates — all feeding back through the app.</p>
+<p>Less &quot;AI&quot; in the traditional sense, more <strong>intelligent field data collection</strong> — but the GIS clustering, mobile-first workflow, and real-time sync represent a model for any department with field operations.</p>
 
 </section>
 
-<section data-slide-index="14" data-slide-title="6 Transferable Patterns for State Government">
-<h2>6 Transferable Patterns for State Government</h2>
-<p>Each DMV system maps to a <strong>reusable pattern</strong> any department can adopt:</p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>DMV System</th>
-<th>What It Does</th>
-<th>Universality</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>A</strong> — Document Verification</td>
-<td>RADV</td>
-<td>OCR + ML validates documents against database</td>
-<td>Any dept with paper intake</td>
-</tr>
-<tr>
-<td><strong>B</strong> — AI Chatbot</td>
-<td>Miles</td>
-<td>Voice/chat handles status checks + FAQs</td>
-<td>Any dept with a call center</td>
-</tr>
-<tr>
-<td><strong>C</strong> — AI-Driven Search</td>
-<td>Service Advisor</td>
-<td>Semantic search + form filling on website</td>
-<td><strong>Every department</strong></td>
-</tr>
-<tr>
-<td><strong>D</strong> — GenAI Content Review</td>
-<td>Personalized Plates</td>
-<td>AI reviews content, human decides</td>
-<td>Any dept with subjective review</td>
-</tr>
-<tr>
-<td><strong>E</strong> — Mobile Field App</td>
-<td>Disaster Recovery</td>
-<td>GIS-based field data collection</td>
-<td>Any dept with inspectors</td>
-</tr>
-<tr>
-<td><strong>F</strong> — Identity Verification</td>
-<td>MyDMV</td>
-<td>Multi-tier automated identity proofing</td>
-<td>Any dept with online accounts</td>
-</tr>
-</tbody></table></div>
-
-</section>
-
-<section data-slide-index="15" data-slide-title="Pattern A: Document Verification (RADV Model)">
-<h2>Pattern A: Document Verification (RADV Model)</h2>
-<p><strong>DMV capability:</strong> ABBYY OCR/ICR + ML validation against database</p>
-<h3>Fellowship Department Opportunities</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Fellow</th>
-<th>Department</th>
-<th>Transfer Opportunity</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Henri Aghaei Baradaran</td>
-<td><strong>DDS</strong></td>
-<td>Regional center intake — ~460K clients served through 21 regional centers. OCR could auto-validate Lanterman Act applications and reduce 90-day processing backlogs.</td>
-</tr>
-<tr>
-<td>Jeremiah Oakden</td>
-<td><strong>CDTFA</strong></td>
-<td>Tax return processing — sales tax returns, exemption certificates. CDTFA already digitizes returns; adding ML validation could flag mismatches before they reach auditors.</td>
-</tr>
-<tr>
-<td>Nikki Hatcher / Brent Vanderburgh</td>
-<td><strong>DWR / SWRCB</strong></td>
-<td>Water right applications — records dating back to 1902 across thousands of active permits. Start with new applications (standardized forms), then tackle backfile conversion.</td>
-</tr>
-<tr>
-<td>Bryanna McAdams</td>
-<td><strong>DCSS</strong></td>
-<td>Child support orders — income declarations across 47 county agencies. Each county submits slightly different paperwork; ML normalization across county formats is the high-value target.</td>
-</tr>
-<tr>
-<td>Samantha Kissane / Chris Siino</td>
-<td><strong>CDCR</strong></td>
-<td>Inmate records, transfer paperwork, parole documentation. CDCR processes thousands of Form 128-Bs (classification chrono) monthly — many still handwritten.</td>
-</tr>
-<tr>
-<td>SMSgt Blake Carter</td>
-<td><strong>CA Air National Guard</strong></td>
-<td>Personnel action forms, deployment orders. Military paperwork is highly standardized (DD-214s, SF-180s) — ideal for OCR with near-zero customization.</td>
-</tr>
-</tbody></table></div>
-<div class="collapsible">
-<div class="collapsible-header">
-<span class="collapsible-title">Why this transfers well</span>
-<svg class="collapsible-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M6 9l6 6 6-6"/>
-</svg>
-</div>
-<div class="collapsible-content">
-<div class="collapsible-body">
-<p>Document verification is the most <strong>structurally similar</strong> use case across departments. Every agency receives paper forms, validates them against a database, and routes failures for manual review. DMV proved the <a href="https://www.abbyy.com/">ABBYY</a> platform scales from 37K to 309K documents with minimal additional configuration. The licensing model (per-page pricing) means departments can start small and scale.</p>
-
-</div>
-</div>
-</div>
-
-<div class="callout callout-tip"><div class="callout-icon">💡</div><div class="callout-content"><p><strong>Pilot sizing:</strong> Identify your top 3 highest-volume paper forms and run a 30-day submission count. That number × ABBYY&#39;s per-page rate gives you a pilot budget. DMV&#39;s data shows ~50% automation in year one — a reasonable baseline for any business case.</p>
-</div></div>
-</section>
-
-<section data-slide-index="16" data-slide-title="Pattern B: AI Chatbot (Miles Model)">
-<h2>Pattern B: AI Chatbot (Miles Model)</h2>
-<p><strong>DMV capability:</strong> Voice + chat bot handling 13.77M calls/year, evolving toward GenAI</p>
-<h3>Fellowship Department Opportunities</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Fellow</th>
-<th>Department</th>
-<th>Transfer Opportunity</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Lorna Brisco</td>
-<td><strong>DGS</strong></td>
-<td>Procurement support — vendor bid status, contract questions. DGS handles thousands of &quot;Where&#39;s my PO?&quot; calls; a status-check bot could deflect 40%+ of that volume.</td>
-</tr>
-<tr>
-<td>Jennifer Uyeda Issertell</td>
-<td><strong>CDT</strong></td>
-<td>Statewide IT help desk — password resets, service tickets, system status. CDT&#39;s ServiceNow platform already has structured data; a bot layer on top is straightforward.</td>
-</tr>
-<tr>
-<td>Jeremiah Oakden</td>
-<td><strong>CDTFA</strong></td>
-<td>Taxpayer inquiries — &quot;When is my return due?&quot; &quot;What&#39;s my balance?&quot; These are the exact same query types Miles handles for DMV, just with tax data.</td>
-</tr>
-<tr>
-<td>Bryanna McAdams</td>
-<td><strong>DCSS</strong></td>
-<td>Already has Customer Connect 24/7 — but it&#39;s keyword-based. DMV&#39;s semantic search roadmap shows the upgrade path to context-aware responses.</td>
-</tr>
-<tr>
-<td>Lt. Marc Peachey</td>
-<td><strong>CHP</strong></td>
-<td>Accident report status, permit questions, commercial vehicle requirements. CHP&#39;s call center handles 2M+ calls/year — strong deflection potential.</td>
-</tr>
-<tr>
-<td>Molly Linares</td>
-<td><strong>CA Volunteers</strong></td>
-<td>Volunteer matching + program questions. Lower call volume makes this a natural low-risk pilot environment.</td>
-</tr>
-<tr>
-<td>Kattya Trinh</td>
-<td><strong>OTSI/CalHHS</strong></td>
-<td>Medi-Cal questions, benefit status, provider lookup. CalHHS already has structured eligibility data; a chatbot reduces the burden on county eligibility workers.</td>
-</tr>
-</tbody></table></div>
-<div class="collapsible">
-<div class="collapsible-header">
-<span class="collapsible-title">The chatbot maturity ladder</span>
-<svg class="collapsible-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M6 9l6 6 6-6"/>
-</svg>
-</div>
-<div class="collapsible-content">
-<div class="collapsible-body">
-<p>DMV&#39;s roadmap shows 5 stages that departments can enter at any point:</p>
-<ol>
-<li><strong>Keyword QnA</strong> — Match questions to canned answers (cheapest, simplest)</li>
-<li><strong>Status Lookup</strong> — Authenticate caller, query database, return status</li>
-<li><strong>Semantic Search</strong> — Understand <em>meaning</em>, not just keywords</li>
-<li><strong>GenAI Conversational</strong> — Generate answers from knowledge base with guardrails</li>
-<li><strong>Predictive</strong> — Determine caller intent before they ask</li>
-</ol>
-
-</div>
-</div>
-</div>
-
-<div class="callout callout-tip"><div class="callout-icon">💡</div><div class="callout-content"><p><strong>Where to enter:</strong> A department&#39;s top 10 call reasons usually reveal the right starting stage. If 3+ are simple status checks or FAQ lookups, Stage 1 (keyword QnA) delivers value with minimal investment.</p>
-</div></div>
-</section>
-
-<section data-slide-index="17" data-slide-title="Pattern C: AI-Driven Search (Service Advisor Model)">
-<h2>Pattern C: AI-Driven Search (Service Advisor Model)</h2>
-<p><strong>DMV capability:</strong> Semantic search on website with form-filling assistance</p>
-<h3>The Most Universally Transferable Pattern</h3>
-<p><strong>Every single department represented in the Fellowship</strong> has a public-facing website with a search function. DMV proved that an AI-driven search overlay handles 1M+ queries/year and directly reduces call center volume.</p>
-<h3>Specific High-Value Targets</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Fellow</th>
-<th>Department</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Kannan Krishnan</td>
-<td><strong>OEHHA</strong></td>
-<td><a href="https://oehha.ca.gov/proposition-65">Proposition 65</a> chemical hazard lookup — businesses search the Prop 65 list thousands of times daily. An AI search overlay could interpret plain-English queries (&quot;Is BPA in baby bottles covered?&quot;) instead of requiring exact chemical names.</td>
-</tr>
-<tr>
-<td>Will Robinson</td>
-<td><strong>LCI</strong></td>
-<td><a href="https://opr.ca.gov/ceqa/">CEQA</a> guidance — notoriously complex regulations that generate constant &quot;How do I comply?&quot; questions. A semantic search advisor could cut the learning curve for new project applicants.</td>
-</tr>
-<tr>
-<td>Christina Marin-Fitzhugh</td>
-<td><strong>CARB</strong></td>
-<td>ZEV compliance, emission regulations, Cap-and-Invest. Fleet operators need to understand complex compliance pathways — a guided advisor replaces the current &quot;call us&quot; experience.</td>
-</tr>
-<tr>
-<td>Ben Bressette</td>
-<td><strong>Caltrans</strong></td>
-<td>Project status, encroachment permits, traffic data. Caltrans.ca.gov is one of the state&#39;s highest-traffic sites; an AI search layer would serve millions of visitors.</td>
-</tr>
-<tr>
-<td><em>All Fellows</em></td>
-<td><em>All Departments</em></td>
-<td>Form-filling assistance for any publicly available government form</td>
-</tr>
-</tbody></table></div>
-<p>The <strong>Form Filler</strong> capability alone is worth the investment. DMV walks users through REG 256 (Statement of Facts) step by step — imagine that for tax forms (CDTFA), water right applications (DWR/SWRCB), or child support forms (DCSS).</p>
-<div class="callout callout-tip"><div class="callout-icon">💡</div><div class="callout-content"><p><strong>The simplest business case:</strong> Monthly &quot;How do I...?&quot; call volume × average handling time = the hours an AI search overlay could reclaim. DMV deployed theirs on an existing website without rebuilding anything.</p>
-</div></div>
-</section>
-
-<section data-slide-index="18" data-slide-title="Pattern D: GenAI Content Review (Plates Model)">
-<h2>Pattern D: GenAI Content Review (Plates Model)</h2>
-<p><strong>DMV capability:</strong> GenAI reviews content, makes recommendations, human makes final decision</p>
-<h3>Fellowship Department Opportunities</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Fellow</th>
-<th>Department</th>
-<th>Transfer Opportunity</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Samantha Kissane</td>
-<td><strong>CDCR</strong></td>
-<td>Inmate correspondence screening — flag threats/contraband language, staff makes the call. CDCR screens tens of thousands of pieces of mail monthly; GenAI pre-screening could cut reviewer workload by 60%+.</td>
-</tr>
-<tr>
-<td>Christina Marin-Fitzhugh</td>
-<td><strong>CARB</strong></td>
-<td>Emission test result review — flag anomalous readings for inspectors. The pattern is identical: AI scans structured data, flags outliers, human investigates.</td>
-</tr>
-<tr>
-<td>Kannan Krishnan</td>
-<td><strong>OEHHA</strong></td>
-<td>Chemical assessment triage — scan incoming papers for chemicals that need expedited Prop 65 listing review. Prioritization, not decision-making.</td>
-</tr>
-<tr>
-<td>Jai London</td>
-<td><strong>CMD</strong></td>
-<td>Procurement bid screening — flag non-compliant submissions before they reach evaluators. Saves evaluator time on bids missing required sections.</td>
-</tr>
-<tr>
-<td>SSgt Kelton Pisano</td>
-<td><strong>CMD</strong></td>
-<td>Wildfire cost claim review — flag outlier reimbursement requests against historical norms. The same &quot;flag and route&quot; architecture DMV uses for plates.</td>
-</tr>
-<tr>
-<td>Elizabeth Betancourt</td>
-<td><strong>Natural Resources</strong></td>
-<td>EIR screening — summarize 500+ page environmental impact reports and flag key findings for reviewers. GenAI excels at structured summarization.</td>
-</tr>
-</tbody></table></div>
-<div class="collapsible">
-<div class="collapsible-header">
-<span class="collapsible-title">Why the Plates model is the gold standard</span>
-<svg class="collapsible-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M6 9l6 6 6-6"/>
-</svg>
-</div>
-<div class="collapsible-content">
-<div class="collapsible-body">
-<p>The Personalized Plates system is the purest example of &quot;GenAI assist, human decide&quot; in California government. It faced a real legal challenge (<a href="https://casetext.com/case/ogilvie-v-gordon-3">Ogilvie v. Steve Gordon</a>), implemented GenAI as the fix, and has had <strong>zero lawsuits since</strong>. The 90% staff approval rate of AI recommendations proves the model is accurate. The 50% wait time reduction proves it&#39;s efficient. And the zero-lawsuit record proves it&#39;s legally sound.</p>
-
-</div>
-</div>
-</div>
-
-<div class="callout callout-tip"><div class="callout-icon">💡</div><div class="callout-content"><p><strong>Good fit indicator:</strong> Any review process where two staff members might reach different conclusions on the same item is a candidate for GenAI-assisted consistency. DMV&#39;s legal track record provides strong precedent for a business case.</p>
-</div></div>
-</section>
-
-<section data-slide-index="19" data-slide-title="Pattern E: Mobile Field App (Disaster Recovery Model)">
-<h2>Pattern E: Mobile Field App (Disaster Recovery Model)</h2>
-<p><strong>DMV capability:</strong> GIS-based mobile app for field investigations</p>
-<h3>Fellowship Department Opportunities</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Fellow</th>
-<th>Department</th>
-<th>Transfer Opportunity</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Kattya Trinh</td>
-<td><strong>OTSI/CalHHS</strong></td>
-<td>Integrate with <a href="https://www.nascio.org/awards/">All-Hazards Dashboard</a> (NASCIO award winner). CalHHS already has the data platform; a field collection app feeds it directly.</td>
-</tr>
-<tr>
-<td>Lt. Marc Peachey</td>
-<td><strong>CHP</strong></td>
-<td>Accident investigation, MAIT teams. CHP investigators photograph scenes, measure skid marks, catalog debris — all currently on paper or ad-hoc tablets. A purpose-built GIS app standardizes the workflow.</td>
-</tr>
-<tr>
-<td>SSgt Kelton Pisano</td>
-<td><strong>CMD</strong></td>
-<td>Wildfire deployment tracking — field app connected to cost dashboards. CMD deploys personnel across dozens of fire zones simultaneously; real-time location + status data replaces radio check-ins.</td>
-</tr>
-<tr>
-<td>Elizabeth Betancourt</td>
-<td><strong>Natural Resources</strong></td>
-<td>Working lands assessments, post-fire landscape surveys. Field biologists currently carry paper checklists + GPS units + cameras separately; one app replaces three tools.</td>
-</tr>
-<tr>
-<td>Brent Vanderburgh</td>
-<td><strong>SWRCB</strong></td>
-<td>Water rights field inspections — replace paper forms with GIS-enabled mobile. Inspectors visit remote sites with no cell coverage; offline-first design (sync when connected) is critical.</td>
-</tr>
-</tbody></table></div>
-<p>The pattern: <strong>mobile-first, GIS-enabled, offline-capable, syncs when connected.</strong> Any department that sends people into the field with clipboards is leaving efficiency on the table.</p>
-<div class="callout callout-tip"><div class="callout-icon">💡</div><div class="callout-content"><p><strong>Smallest viable pilot:</strong> One inspection workflow, one data entry form with GPS auto-tagging, deployed on iPads. DMV&#39;s disaster recovery app started exactly this small.</p>
-</div></div>
-</section>
-
-<section data-slide-index="20" data-slide-title="Pattern F: Identity Verification (MyDMV Model)">
-<h2>Pattern F: Identity Verification (MyDMV Model)</h2>
-<p><strong>DMV capability:</strong> Multi-tier identity proofing with external verification services</p>
-<h3>The Biggest Strategic Multiplier</h3>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>Fellow</th>
-<th>Department</th>
-<th>Transfer Opportunity</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Jennifer Uyeda Issertell</td>
-<td><strong>CDT</strong></td>
-<td>Offer identity verification as a <strong>shared service</strong> for all state departments. CDT is the natural platform owner — one implementation, every department benefits.</td>
-</tr>
-<tr>
-<td>Bryanna McAdams</td>
-<td><strong>DCSS</strong></td>
-<td>Parent identity verification for child support portal. DCSS serves 1.2M cases across 47 counties; custodial parents logging in to check case status need reliable identity proofing.</td>
-</tr>
-<tr>
-<td>Kattya Trinh</td>
-<td><strong>OTSI/CalHHS</strong></td>
-<td>Medi-Cal eligibility verification for 14M+ beneficiaries. CalHHS already partners with Login.gov; DMV&#39;s two-tier model would add a state-specific fallback layer.</td>
-</tr>
-</tbody></table></div>
-<h3>Why This Is the Biggest Win</h3>
-<p>DMV solved the hardest problem in government digital services: <strong>proving you are who you say you are</strong> — at 90-95% success. If CDT offered this as a platform service, every department could skip years of development.</p>
-<p>The <a href="https://www.edd.ca.gov/about_edd/fraud.htm">EDD fraud crisis</a> proved what happens when identity verification fails — an estimated $10.4B to $32.6B in fraudulent claims during the pandemic. DMV&#39;s two-tier model (validate against internal records → fallback to external identity services) is the architecture the entire state should be using.</p>
-<div class="callout callout-info"><div class="callout-icon">ℹ️</div><div class="callout-content"><p><strong>Why this matters for every department:</strong> Every agency offering online services needs identity verification. Today, each builds or buys its own. A shared service based on DMV&#39;s proven architecture would eliminate that duplication and raise the security floor statewide.</p>
-</div></div>
-</section>
-
-<section data-slide-index="21" data-slide-title="DMV Contacts &amp; Your Internal Bridge">
+<section data-slide-index="23" data-slide-title="DMV Contacts &amp; Your Internal Bridge">
 <h2>DMV Contacts &amp; Your Internal Bridge</h2>
 <h3>DMV Innovation Team</h3>
 <div class="table-wrapper"><table>
@@ -4552,7 +4596,7 @@ section:first-of-type .slide-footer {
 
 </section>
 
-<section data-slide-index="22" data-slide-title="Key Takeaways">
+<section data-slide-index="24" data-slide-title="Key Takeaways">
 <h2>Key Takeaways</h2>
 <ol>
 <li><p><strong>Human in the loop is non-negotiable.</strong> Every DMV AI system keeps a human making the final decision. The Personalized Plates flow (GenAI recommends → Staff decides → IA executes) survived legal challenge with zero lawsuits. That&#39;s your template.</p>
@@ -4561,9 +4605,9 @@ section:first-of-type .slide-footer {
 </li>
 <li><p><strong>The chatbot roadmap is a replicable playbook.</strong> Keyword QnA → Semantic Search → GenAI → Predictive. Enter at whatever stage matches your maturity.</p>
 </li>
-<li><p><strong>Start with the Service Advisor pattern.</strong> Every department has a website. Every website has a search function. An AI-driven search overlay with form-filling assistance is the lowest-friction, highest-visibility win available.</p>
+<li><p><strong>Start with the easiest win for your department.</strong> Every department has a website, a call center, or a pile of paper forms. Pick the one that causes the most pain and look at how DMV addressed the same problem.</p>
 </li>
-<li><p><strong>Don&#39;t start from scratch.</strong> That&#39;s the whole point. DMV built the playbook — now use it.</p>
+<li><p><strong>Don&#39;t start from scratch.</strong> That&#39;s the whole point. DMV has proven patterns in production — the opportunity is to adapt what works, not reinvent it.</p>
 </li>
 </ol>
 
@@ -4729,140 +4773,152 @@ section:first-of-type .slide-footer {
     const slideContent = [
   {
     "index": 0,
-    "title": "DMV AI Innovation: A Blueprint for California State Government",
-    "content": "DMV AI Innovation: A Blueprint for California State Government Governor's Innovation Fellows Program Core Thesis: DMV has 6 AI systems in production — with RADV alone saving 22,000+ staff hours/year. Every Fellowship department can adopt at least one of these patterns without starting from scratch. February 2026 | Based on DMV Innovation Tour, January 30, 2026",
-    "excerpt": "DMV AI Innovation: A Blueprint for California State Government Governor's Innovation Fellows Program Core Thesis: DMV has 6 AI systems in production —..."
+    "title": "DMV AI in Production: What Could Your Department Do With These Tools?",
+    "content": "DMV AI in Production: What Could Your Department Do With These Tools? Governor's Innovation Fellows Program Core Thesis: DMV has 6 AI systems in production saving thousands of staff hours annually. Every Fellowship department has problems these proven patterns already solve — the question is which ones fit your shop. March 2026 | Based on DMV Innovation Tour, January 30, 2026",
+    "excerpt": "DMV AI in Production: What Could Your Department Do With These Tools? Governor's Innovation Fellows Program Core Thesis: DMV has 6 AI systems in produ..."
   },
   {
     "index": 1,
-    "title": "Why This Matters",
-    "content": "Why This Matters California DMV is running six distinct AI/automation systems in production — more than most state departments have even piloted. The critical pattern: DMV uses AI as a decision-support layer (human stays in the loop), not full automation. This approach: - Requires no new legislation - Has survived legal challenge (Personalized Plates: zero lawsuits since GenAI implementation) - Produces measurable, auditable results The Governor's Innovation Fellows Program puts 21 Fellows across 15 departments in 9 agencies — every one of which has a direct transfer opportunity from DMV's playbook.",
-    "excerpt": "Why This Matters California DMV is running six distinct AI/automation systems in production — more than most state departments have even piloted. The..."
+    "title": "Before You Read: How to Use This Deck",
+    "content": "Before You Read: How to Use This Deck This deck is prep material for the March 20 Fellows meeting. Here's the plan: 1. Now — Read this deck. Find your department. Look at which DMV tools apply. 2. Before March 20 — Have one conversation with someone in your shop. Ask: \"If we had this, what would change?\" 3. March 20 meeting — Bring your ideas. We'll discuss as a group. 4. After the meeting — A formal survey will capture everyone's ideas in writing. This deck includes AI-generated suggestions for how DMV's tools might apply at each department. Some will be on target; others will miss the mark entirely. Only you and your department know where these patterns actually fit. That's the point — we need your expertise, not more AI guesswork. Skip to your department: Use the left-hand navigation to jump to \"Your Department at a Glance.\"",
+    "excerpt": "Before You Read: How to Use This Deck This deck is prep material for the March 20 Fellows meeting. Here's the plan: 1. Now — Read this deck. Find your..."
   },
   {
     "index": 2,
-    "title": "The 6 AI Systems in Production",
-    "content": "The 6 AI Systems in Production | | System | AI Type | Launched | Key Metric | |---|--------|---------|----------|------------| | 1 | RADV — Document Verification | OCR/ICR + ML | 2020 | 5.4M docs/year, 62% automated | | 2 | Miles Chatbot — Voice & Chat | NLP → GenAI | Ongoing | 13.77M calls/year handled | | 3 | Service Advisor — Web Search | Semantic Search | Active | 1M+ queries/year | | 4 | MyDMV — Identity Verification | Multi-tier Auth + Biometrics | Active | 90-95% verification success | | 5 | Disaster Recovery App — Field Ops | GIS Mobile App | Active | 195 vehicles mapped (Sacramento region) | | 6 | GenAI Plates — Content Review | GenAI + RPA | Nov 2022 | 90% auto-processed, 0 lawsuits | Each system follows the same philosophy: AI assists, humans decide.",
-    "excerpt": "The 6 AI Systems in Production | | System | AI Type | Launched | Key Metric | |---|--------|---------|----------|------------| | 1 | RADV — Document V..."
+    "title": "Why This Matters",
+    "content": "Why This Matters California DMV is running six distinct AI/automation systems in production — more than most state departments have even piloted. The critical pattern: DMV uses AI as a decision-support layer (human stays in the loop), not full automation. This approach: - Requires no new legislation - Has survived legal challenge (Personalized Plates: zero lawsuits since GenAI implementation) - Produces measurable, auditable results The Governor's Innovation Fellows Program puts 21 Fellows across 15 departments in 9 agencies — every one of which has a direct opportunity to benefit from DMV's proven approach.",
+    "excerpt": "Why This Matters California DMV is running six distinct AI/automation systems in production — more than most state departments have even piloted. The..."
   },
   {
     "index": 3,
-    "title": "System 1: RADV — Real ID Automated Document Verification",
-    "content": "System 1: RADV — Real ID Automated Document Verification Presenter: Adrian Monteon | Technology: ABBYY OCR/ICR + Machine Learning How It Works Citizens upload identity documents (birth certificates, passports, EAD cards, I-94s) through the online portal. The ABBYY engine: 1. Extracts printed text and handwritten entries via OCR/ICR 2. Validates extracted data against DMV's database 3. Auto-approves documents that pass (~62%) 4. Routes failures to a human technician for manual review Five-Year Average Savings - Time saved: 22,050 hours/year - Staff equivalent: 28 FTE/year - Documents processed: Millions monthly",
-    "excerpt": "System 1: RADV — Real ID Automated Document Verification Presenter: Adrian Monteon | Technology: ABBYY OCR/ICR + Machine Learning How It Works Citizen..."
+    "title": "3 Focus Areas for March 20",
+    "content": "3 Focus Areas for March 20 For this meeting, we're focusing on the three DMV systems with the broadest applicability across Fellowship departments: | Focus Area | What DMV Built | Why It Matters to You | |-----------|---------------|----------------------| | Miles Chatbot | Voice & chat AI handling 13.77M calls/year — 49% now fully self-service | Every department has a call center or help desk. What would your Miles answer? | | RADV Document Verification | OCR + ML auto-verifies 62% of documents — saving 22,050 hours/year (28 FTE) | Every department processes paper. Which forms eat the most staff time? | | MyDMV Identity Verification | Multi-tier identity proofing at 90-95% success (up from 35-40%) | Every department with online accounts needs identity verification. Where does proving identity create friction? | DMV also has 3 additional systems covered later in this deck: Service Advisor (AI web search), Disaster Recovery App (mobile field ops), and GenAI for Personalized Plates (content review). Browse those for additional ideas.",
+    "excerpt": "3 Focus Areas for March 20 For this meeting, we're focusing on the three DMV systems with the broadest applicability across Fellowship departments: |..."
   },
   {
     "index": 4,
-    "title": "RADV: Automation Rate Climbing Year Over Year",
-    "content": "RADV: Automation Rate Climbing Year Over Year <!--CHART_0--> Automation rate rose from 53% in 2021 to 62% in 2025 — driven by machine learning improvements, not just volume growth. The Digital Imaging and Archiving extension reached 75% automation for internal form processing (309K docs in 2025).",
-    "excerpt": "RADV: Automation Rate Climbing Year Over Year <!--CHART_0--> Automation rate rose from 53% in 2021 to 62% in 2025 — driven by machine learning improve..."
+    "title": "The Master Pattern: AI Assists, Humans Decide",
+    "content": "The Master Pattern: AI Assists, Humans Decide Every one of DMV's 6 AI systems follows the same architecture: 1. AI processes — Extracts, classifies, recommends, routes 2. Human decides — Reviews flagged items, makes final call 3. Automation executes — Carries out the approved action This isn't a coincidence. It's a deliberate design choice that: - Satisfies legal requirements — Human accountability for decisions - Builds staff trust — AI augments, doesn't replace - Survives scrutiny — Personalized Plates has had zero lawsuits since implementation - Improves over time — ML learns from human corrections This is the pattern other departments should look at. Not \"AI replaces workers\" — but \"AI handles the 60-90% that's routine so workers can focus on the cases that actually need judgment.\"",
+    "excerpt": "The Master Pattern: AI Assists, Humans Decide Every one of DMV's 6 AI systems follows the same architecture: 1. AI processes — Extracts, classifies, r..."
   },
   {
     "index": 5,
-    "title": "System 2: Miles Chatbot — Voice & Chat AI",
-    "content": "System 2: Miles Chatbot — Voice & Chat AI Presenter: Sonia Huestis | Technology: NLP chatbot evolving toward GenAI conversational bot Scale: 13.77 Million Calls in 2025 <!--CHART_1--> The bot deflected 6.8M calls to self-service in 2025 (up from 6.0M in 2024) — a 13% increase in automation without adding staff. Top call reasons: VR Renewal (13%), Title Transfer (5%), DL Renewal (5%), Drive Test Appointments (4%).",
-    "excerpt": "System 2: Miles Chatbot — Voice & Chat AI Presenter: Sonia Huestis | Technology: NLP chatbot evolving toward GenAI conversational bot Scale: 13.77 Mil..."
+    "title": "The 6 AI Systems in Production",
+    "content": "The 6 AI Systems in Production | | System | AI Type | Launched | Key Metric | |---|--------|---------|----------|------------| | 1 | Miles Chatbot — Voice & Chat | NLP → GenAI | Ongoing | 13.77M calls/year handled | | 2 | RADV — Document Verification | OCR/ICR + ML | 2020 | 5.4M docs/year, 62% automated | | 3 | MyDMV — Identity Verification | Multi-tier Auth + Biometrics | Active | 90-95% verification success | | 4 | Service Advisor — Web Search | Semantic Search | Active | 1M+ queries/year | | 5 | GenAI Plates — Content Review | GenAI + RPA | Nov 2022 | 90% auto-processed, 0 lawsuits | | 6 | Disaster Recovery App — Field Ops | GIS Mobile App | Active | 195 vehicles mapped (Sacramento region) | Each system follows the same philosophy: AI assists, humans decide.",
+    "excerpt": "The 6 AI Systems in Production | | System | AI Type | Launched | Key Metric | |---|--------|---------|----------|------------| | 1 | Miles Chatbot — V..."
   },
   {
     "index": 6,
+    "title": "Focus 1: Miles Chatbot — Voice & Chat AI",
+    "content": "Focus 1: Miles Chatbot — Voice & Chat AI Presenter: Sonia Huestis | Technology: NLP chatbot evolving toward GenAI conversational bot Scale: 13.77 Million Calls in 2025 <!--CHART_0--> The bot deflected 6.8M calls to self-service in 2025 (up from 6.0M in 2024) — a 13% increase in automation without adding staff. Top call reasons: VR Renewal (13%), Title Transfer (5%), DL Renewal (5%), Drive Test Appointments (4%).",
+    "excerpt": "Focus 1: Miles Chatbot — Voice & Chat AI Presenter: Sonia Huestis | Technology: NLP chatbot evolving toward GenAI conversational bot Scale: 13.77 Mill..."
+  },
+  {
+    "index": 7,
     "title": "Miles Chatbot: Evolution Roadmap",
     "content": "Miles Chatbot: Evolution Roadmap The roadmap shows a clear pattern from rule-based → semantic → generative → predictive: | Date | Milestone | What Changes | |------|-----------|-------------| | March '25 | Content Cleanup | Reduce QnA utterance noise — fewer dead-end responses | | April '25 | VR Status | Customers check vehicle registration status via bot | | Sept '25 | Semantic Search | Bot understands meaning and context, not just keywords | | Nov '25 | DL Status | Customers check driver's license renewal status via bot | | Dec '25 | GenAI Convo Bot | New knowledge base + content safety guardrails | | Q1-Q2 '26 | Predictive Caller | Bot determines caller intent before connecting | | Q1-Q2 '26 | Title Transfer | Full self-service title transfer via bot | Key takeaway for other departments: You don't have to start at GenAI. Enter the roadmap at whatever stage matches your current maturity — even a keyword QnA bot that handles the top 5 call reasons creates immediate value.",
     "excerpt": "Miles Chatbot: Evolution Roadmap The roadmap shows a clear pattern from rule-based → semantic → generative → predictive: | Date | Milestone | What Cha..."
   },
   {
-    "index": 7,
-    "title": "System 3: Service Advisor — AI-Driven Web Search",
-    "content": "System 3: Service Advisor — AI-Driven Web Search Presenter: Randolph L. Fernandez-Gonzalez | Technology: Semantic search + guided form-filling assistant Integrated into dmv.ca.gov at the three highest-traffic touchpoints: homepage search, site-wide search, and the appointments page. <!--CHART_2-->",
-    "excerpt": "System 3: Service Advisor — AI-Driven Web Search Presenter: Randolph L. Fernandez-Gonzalez | Technology: Semantic search + guided form-filling assista..."
-  },
-  {
     "index": 8,
-    "title": "Service Advisor: Key Capabilities",
-    "content": "Service Advisor: Key Capabilities Not Just Search — It's an AI Assistant - Contextual answers — Returns structured guidance, not just links. Searching \"statement of facts\" identifies the exact form (REG 256), explains all 6 uses, and offers a guided Form Filler. - Form Filler integration — Walks users step-by-step through DMV forms. Enter your license plate, answer questions, and it generates a completed PDF. - Scam detection — Recognizes known scam reference numbers and immediately surfaces fraud alerts: \"The DMV will never ask for personal or financial information by text.\" - mDL Q&A assistant — Handles mobile driver's license questions with corrective actions when something goes wrong (e.g., \"What do I do if my mDL request is rejected?\"). - Adaptable — Same interface handles procedural guidance (Notice of Transfer walkthrough) and real-time crisis response (scam alerts). This is the most universally transferable pattern. Every department has a website. Every website has a \"How do I...?\" problem.",
-    "excerpt": "Service Advisor: Key Capabilities Not Just Search — It's an AI Assistant - Contextual answers — Returns structured guidance, not just links. Searching..."
+    "title": "Focus 2: RADV — Real ID Automated Document Verification",
+    "content": "Focus 2: RADV — Real ID Automated Document Verification Presenter: Adrian Monteon | Technology: ABBYY OCR/ICR + Machine Learning How It Works Citizens upload identity documents (birth certificates, passports, EAD cards, I-94s) through the online portal. The ABBYY engine: 1. Extracts printed text and handwritten entries via OCR/ICR 2. Validates extracted data against DMV's database 3. Auto-approves documents that pass (~62%) 4. Routes failures to a human technician for manual review Five-Year Average Savings - Time saved: 22,050 hours/year - Staff equivalent: 28 FTE/year - Documents processed: Millions monthly",
+    "excerpt": "Focus 2: RADV — Real ID Automated Document Verification Presenter: Adrian Monteon | Technology: ABBYY OCR/ICR + Machine Learning How It Works Citizens..."
   },
   {
     "index": 9,
-    "title": "System 4: MyDMV — Identity Management & Automation",
-    "content": "System 4: MyDMV — Identity Management & Automation Presenter: Stefan Schoy | Technology: Multi-tier automated identity verification via MyDMV + biometric exploration The Problem → The Fix | | Before | After | |---|--------|-------| | Approach | Single verification attempt | Two-tier (Level 1 → Level 2 fallback) | | Success Rate | 35-40% | 90-95% | | Failure Routing | All failures → call center | Only double-failures → agent | | Document Flexibility | Rigid single pathway | Multiple verification pathways | High-Risk Application Protections For sensitive operations (phone number reset, replacement DL), the system adds external identity verification services — validating against third-party databases in addition to DMV records. Future: Biometric Verification DMV is exploring selfie + camera comparison against the DL photo on file — for both MyDMV account creation and CA DMV Wallet (mDL) issuance. Same face = verified identity = credential issued.",
-    "excerpt": "System 4: MyDMV — Identity Management & Automation Presenter: Stefan Schoy | Technology: Multi-tier automated identity verification via MyDMV + biomet..."
+    "title": "RADV: Automation Rate Climbing Year Over Year",
+    "content": "RADV: Automation Rate Climbing Year Over Year <!--CHART_1--> Automation rate rose from 53% in 2021 to 62% in 2025 — driven by machine learning improvements, not just volume growth. The Digital Imaging and Archiving extension reached 75% automation for internal form processing (309K docs in 2025).",
+    "excerpt": "RADV: Automation Rate Climbing Year Over Year <!--CHART_1--> Automation rate rose from 53% in 2021 to 62% in 2025 — driven by machine learning improve..."
   },
   {
     "index": 10,
-    "title": "System 5: Disaster Recovery App — Mobile Field Investigation",
-    "content": "System 5: Disaster Recovery App — Mobile Field Investigation Presenter: Amy Burks | Technology: GIS-based mobile application for field data collection Real-World Application Used by DMV investigators to locate and document vehicles destroyed in wildfires and other natural disasters. The mobile app: - Maps investigation clusters using GIS (195 vehicles in Sacramento region alone) - Enables on-site data collection via iPad - Tracks investigation status in real-time - Syncs field data with central databases Field Operations Investigators physically locate burned vehicles at disaster sites — crawling under wreckage to read VINs, photographing damage, recording GPS coordinates — all feeding back through the app. Less \"AI\" in the traditional sense, more intelligent field data collection — but the GIS clustering, mobile-first workflow, and real-time sync represent a model for any department with field operations.",
-    "excerpt": "System 5: Disaster Recovery App — Mobile Field Investigation Presenter: Amy Burks | Technology: GIS-based mobile application for field data collection..."
+    "title": "Focus 3: MyDMV — Identity Management & Automation",
+    "content": "Focus 3: MyDMV — Identity Management & Automation Presenter: Stefan Schoy | Technology: Multi-tier automated identity verification via MyDMV + biometric exploration The Problem → The Fix | | Before | After | |---|--------|-------| | Approach | Single verification attempt | Two-tier (Level 1 → Level 2 fallback) | | Success Rate | 35-40% | 90-95% | | Failure Routing | All failures → call center | Only double-failures → agent | | Document Flexibility | Rigid single pathway | Multiple verification pathways | High-Risk Application Protections For sensitive operations (phone number reset, replacement DL), the system adds external identity verification services — validating against third-party databases in addition to DMV records. Future: Biometric Verification DMV is exploring selfie + camera comparison against the DL photo on file — for both MyDMV account creation and CA DMV Wallet (mDL) issuance. Same face = verified identity = credential issued.",
+    "excerpt": "Focus 3: MyDMV — Identity Management & Automation Presenter: Stefan Schoy | Technology: Multi-tier automated identity verification via MyDMV + biometr..."
   },
   {
     "index": 11,
-    "title": "System 6: GenAI + Intelligent Automation for Personalized Plates",
-    "content": "System 6: GenAI + Intelligent Automation for Personalized Plates Presenter: Angela Marbray | Technology: Generative AI (content review) + RPA (plate assignment) The Origin Story A 2020 lawsuit (Ogilvie v. Steve Gordon) exposed that plate configuration decisions were subjective and inconsistent across reviewers. The numbers told the story: - 167,000 orders/year (~668/day) - Only 4 reviewers + 5 assignment staff - 36,000 plate backlog - Up to 9 months wait time - Inconsistent approve/deny decisions",
-    "excerpt": "System 6: GenAI + Intelligent Automation for Personalized Plates Presenter: Angela Marbray | Technology: Generative AI (content review) + RPA (plate a..."
+    "title": "Your Department at a Glance — GovOps Agency",
+    "content": "Your Department at a Glance — GovOps Agency CDT (Dept of Technology) — Jennifer Uyeda Issertell | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Statewide IT help desk bot — password resets, service tickets, system status. CDT's ServiceNow platform already has structured data; a bot layer on top could deflect 40%+ of routine calls. | | Identity Verification | CDT could offer identity proofing as a shared service for all state departments. One implementation, every department benefits. The EDD fraud crisis proved what happens without this. | Your question: CDT serves every department in the state. If you could automate the top 5 help desk requests, what would they be? And what would a statewide identity verification service save your department users? DGS (General Services) — Lorna Brisco | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Procurement support bot — vendor bid status, contract questions. DGS handles thousands of \"Where's my PO?\" inquiries; a status-check bot could deflect significant volume. | Your question: What are the top 5 questions vendors and departments ask DGS over and over? Those are your Miles candidates. CDTFA (Tax & Fee Admin) — Jeremiah Oakden | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Taxpayer inquiries — \"When is my return due?\" \"What's my balance?\" These are the exact same query types Miles handles for DMV, just with tax data. | | Document Verification | Tax return processing — sales tax returns, exemption certificates. CDTFA already digitizes returns; adding ML validation could flag mismatches before they reach auditors. | Your question: What percentage of CDTFA call center volume is simple status checks? And which return types have the most data-entry errors that auditors catch manually?",
+    "excerpt": "Your Department at a Glance — GovOps Agency CDT (Dept of Technology) — Jennifer Uyeda Issertell | DMV Tool | What This Could Look Like | |----------|-..."
   },
   {
     "index": 12,
+    "title": "Your Department at a Glance — Health & Human Services",
+    "content": "Your Department at a Glance — Health & Human Services DDS (Developmental Services) — Henri Aghaei Baradaran | DMV Tool | What This Could Look Like | |----------|--------------------------| | Document Verification | Regional center intake — ~460K clients submit eligibility paperwork. Automated verification could speed intake from weeks to days for standardized forms. | Your question: How long does intake document processing take at regional centers today? Which document types cause the most rework? DCSS (Child Support) — Bryanna McAdams | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | DCSS already has \"Customer Connect 24/7\" — but DMV's semantic search + GenAI roadmap shows the upgrade path to context-aware responses. | | Document Verification | Child support order verification — income declarations across 47 county agencies. Each county submits slightly different formats; ML normalization is the high-value target. | | Identity Verification | Parent identity verification for the child support portal. DCSS serves 1.2M cases across 47 counties — reliable identity proofing reduces fraud and call center burden. | Your question: What's the most common reason a parent contacts DCSS? And across 47 counties, how much staff time goes to reconciling different document formats? OTSI/CalHHS — Kattya Trinh | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Medi-Cal questions, benefit status, provider lookup. CalHHS serves millions — a chatbot reduces the burden on county eligibility workers. | | Identity Verification | Medi-Cal eligibility verification for 14M+ beneficiaries. CalHHS already partners with Login.gov; DMV's two-tier model would add a state-specific fallback layer. | Your question: How many Medi-Cal eligibility calls could be handled by a bot that can authenticate and return status? Where does identity verification create the most friction for beneficiaries?",
+    "excerpt": "Your Department at a Glance — Health & Human Services DDS (Developmental Services) — Henri Aghaei Baradaran | DMV Tool | What This Could Look Like | |..."
+  },
+  {
+    "index": 13,
+    "title": "Your Department at a Glance — Transportation Agency",
+    "content": "Your Department at a Glance — Transportation Agency CHP (Highway Patrol) — Lt. Marc Peachey | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Accident report status, permit questions, commercial vehicle requirements. CHP handles significant public-facing call volume — status checks are prime bot territory. | Your question: What are CHP's top 10 public call reasons? How many are simple status checks or FAQ lookups that don't require an officer? Caltrans — Ben Bressette | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Project status, encroachment permits, traffic data inquiries. Caltrans.ca.gov is one of the state's highest-traffic sites — an AI search layer would serve millions of visitors. | Your question: What are the top queries on caltrans.ca.gov? How much call center time goes to project status checks or permit questions that have straightforward answers?",
+    "excerpt": "Your Department at a Glance — Transportation Agency CHP (Highway Patrol) — Lt. Marc Peachey | DMV Tool | What This Could Look Like | |----------|-----..."
+  },
+  {
+    "index": 14,
+    "title": "Your Department at a Glance — Natural Resources & Environment",
+    "content": "Your Department at a Glance — Natural Resources & Environment DWR (Water Resources) — Nikki Hatcher | DMV Tool | What This Could Look Like | |----------|--------------------------| | Document Verification | Water right applications involve massive paper submissions. DWR has 7M+ historical documents — automated extraction could feed directly into CalWATRS. | Your question: How many water right applications does DWR process annually? Which document types in those applications are most standardized (best candidates for automation)? SWRCB (Water Board) — Brent Vanderburgh | DMV Tool | What This Could Look Like | |----------|--------------------------| | Document Verification | Water rights division has paper records dating to the 1800s. The UPWARD initiative ($60M) is digitizing; AI verification is the next step in that chain. | Your question: Which water rights forms have the highest error rates? Where in the UPWARD digitization pipeline would automated verification create the most value? OEHHA — Kannan Krishnan | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Proposition 65 chemical hazard lookup — businesses search the Prop 65 list thousands of times daily. An AI search that interprets plain-English queries (\"Is BPA in baby bottles covered?\") instead of requiring exact chemical names. | Your question: How many Prop 65 inquiries does OEHHA handle? What are the most common questions businesses ask that have clear, lookup-based answers? CARB (Air Resources) — Christina Marin-Fitzhugh | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | ZEV compliance, emission regulations, Cap-and-Invest program questions. Fleet operators need to understand complex compliance pathways — a guided advisor replaces the \"call us\" experience. | Your question: What are the top compliance questions CARB receives from fleet operators and businesses? How much staff time goes to answering questions that have standardized answers? Natural Resources Agency — Elizabeth Betancourt | DMV Tool | What This Could Look Like | |----------|--------------------------| | Document Verification | Environmental review document screening — EIRs can run 500+ pages. AI-assisted summarization and issue flagging could dramatically reduce reviewer workload. | Your question: How many environmental review documents does your team process annually? What's the average review time, and which sections consume the most attention?",
+    "excerpt": "Your Department at a Glance — Natural Resources & Environment DWR (Water Resources) — Nikki Hatcher | DMV Tool | What This Could Look Like | |--------..."
+  },
+  {
+    "index": 15,
+    "title": "Your Department at a Glance — Military, Corrections & Other",
+    "content": "Your Department at a Glance — Military, Corrections & Other CDCR (Corrections) — Samantha Kissane & Chris Siino | DMV Tool | What This Could Look Like | |----------|--------------------------| | Document Verification | Inmate records, transfer paperwork, parole documentation — CDCR processes thousands of classification chronos (Form 128-B) monthly, many still handwritten. | | Identity Verification | Inmate and officer identification at kiosks. DMV's biometric approach could transform check-in/check-out processes across facilities. | Your question: Which CDCR forms are still handwritten? What's the volume of classification documents processed monthly? Where would faster identity verification — for staff or inmates — have the biggest operational impact? CMD (Military Dept) — Jai London & SSgt Kelton Pisano | DMV Tool | What This Could Look Like | |----------|--------------------------| | Document Verification | Personnel action forms, deployment orders. Military paperwork is highly standardized (DD-214s, SF-180s) — ideal for automated verification with near-zero customization needed. | Your question: Which personnel or deployment forms are the most time-consuming to process? Where do document errors cause the most downstream delays? CA Air National Guard — SMSgt Blake Carter | DMV Tool | What This Could Look Like | |----------|--------------------------| | Document Verification | Personnel action forms and deployment orders. The A1 Connect platform already handles some document workflows — AI verification could extend its capabilities. | Your question: What document processing does A1 Connect handle today, and where are the gaps? Which forms still require manual review that could be automated? LCI (Land Use & Climate) — Will Robinson | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | CEQA guidance is notoriously complex. An AI advisor for CEQA requirements, housing element compliance, and climate adaptation resources could cut the learning curve for project applicants. | Your question: What are the most common CEQA questions LCI receives? How many hours per week does staff spend answering questions that have standard, policy-based answers? CA Volunteers — Molly Linares | DMV Tool | What This Could Look Like | |----------|--------------------------| | Miles-style Chatbot | Volunteer matching and program questions. The ServiceForce database + chatbot = self-service volunteer placement. Lower call volume makes this a natural low-risk pilot environment. | Your question: How do volunteers currently find opportunities — and where does that process break down? What are the top 5 questions volunteers or organizations ask?",
+    "excerpt": "Your Department at a Glance — Military, Corrections & Other CDCR (Corrections) — Samantha Kissane & Chris Siino | DMV Tool | What This Could Look Like..."
+  },
+  {
+    "index": 16,
+    "title": "Questions to Bring to the March 20 Meeting",
+    "content": "Questions to Bring to the March 20 Meeting Before the meeting, try to find out: 1. If your department had a Miles, what would people ask it? Think about your call center, help desk, or front counter — what are the top 5 questions that come in over and over? 2. What's your department's highest-volume paper form? Roughly how many per month? Is it still partially handwritten or fully digital? How much staff time goes to processing it? 3. Where does proving identity create friction? For the public trying to access your services online — or for staff logging into systems. Where do people get stuck? 4. If you could automate one repetitive review or intake task, what would it be? The one where staff look at the same kind of document hundreds of times and make the same determination. You don't need formal answers. A five-minute conversation with the right person in your shop will surface more than a week of desk research.",
+    "excerpt": "Questions to Bring to the March 20 Meeting Before the meeting, try to find out: 1. If your department had a Miles, what would people ask it? Think abo..."
+  },
+  {
+    "index": 17,
+    "title": "What Happens Next",
+    "content": "What Happens Next | Phase | What | When | |-------|------|------| | Prep | Read this deck, talk to your department | Now through March 20 | | Discuss | Group discussion at monthly meeting | March 20 | | Capture | Formal survey to memorialize ideas | After the meeting | | Discover | Deep-dive session with DMV subject matter experts | TBD based on survey results | | Scope | IT, security, costs, and implementation planning | After discovery — not before | We're deliberately keeping the conversation at the business-need level for now. The technical details, security reviews, and cost estimates come later — once we know which patterns have the strongest fit across departments. First we figure out what, then we figure out how.",
+    "excerpt": "What Happens Next | Phase | What | When | |-------|------|------| | Prep | Read this deck, talk to your department | Now through March 20 | | Discuss..."
+  },
+  {
+    "index": 18,
+    "title": "Additional Reference: Service Advisor — AI-Driven Web Search",
+    "content": "Additional Reference: Service Advisor — AI-Driven Web Search Presenter: Randolph L. Fernandez-Gonzalez | Technology: Semantic search + guided form-filling assistant Integrated into dmv.ca.gov at the three highest-traffic touchpoints: homepage search, site-wide search, and the appointments page. <!--CHART_2-->",
+    "excerpt": "Additional Reference: Service Advisor — AI-Driven Web Search Presenter: Randolph L. Fernandez-Gonzalez | Technology: Semantic search + guided form-fil..."
+  },
+  {
+    "index": 19,
+    "title": "Service Advisor: Key Capabilities",
+    "content": "Service Advisor: Key Capabilities Not Just Search — It's an AI Assistant - Contextual answers — Returns structured guidance, not just links. Searching \"statement of facts\" identifies the exact form (REG 256), explains all 6 uses, and offers a guided Form Filler. - Form Filler integration — Walks users step-by-step through DMV forms. Enter your license plate, answer questions, and it generates a completed PDF. - Scam detection — Recognizes known scam reference numbers and immediately surfaces fraud alerts: \"The DMV will never ask for personal or financial information by text.\" - mDL Q&A assistant — Handles mobile driver's license questions with corrective actions when something goes wrong. - Adaptable — Same interface handles procedural guidance (Notice of Transfer walkthrough) and real-time crisis response (scam alerts). This is the most universally transferable pattern. Every department has a website. Every website has a \"How do I...?\" problem.",
+    "excerpt": "Service Advisor: Key Capabilities Not Just Search — It's an AI Assistant - Contextual answers — Returns structured guidance, not just links. Searching..."
+  },
+  {
+    "index": 20,
+    "title": "Additional Reference: GenAI + Intelligent Automation for Personalized Plates",
+    "content": "Additional Reference: GenAI + Intelligent Automation for Personalized Plates Presenter: Angela Marbray | Technology: Generative AI (content review) + RPA (plate assignment) The Origin Story A 2020 lawsuit (Ogilvie v. Steve Gordon) exposed that plate configuration decisions were subjective and inconsistent across reviewers. The numbers told the story: - 167,000 orders/year (~668/day) - Only 4 reviewers + 5 assignment staff - 36,000 plate backlog - Up to 9 months wait time - Inconsistent approve/deny decisions",
+    "excerpt": "Additional Reference: GenAI + Intelligent Automation for Personalized Plates Presenter: Angela Marbray | Technology: Generative AI (content review) +..."
+  },
+  {
+    "index": 21,
     "title": "Personalized Plates: The AI Solution",
     "content": "Personalized Plates: The AI Solution Two-Part Fix 1. Generative AI (Nov 2022): Reviews plate configurations for offensive/inappropriate content. Makes approve/deny recommendations. Eliminated human bias and created consistency. 2. Intelligent Automation (July 2023): Assigns approved plates to vehicles automatically. Runs 24/7 — no breaks, no sick days, works beyond business hours. End-to-End Flow Intake → GenAI Assist → Staff Review → IA Assist → Fulfillment Online, Mail, Field Office, AAA → Machine review, flags & routing → Final human decision → Assigns plates to vehicles → CALPIA Manufacturing Results | Metric | Result | |--------|--------| | IA processing rate | 90% of all plate assignments | | AI approval rate | 90% of AI recommendations confirmed by staff | | Wait time | 2-4 months (was 9 months) — 50% reduction | | Lawsuits | 0 since implementation | The human-in-the-loop design is why there are zero lawsuits. GenAI recommends, staff decides.",
     "excerpt": "Personalized Plates: The AI Solution Two-Part Fix 1. Generative AI (Nov 2022): Reviews plate configurations for offensive/inappropriate content. Makes..."
   },
   {
-    "index": 13,
-    "title": "The Master Pattern: Human in the Loop",
-    "content": "The Master Pattern: Human in the Loop Every one of DMV's 6 AI systems follows the same architecture: 1. AI processes — Extracts, classifies, recommends, routes 2. Human decides — Reviews flagged items, makes final call 3. Automation executes — Carries out the approved action This isn't a coincidence. It's a deliberate design choice that: - Satisfies legal requirements — Human accountability for decisions - Builds staff trust — AI augments, doesn't replace - Survives scrutiny — Personalized Plates has had zero lawsuits since implementation - Improves over time — ML learns from human corrections This is the pattern other departments should adopt. Not \"AI replaces workers\" — but \"AI handles the 60-90% that's routine so workers can focus on the cases that actually need judgment.\"",
-    "excerpt": "The Master Pattern: Human in the Loop Every one of DMV's 6 AI systems follows the same architecture: 1. AI processes — Extracts, classifies, recommend..."
+    "index": 22,
+    "title": "Additional Reference: Disaster Recovery App — Mobile Field Investigation",
+    "content": "Additional Reference: Disaster Recovery App — Mobile Field Investigation Presenter: Amy Burks | Technology: GIS-based mobile application for field data collection Real-World Application Used by DMV investigators to locate and document vehicles destroyed in wildfires and other natural disasters. The mobile app: - Maps investigation clusters using GIS (195 vehicles in Sacramento region alone) - Enables on-site data collection via iPad - Tracks investigation status in real-time - Syncs field data with central databases Field Operations Investigators physically locate burned vehicles at disaster sites — crawling under wreckage to read VINs, photographing damage, recording GPS coordinates — all feeding back through the app. Less \"AI\" in the traditional sense, more intelligent field data collection — but the GIS clustering, mobile-first workflow, and real-time sync represent a model for any department with field operations.",
+    "excerpt": "Additional Reference: Disaster Recovery App — Mobile Field Investigation Presenter: Amy Burks | Technology: GIS-based mobile application for field dat..."
   },
   {
-    "index": 14,
-    "title": "6 Transferable Patterns for State Government",
-    "content": "6 Transferable Patterns for State Government Each DMV system maps to a reusable pattern any department can adopt: | Pattern | DMV System | What It Does | Universality | |---------|-----------|-------------|-------------| | A — Document Verification | RADV | OCR + ML validates documents against database | Any dept with paper intake | | B — AI Chatbot | Miles | Voice/chat handles status checks + FAQs | Any dept with a call center | | C — AI-Driven Search | Service Advisor | Semantic search + form filling on website | Every department | | D — GenAI Content Review | Personalized Plates | AI reviews content, human decides | Any dept with subjective review | | E — Mobile Field App | Disaster Recovery | GIS-based field data collection | Any dept with inspectors | | F — Identity Verification | MyDMV | Multi-tier automated identity proofing | Any dept with online accounts |",
-    "excerpt": "6 Transferable Patterns for State Government Each DMV system maps to a reusable pattern any department can adopt: | Pattern | DMV System | What It Doe..."
-  },
-  {
-    "index": 15,
-    "title": "Pattern A: Document Verification (RADV Model)",
-    "content": "Pattern A: Document Verification (RADV Model) DMV capability: ABBYY OCR/ICR + ML validation against database Fellowship Department Opportunities | Fellow | Department | Transfer Opportunity | |--------|-----------|---------------------| | Henri Aghaei Baradaran | DDS | Regional center intake — ~460K clients served through 21 regional centers. OCR could auto-validate Lanterman Act applications and reduce 90-day processing backlogs. | | Jeremiah Oakden | CDTFA | Tax return processing — sales tax returns, exemption certificates. CDTFA already digitizes returns; adding ML validation could flag mismatches before they reach auditors. | | Nikki Hatcher / Brent Vanderburgh | DWR / SWRCB | Water right applications — records dating back to 1902 across thousands of active permits. Start with new applications (standardized forms), then tackle backfile conversion. | | Bryanna McAdams | DCSS | Child support orders — income declarations across 47 county agencies. Each county submits slightly different paperwork; ML normalization across county formats is the high-value target. | | Samantha Kissane / Chris Siino | CDCR | Inmate records, transfer paperwork, parole documentation. CDCR processes thousands of Form 128-Bs (classification chrono) monthly — many still handwritten. | | SMSgt Blake Carter | CA Air National Guard | Personnel action forms, deployment orders. Military paperwork is highly standardized (DD-214s, SF-180s) — ideal for OCR with near-zero customization. |",
-    "excerpt": "Pattern A: Document Verification (RADV Model) DMV capability: ABBYY OCR/ICR + ML validation against database Fellowship Department Opportunities | Fel..."
-  },
-  {
-    "index": 16,
-    "title": "Pattern B: AI Chatbot (Miles Model)",
-    "content": "Pattern B: AI Chatbot (Miles Model) DMV capability: Voice + chat bot handling 13.77M calls/year, evolving toward GenAI Fellowship Department Opportunities | Fellow | Department | Transfer Opportunity | |--------|-----------|---------------------| | Lorna Brisco | DGS | Procurement support — vendor bid status, contract questions. DGS handles thousands of \"Where's my PO?\" calls; a status-check bot could deflect 40%+ of that volume. | | Jennifer Uyeda Issertell | CDT | Statewide IT help desk — password resets, service tickets, system status. CDT's ServiceNow platform already has structured data; a bot layer on top is straightforward. | | Jeremiah Oakden | CDTFA | Taxpayer inquiries — \"When is my return due?\" \"What's my balance?\" These are the exact same query types Miles handles for DMV, just with tax data. | | Bryanna McAdams | DCSS | Already has Customer Connect 24/7 — but it's keyword-based. DMV's semantic search roadmap shows the upgrade path to context-aware responses. | | Lt. Marc Peachey | CHP | Accident report status, permit questions, commercial vehicle requirements. CHP's call center handles 2M+ calls/year — strong deflection potential. | | Molly Linares | CA Volunteers | Volunteer matching + program questions. Lower call volume makes this a natural low-risk pilot environment. | | Kattya Trinh | OTSI/CalHHS | Medi-Cal questions, benefit status, provider lookup. CalHHS already has structured eligibility data; a chatbot reduces the burden on county eligibility workers. |",
-    "excerpt": "Pattern B: AI Chatbot (Miles Model) DMV capability: Voice + chat bot handling 13.77M calls/year, evolving toward GenAI Fellowship Department Opportuni..."
-  },
-  {
-    "index": 17,
-    "title": "Pattern C: AI-Driven Search (Service Advisor Model)",
-    "content": "Pattern C: AI-Driven Search (Service Advisor Model) DMV capability: Semantic search on website with form-filling assistance The Most Universally Transferable Pattern Every single department represented in the Fellowship has a public-facing website with a search function. DMV proved that an AI-driven search overlay handles 1M+ queries/year and directly reduces call center volume. Specific High-Value Targets | Fellow | Department | Use Case | |--------|-----------|----------| | Kannan Krishnan | OEHHA | Proposition 65 chemical hazard lookup — businesses search the Prop 65 list thousands of times daily. An AI search overlay could interpret plain-English queries (\"Is BPA in baby bottles covered?\") instead of requiring exact chemical names. | | Will Robinson | LCI | CEQA guidance — notoriously complex regulations that generate constant \"How do I comply?\" questions. A semantic search advisor could cut the learning curve for new project applicants. | | Christina Marin-Fitzhugh | CARB | ZEV compliance, emission regulations, Cap-and-Invest. Fleet operators need to understand complex compliance pathways — a guided advisor replaces the current \"call us\" experience. | | Ben Bressette | Caltrans | Project status, encroachment permits, traffic data. Caltrans.ca.gov is one of the state's highest-traffic sites; an AI search layer would serve millions of visitors. | | All Fellows | All Departments | Form-filling assistance for any publicly available government form | The Form Filler capability alone is worth the investment. DMV walks users through REG 256 (Statement of Facts) step by step — imagine that for tax forms (CDTFA), water right applications (DWR/SWRCB), or child support forms (DCSS).",
-    "excerpt": "Pattern C: AI-Driven Search (Service Advisor Model) DMV capability: Semantic search on website with form-filling assistance The Most Universally Trans..."
-  },
-  {
-    "index": 18,
-    "title": "Pattern D: GenAI Content Review (Plates Model)",
-    "content": "Pattern D: GenAI Content Review (Plates Model) DMV capability: GenAI reviews content, makes recommendations, human makes final decision Fellowship Department Opportunities | Fellow | Department | Transfer Opportunity | |--------|-----------|---------------------| | Samantha Kissane | CDCR | Inmate correspondence screening — flag threats/contraband language, staff makes the call. CDCR screens tens of thousands of pieces of mail monthly; GenAI pre-screening could cut reviewer workload by 60%+. | | Christina Marin-Fitzhugh | CARB | Emission test result review — flag anomalous readings for inspectors. The pattern is identical: AI scans structured data, flags outliers, human investigates. | | Kannan Krishnan | OEHHA | Chemical assessment triage — scan incoming papers for chemicals that need expedited Prop 65 listing review. Prioritization, not decision-making. | | Jai London | CMD | Procurement bid screening — flag non-compliant submissions before they reach evaluators. Saves evaluator time on bids missing required sections. | | SSgt Kelton Pisano | CMD | Wildfire cost claim review — flag outlier reimbursement requests against historical norms. The same \"flag and route\" architecture DMV uses for plates. | | Elizabeth Betancourt | Natural Resources | EIR screening — summarize 500+ page environmental impact reports and flag key findings for reviewers. GenAI excels at structured summarization. |",
-    "excerpt": "Pattern D: GenAI Content Review (Plates Model) DMV capability: GenAI reviews content, makes recommendations, human makes final decision Fellowship Dep..."
-  },
-  {
-    "index": 19,
-    "title": "Pattern E: Mobile Field App (Disaster Recovery Model)",
-    "content": "Pattern E: Mobile Field App (Disaster Recovery Model) DMV capability: GIS-based mobile app for field investigations Fellowship Department Opportunities | Fellow | Department | Transfer Opportunity | |--------|-----------|---------------------| | Kattya Trinh | OTSI/CalHHS | Integrate with All-Hazards Dashboard (NASCIO award winner). CalHHS already has the data platform; a field collection app feeds it directly. | | Lt. Marc Peachey | CHP | Accident investigation, MAIT teams. CHP investigators photograph scenes, measure skid marks, catalog debris — all currently on paper or ad-hoc tablets. A purpose-built GIS app standardizes the workflow. | | SSgt Kelton Pisano | CMD | Wildfire deployment tracking — field app connected to cost dashboards. CMD deploys personnel across dozens of fire zones simultaneously; real-time location + status data replaces radio check-ins. | | Elizabeth Betancourt | Natural Resources | Working lands assessments, post-fire landscape surveys. Field biologists currently carry paper checklists + GPS units + cameras separately; one app replaces three tools. | | Brent Vanderburgh | SWRCB | Water rights field inspections — replace paper forms with GIS-enabled mobile. Inspectors visit remote sites with no cell coverage; offline-first design (sync when connected) is critical. | The pattern: mobile-first, GIS-enabled, offline-capable, syncs when connected. Any department that sends people into the field with clipboards is leaving efficiency on the table.",
-    "excerpt": "Pattern E: Mobile Field App (Disaster Recovery Model) DMV capability: GIS-based mobile app for field investigations Fellowship Department Opportunitie..."
-  },
-  {
-    "index": 20,
-    "title": "Pattern F: Identity Verification (MyDMV Model)",
-    "content": "Pattern F: Identity Verification (MyDMV Model) DMV capability: Multi-tier identity proofing with external verification services The Biggest Strategic Multiplier | Fellow | Department | Transfer Opportunity | |--------|-----------|---------------------| | Jennifer Uyeda Issertell | CDT | Offer identity verification as a shared service for all state departments. CDT is the natural platform owner — one implementation, every department benefits. | | Bryanna McAdams | DCSS | Parent identity verification for child support portal. DCSS serves 1.2M cases across 47 counties; custodial parents logging in to check case status need reliable identity proofing. | | Kattya Trinh | OTSI/CalHHS | Medi-Cal eligibility verification for 14M+ beneficiaries. CalHHS already partners with Login.gov; DMV's two-tier model would add a state-specific fallback layer. | Why This Is the Biggest Win DMV solved the hardest problem in government digital services: proving you are who you say you are — at 90-95% success. If CDT offered this as a platform service, every department could skip years of development. The EDD fraud crisis proved what happens when identity verification fails — an estimated $10.4B to $32.6B in fraudulent claims during the pandemic. DMV's two-tier model (validate against internal records → fallback to external identity services) is the architecture the entire state should be using.",
-    "excerpt": "Pattern F: Identity Verification (MyDMV Model) DMV capability: Multi-tier identity proofing with external verification services The Biggest Strategic..."
-  },
-  {
-    "index": 21,
+    "index": 23,
     "title": "DMV Contacts & Your Internal Bridge",
     "content": "DMV Contacts & Your Internal Bridge DMV Innovation Team | Name | Area | Email | |------|------|-------| | Adrian Monteon | Document Processing (RADV) | adrian.monteon@dmv.ca.gov | | Sonia Huestis | Miles Chatbot | sonia.huestis@dmv.ca.gov | | Randolph L. Fernandez-Gonzalez | Service Advisor | randolph.gonzalez@dmv.ca.gov | | Stefan Schoy | MyDMV Identity | stefan.schoy@dmv.ca.gov | | Amy Burks | Disaster Recovery App | amy.burks@dmv.ca.gov | | Angela Marbray | GenAI Personalized Plates | angela.marbray@dmv.ca.gov | Your Internal Bridge Liyuan Guo — DMV's own Innovation Fellow (EEO Officer) — is already in Cohort 1. She can serve as the liaison between DMV's innovation teams and Fellows from other departments.",
     "excerpt": "DMV Contacts & Your Internal Bridge DMV Innovation Team | Name | Area | Email | |------|------|-------| | Adrian Monteon | Document Processing (RADV)..."
   },
   {
-    "index": 22,
+    "index": 24,
     "title": "Key Takeaways",
-    "content": "Key Takeaways 1. Human in the loop is non-negotiable. Every DMV AI system keeps a human making the final decision. The Personalized Plates flow (GenAI recommends → Staff decides → IA executes) survived legal challenge with zero lawsuits. That's your template. 2. Identity verification is the biggest multiplier. DMV proved 90-95% success at scale. If CDT offers this as a shared service, every department skips years of work. 3. The chatbot roadmap is a replicable playbook. Keyword QnA → Semantic Search → GenAI → Predictive. Enter at whatever stage matches your maturity. 4. Start with the Service Advisor pattern. Every department has a website. Every website has a search function. An AI-driven search overlay with form-filling assistance is the lowest-friction, highest-visibility win available. 5. Don't start from scratch. That's the whole point. DMV built the playbook — now use it.",
+    "content": "Key Takeaways 1. Human in the loop is non-negotiable. Every DMV AI system keeps a human making the final decision. The Personalized Plates flow (GenAI recommends → Staff decides → IA executes) survived legal challenge with zero lawsuits. That's your template. 2. Identity verification is the biggest multiplier. DMV proved 90-95% success at scale. If CDT offers this as a shared service, every department skips years of work. 3. The chatbot roadmap is a replicable playbook. Keyword QnA → Semantic Search → GenAI → Predictive. Enter at whatever stage matches your maturity. 4. Start with the easiest win for your department. Every department has a website, a call center, or a pile of paper forms. Pick the one that causes the most pain and look at how DMV addressed the same problem. 5. Don't start from scratch. That's the whole point. DMV has proven patterns in production — the opportunity is to adapt what works, not reinvent it.",
     "excerpt": "Key Takeaways 1. Human in the loop is non-negotiable. Every DMV AI system keeps a human making the final decision. The Personalized Plates flow (GenAI..."
   }
 ];
@@ -5145,6 +5201,39 @@ section:first-of-type .slide-footer {
         observer.observe(el);
       });
     }
+
+    // ==========================================
+    // Diagram Embed Auto-Fit
+    // ==========================================
+    (function() {
+      var embeds = document.querySelectorAll('.diagram-embed');
+      if (!embeds.length) return;
+      function fitEmbed(embed) {
+        var container = embed.querySelector('.diagram-container') || embed.querySelector('.tl-wrapper');
+        var viewport = embed.querySelector('.diagram-viewport');
+        if (!container || !viewport) return;
+        container.style.transform = '';
+        viewport.style.height = '';
+        var pw = embed.clientWidth;
+        var cw = container.scrollWidth;
+        if (cw > pw && pw > 0) {
+          var s = pw / cw;
+          container.style.transform = 'scale(' + s + ')';
+          container.style.transformOrigin = 'top left';
+          viewport.style.height = (container.scrollHeight * s) + 'px';
+          viewport.style.overflow = 'hidden';
+        }
+      }
+      function fitAll() { embeds.forEach(fitEmbed); }
+      // Hook into Reveal.js ready + slidechanged events
+      if (typeof deck !== 'undefined' && deck.on) {
+        deck.on('ready', function() { setTimeout(fitAll, 50); });
+        deck.on('slidechanged', function() { setTimeout(fitAll, 50); });
+      } else {
+        setTimeout(fitAll, 500);
+      }
+      window.addEventListener('resize', fitAll);
+    })();
 
     // ==========================================
     // Map Initialization (Leaflet)
