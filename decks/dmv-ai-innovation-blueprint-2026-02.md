@@ -190,26 +190,27 @@ DMV is exploring selfie + camera comparison against the DL photo on file — for
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
 | **Miles-style Chatbot** | Statewide IT help desk bot — password resets, service tickets, system status. CDT's ServiceNow platform already has structured data; a bot layer on top could deflect 40%+ of routine calls. |
-| **Identity Verification** | CDT could offer identity proofing as a **shared service** for all state departments. One implementation, every department benefits. The EDD fraud crisis proved what happens without this. |
+| **Identity Verification** | CDT could offer identity proofing as a **shared service** for all state departments. One implementation, every department benefits. Jennifer led the EDD Strike Team — she's seen firsthand what happens when identity verification fails at scale and call centers can't keep up. |
 
-**Your question:** *CDT serves every department in the state. If you could automate the top 5 help desk requests, what would they be? And what would a statewide identity verification service save your department users?*
+**Your question:** *From the EDD Strike Team experience — what were the top lessons about identity verification and call center overload? If CDT offered identity proofing as a shared service, which departments would benefit most immediately?*
 
 ### DGS (General Services) — Lorna Brisco
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | Procurement support bot — vendor bid status, contract questions. DGS handles thousands of "Where's my PO?" inquiries; a status-check bot could deflect significant volume. |
+| **Miles-style Chatbot** | DGS has 4 trainers for 4,000 employees. An internal knowledge bot handling policy questions, onboarding guidance, and procedure lookups could bridge the training gap that DGS can't staff for. Externally: vendors constantly call about bid status, contract questions, and Cal eProcure — a procurement status bot could deflect significant volume. |
+| **Document Verification** | SB/DVBE certification processing and K-12 school construction plan reviews are high-volume document workflows where automated extraction could speed review cycles. |
 
-**Your question:** *What are the top 5 questions vendors and departments ask DGS over and over? Those are your Miles candidates.*
+**Your question:** *What are the top 5 questions DGS employees ask that training staff can't keep up with? For vendors — what do they call about most, and how much of that is simple status checks on Cal eProcure?*
 
 ### CDTFA (Tax & Fee Admin) — Jeremiah Oakden
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | Taxpayer inquiries — "When is my return due?" "What's my balance?" These are the exact same query types Miles handles for DMV, just with tax data. |
-| **Document Verification** | Tax return processing — sales tax returns, exemption certificates. CDTFA already digitizes returns; adding ML validation could flag mismatches before they reach auditors. |
+| **Miles-style Chatbot** | CDTFA collects $90B+ annually across 42 different programs — every retail business in California files with them. Taxpayer inquiries — "When is my return due?" "What's my balance?" — are the exact same query types Miles handles for DMV. Their Customer Service Center already publishes live wait times, signaling they know call volume is a problem. |
+| **Document Verification** | Sales tax returns, exemption certificates, and cannabis compliance filings across hundreds of thousands of businesses. CDTFA already digitizes returns; adding ML validation could flag mismatches before they reach auditors. |
 
-**Your question:** *What percentage of CDTFA call center volume is simple status checks? And which return types have the most data-entry errors that auditors catch manually?*
+**Your question:** *Across CDTFA's 42 programs, which generate the most customer service contacts? What percentage of calls are simple status or deadline questions that could be self-service?*
 
 ---
 
@@ -219,28 +220,28 @@ DMV is exploring selfie + camera comparison against the DL photo on file — for
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Document Verification** | Regional center intake — ~460K clients submit eligibility paperwork. Automated verification could speed intake from weeks to days for standardized forms. |
+| **Document Verification** | DDS's 21 regional centers each process eligibility paperwork and Individual Program Plans for 491K+ consumers — but with no unified data system across centers. Automated verification of standardized eligibility forms could reduce the 120-day intake timeline. Henri's data analytics background positions him to identify which document types across centers have the most inconsistency. |
 
-**Your question:** *How long does intake document processing take at regional centers today? Which document types cause the most rework?*
+**Your question:** *Across DDS's 21 regional centers, which intake documents are most standardized — and which vary the most between centers? How long does eligibility determination actually take, and where in that process does paperwork create bottlenecks?*
 
 ### DCSS (Child Support) — Bryanna McAdams
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | DCSS already has "Customer Connect 24/7" — but DMV's semantic search + GenAI roadmap shows the upgrade path to context-aware responses. |
+| **Miles-style Chatbot** | DCSS already has "Customer Connect 24/7" — but it's keyword-based. Bryanna's behavioral economics work focuses on reducing friction for specialized populations (military parents, formerly incarcerated parents, housing-insecure parents). A Miles-style chatbot that handles edge cases — not just "What's my balance?" but "I'm being released from custody, what happens to my child support order?" — would be a real differentiator. 1.04M+ open cases, $2.55B/year distributed. |
 | **Document Verification** | Child support order verification — income declarations across 47 county agencies. Each county submits slightly different formats; ML normalization is the high-value target. |
-| **Identity Verification** | Parent identity verification for the child support portal. DCSS serves 1.2M cases across 47 counties — reliable identity proofing reduces fraud and call center burden. |
+| **Identity Verification** | Parent identity verification for the child support portal across 47 counties — reliable identity proofing reduces fraud and call center burden. |
 
-**Your question:** *What's the most common reason a parent contacts DCSS? And across 47 counties, how much staff time goes to reconciling different document formats?*
+**Your question:** *What are the top 5 reasons parents contact DCSS? For specialized populations (military, formerly incarcerated, housing-insecure) — where does the current Customer Connect 24/7 fall short?*
 
 ### OTSI/CalHHS — Kattya Trinh
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | Medi-Cal questions, benefit status, provider lookup. CalHHS serves millions — a chatbot reduces the burden on county eligibility workers. |
-| **Identity Verification** | Medi-Cal eligibility verification for 14M+ beneficiaries. CalHHS already partners with Login.gov; DMV's two-tier model would add a state-specific fallback layer. |
+| **Miles-style Chatbot** | Kattya's All-Hazards Dashboard (NASCIO award winner) already aggregates data across CalHHS agencies for emergency response. The same coordination challenge exists for Californians navigating health and human services — they bounce between DHCS, DSS, DDS, and others. A benefit navigation chatbot that Kattya's OTSI team could coordinate across agencies is a natural extension of her cross-agency platform work. |
+| **Identity Verification** | CalHHS agencies each verify identity independently — a shared identity layer (like DMV's model) serving DHCS, DSS, DDS from one platform would reduce duplication. Medi-Cal alone has 14M+ beneficiaries. |
 
-**Your question:** *How many Medi-Cal eligibility calls could be handled by a bot that can authenticate and return status? Where does identity verification create the most friction for beneficiaries?*
+**Your question:** *From your experience building the All-Hazards Dashboard — what are the biggest integration challenges when coordinating across CalHHS agencies? For Californians accessing health services, where does identity verification create the most friction?*
 
 ---
 
@@ -250,17 +251,18 @@ DMV is exploring selfie + camera comparison against the DL photo on file — for
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | Accident report status, permit questions, commercial vehicle requirements. CHP handles significant public-facing call volume — status checks are prime bot territory. |
+| **Document Verification** | CHP processes hundreds of thousands of collision reports (Form CHP 555) annually, plus commercial vehicle inspection reports and CAD records. Automated extraction from standardized collision report forms could speed data entry and improve the SWITRS collision database. |
+| **Miles-style Chatbot** | CHP's primary call volume is 911 emergency dispatch (LA alone handles 2.7M calls/year) — that's fundamentally different from DMV's Miles model. But CHP's *non-emergency* public inquiries (collision report requests, commercial vehicle permit status, tow company licensing) could be deflected to self-service. |
 
-**Your question:** *What are CHP's top 10 public call reasons? How many are simple status checks or FAQ lookups that don't require an officer?*
+**Your question:** *How many non-emergency public inquiries does CHP handle — collision report requests, permit questions, licensing status? What percentage of CHP's public-facing interactions are routine enough that a self-service tool could handle them?*
 
 ### Caltrans — Ben Bressette
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | Project status, encroachment permits, traffic data inquiries. Caltrans.ca.gov is one of the state's highest-traffic sites — an AI search layer would serve millions of visitors. |
+| **Miles-style Chatbot** | Encroachment permits went mandatory online in January 2025 — contractors and utilities now navigate CEPS digitally at $173/hr processing. A chatbot guiding applicants through the permitting process could reduce processing errors and call volume. Ben's Innovation Program is already focused on technology adoption across Caltrans's 12 districts. |
 
-**Your question:** *What are the top queries on caltrans.ca.gov? How much call center time goes to project status checks or permit questions that have straightforward answers?*
+**Your question:** *Since CEPS went mandatory online in January, what are the most common questions applicants ask? How much staff time goes to helping contractors navigate the permitting process?*
 
 ---
 
@@ -270,41 +272,44 @@ DMV is exploring selfie + camera comparison against the DL photo on file — for
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Document Verification** | Water right applications involve massive paper submissions. DWR has 7M+ historical documents — automated extraction could feed directly into CalWATRS. |
+| **Miles-style Chatbot** | Nikki's procurement branch handles thousands of contracts with 3-18 month timelines across DWR's 29 State Water Project contractor agencies. Vendors and internal staff ask the same questions: "What's the status of my contract?" "What documents do I need for this solicitation?" A procurement chatbot could reduce the repetitive inquiries her team fields daily — and Nikki's 5% Contract Reduction Pilot is already measuring this kind of efficiency gain. |
+| **Document Verification** | Contract compliance documents, dam safety inspection reports, and environmental impact reports are high-volume document types where automated extraction could flag errors before they stall the pipeline. |
 
-**Your question:** *How many water right applications does DWR process annually? Which document types in those applications are most standardized (best candidates for automation)?*
+**Your question:** *In your procurement branch, what are the most common questions staff and vendors ask repeatedly? Where in the contract lifecycle do document errors cause the most delays?*
 
 ### SWRCB (Water Board) — Brent Vanderburgh
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Document Verification** | Water rights division has paper records dating to the 1800s. The UPWARD initiative ($60M) is digitizing; AI verification is the next step in that chain. |
+| **Document Verification** | Water rights division has 7M+ paper records dating to the 1800s. The $60M UPWARD initiative is already digitizing them; AI verification is the logical next step. Water quality lab data (chemistry samples across thousands of monitoring sites) needs anomaly detection — flagging outlier results before they hit compliance reports. |
 
-**Your question:** *Which water rights forms have the highest error rates? Where in the UPWARD digitization pipeline would automated verification create the most value?*
+**Your question:** *Which water rights document types have the highest error rates? In water quality monitoring, how much staff time goes to reviewing lab results that could be flagged automatically?*
 
 ### OEHHA — Kannan Krishnan
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | Proposition 65 chemical hazard lookup — businesses search the Prop 65 list thousands of times daily. An AI search that interprets plain-English queries ("Is BPA in baby bottles covered?") instead of requiring exact chemical names. |
+| **GenAI Content Review** | Kannan's core problem is that traditional chemical assessment methods are too slow. GenAI could triage incoming research papers, flag chemicals needing expedited Prop 65 listing review, and cross-reference new findings against the existing 900+ chemical list. This is the Personalized Plates pattern (AI reviews, human decides) applied to scientific literature screening. |
+| **Service Advisor** | For businesses and attorneys querying the Prop 65 list: a semantic search tool that interprets plain-English queries ("Is BPA in baby bottles covered?") is more appropriate than a full chatbot for OEHHA's scale (~120 staff). |
 
-**Your question:** *How many Prop 65 inquiries does OEHHA handle? What are the most common questions businesses ask that have clear, lookup-based answers?*
+**Your question:** *How many chemical assessments does OEHHA process annually, and what's the current timeline from "new research published" to "listing decision"? For Prop 65 queries from businesses — what are the most common questions, and how are they handled today?*
 
-### CARB (Air Resources) — Christina Marin-Fitzhugh
-
-| DMV Tool | What This Could Look Like |
-|----------|--------------------------|
-| **Miles-style Chatbot** | ZEV compliance, emission regulations, Cap-and-Invest program questions. Fleet operators need to understand complex compliance pathways — a guided advisor replaces the "call us" experience. |
-
-**Your question:** *What are the top compliance questions CARB receives from fleet operators and businesses? How much staff time goes to answering questions that have standardized answers?*
-
-### Natural Resources Agency — Elizabeth Betancourt
+### CARB (Air Resources Board) — Christina Marin-Fitzhugh
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Document Verification** | Environmental review document screening — EIRs can run 500+ pages. AI-assisted summarization and issue flagging could dramatically reduce reviewer workload. |
+| **Miles-style Chatbot** | With 1,700+ employees, CARB's HR branch fields constant questions about hiring timelines, classification specs, leave policies, and health/safety protocols. An internal HR knowledge bot — "What's the process for an out-of-class assignment?" "How do I request a reasonable accommodation?" — could free Christina's team from repetitive inquiries. Department-wide: CARB's regulated entities (fleet operators, manufacturers, cap-and-trade participants) navigate fragmented compliance portals — a public-facing chatbot is a separate but large opportunity. |
+| **Document Verification** | The new climate disclosure filings (SB 253/261, thousands of companies starting 2026) will create a surge of document processing on the regulatory side. |
 
-**Your question:** *How many environmental review documents does your team process annually? What's the average review time, and which sections consume the most attention?*
+**Your question:** *In CARB's HR branch, what are the most repetitive employee questions your team handles? On the regulatory side — what volume of new climate disclosure filings is CARB expecting in 2026, and how will they be processed?*
+
+### CNRA (Natural Resources Agency) — Elizabeth Betancourt
+
+| DMV Tool | What This Could Look Like |
+|----------|--------------------------|
+| **Document Verification** | Elizabeth's real initiative is ADA document remediation — AI-assisted accessibility compliance for ca.gov websites. This is the most broadly applicable project of any Fellow: a cross-cutting solution for all 170+ departments. For CNRA specifically: bond fund administration across 26+ entities involves massive document tracking and environmental review document summarization at the policy level. |
+
+**Your question:** *Elizabeth — for the ADA remediation initiative, which document types across state government are the hardest to make accessible? At the agency level, where does document processing across CNRA's 26+ entities create the most coordination overhead?*
 
 ---
 
@@ -314,42 +319,37 @@ DMV is exploring selfie + camera comparison against the DL photo on file — for
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Document Verification** | Inmate records, transfer paperwork, parole documentation — CDCR processes thousands of classification chronos (Form 128-B) monthly, many still handwritten. |
-| **Identity Verification** | Inmate and officer identification at kiosks. DMV's biometric approach could transform check-in/check-out processes across facilities. |
+| **Document Verification** | CDCR processes 20,000+ grievances/month, thousands of classification chronos (Form 128-B, many still handwritten), and workers' comp claims currently tracked in individual Excel spreadsheets with no centralized database. Employee files don't transfer between institutions — you can't even identify pattern claims (one employee with 6 claims on the same issue). Automated document extraction could tackle the grievance backlog alone. |
+| **Identity Verification** | DMV's kiosk-based biometric approach could transform officer and inmate check-in/check-out across 31 institutions. |
 
-**Your question:** *Which CDCR forms are still handwritten? What's the volume of classification documents processed monthly? Where would faster identity verification — for staff or inmates — have the biggest operational impact?*
+**Your question:** *Which CDCR forms still rely on handwritten input? How many grievances does your institution process monthly, and how much staff time goes to data entry? For workers' comp — how are claims tracked today, and what happens when an employee transfers institutions?*
 
-### CMD (Military Dept) — Jai London & SSgt Kelton Pisano
-
-| DMV Tool | What This Could Look Like |
-|----------|--------------------------|
-| **Document Verification** | Personnel action forms, deployment orders. Military paperwork is highly standardized (DD-214s, SF-180s) — ideal for automated verification with near-zero customization needed. |
-
-**Your question:** *Which personnel or deployment forms are the most time-consuming to process? Where do document errors cause the most downstream delays?*
-
-### CA Air National Guard — SMSgt Blake Carter
+### CMD (Military Dept) — Jai London, SSgt Kelton Pisano & SMSgt Blake Carter
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Document Verification** | Personnel action forms and deployment orders. The A1 Connect platform already handles some document workflows — AI verification could extend its capabilities. |
+| **Document Verification** | Military paperwork is highly standardized (DD-214s, SF-180s, deployment orders) — ideal for OCR with near-zero customization. Blake's A1 Connect platform already handles action item workflows across 5 Wings; AI document verification could extend it. Kelton's wildfire cost dashboards could integrate automated verification of reimbursement claims against historical norms. |
+| **Miles-style Chatbot** | With dual state/federal pay systems and complex personnel rules, Guard members likely have repetitive questions about benefits, deployment status, and personnel actions. Jai's centralized procurement restructuring could also benefit from a vendor/internal FAQ bot. |
 
-**Your question:** *What document processing does A1 Connect handle today, and where are the gaps? Which forms still require manual review that could be automated?*
+**Your question:** *Blake — what document types does A1 Connect handle, and where are the gaps? Kelton — for wildfire cost claims, how much review time goes to verifying completeness and flagging outliers? Jai — in centralized procurement, which document verification steps create the most bottlenecks?*
 
-### LCI (Land Use & Climate) — Will Robinson
+### LCI (Land Use & Climate Innovation) — Will Robinson
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | CEQA guidance is notoriously complex. An AI advisor for CEQA requirements, housing element compliance, and climate adaptation resources could cut the learning curve for project applicants. |
+| **GenAI Content Review** | Will manages LCI's legislative portfolio across complex, overlapping policy domains (land use, climate, housing, tribal consultation). GenAI-assisted bill analysis — flagging conflicts with existing CEQA Guidelines, summarizing amendments, cross-referencing related bills — is something Will could use immediately. LCI is a small policy shop (~50-80 staff), not a service-delivery agency. |
+| **Service Advisor** | LCI's Site Check mapping tool could integrate AI-driven search to help local governments and developers understand CEQA requirements for specific locations. |
 
-**Your question:** *What are the most common CEQA questions LCI receives? How many hours per week does staff spend answering questions that have standard, policy-based answers?*
+**Your question:** *How many bills does LCI track per session, and how much staff time goes to cross-referencing new legislation against existing CEQA Guidelines? For local governments contacting LCI — what are the most common CEQA questions?*
 
 ### CA Volunteers — Molly Linares
 
 | DMV Tool | What This Could Look Like |
 |----------|--------------------------|
-| **Miles-style Chatbot** | Volunteer matching and program questions. The ServiceForce database + chatbot = self-service volunteer placement. Lower call volume makes this a natural low-risk pilot environment. |
+| **Miles-style Chatbot** | CaliforniaVolunteers runs the nation's largest statewide volunteer matching network — 68+ AmeriCorps programs, ~7,000 members at 1,000+ locations, initiatives targeting 10,000 mentors (Men's Service Challenge) and 55 campuses (College Corps). The "How do I find the right program?" question has real volume. Molly's digital delivery background (she built the ServiceForce database) means she's already thinking about platform UX. |
+| **Document Verification** | Grant management across 68+ programs involves applications, renewals, performance reports, and financial reimbursements — a document processing pipeline. |
 
-**Your question:** *How do volunteers currently find opportunities — and where does that process break down? What are the top 5 questions volunteers or organizations ask?*
+**Your question:** *How do volunteers currently find and match to opportunities — and where does that process break down at scale? For grant management across 68+ programs, which document types consume the most staff review time?*
 
 ---
 
