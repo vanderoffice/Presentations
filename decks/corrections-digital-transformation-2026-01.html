@@ -78,7 +78,7 @@
 
     .deck-container { display: flex; height: 100vh; width: 100%; overflow: hidden; }
     .deck-content { flex: 1; height: 100vh; margin-left: var(--nav-width); overflow: hidden; transition: margin-left var(--transition-normal); }
-    .deck-container.nav-collapsed .deck-content { margin-left: var(--nav-width-collapsed); }
+    .deck-container.nav-collapsed .deck-content { margin-left: 0; }
 
     h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 600; line-height: 1.15; margin-top: 0; color: var(--text-primary); letter-spacing: -0.02em; }
     h1 { font-size: 2.75rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
@@ -118,7 +118,10 @@
 
     /* Navigation */
     .deck-nav { position: fixed; top: 0; left: 0; width: var(--nav-width); height: 100vh; background: var(--nav-bg); border-right: 1px solid var(--nav-border); display: flex; flex-direction: column; z-index: 100; transition: width var(--transition-normal), transform var(--transition-normal); overflow: hidden; box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4); }
-    .deck-container.nav-collapsed .deck-nav { width: var(--nav-width-collapsed); }
+    .deck-container.nav-collapsed .deck-nav {
+  width: 0;
+  box-shadow: none;
+}
     .deck-container.nav-collapsed .deck-nav .nav-text { opacity: 0; visibility: hidden; }
     .nav-header { padding: 1.5rem; border-bottom: 1px solid var(--nav-border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
     .nav-title { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -279,10 +282,79 @@
       filter: brightness(0.9);
     }
 
-  </style>
+  /* Floating re-open button when nav is hidden */
+.nav-reopen {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+  background: rgba(6, 8, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.nav-reopen:hover {
+  background: rgba(6, 8, 16, 0.95);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-reopen svg {
+  width: 20px;
+  height: 20px;
+}
+
+.deck-container.nav-collapsed .nav-reopen {
+  display: flex;
+}
+
+
+/* ============================================
+   Navigation Group Dividers
+   ============================================ */
+
+.nav-divider {
+  list-style: none;
+  padding: 0.6rem 1.5rem 0.3rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-divider-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold-muted, #a88840);
+  opacity: 0.7;
+}
+
+.nav-divider:first-of-type {
+  margin-top: 0;
+  border-top: none;
+}
+
+.deck-container.nav-collapsed .nav-divider {
+  display: none;
+}
+
+</style>
 </head>
 <body>
   <div class="deck-container">
+    <!-- Floating button to re-open nav when collapsed -->
+    <button class="nav-reopen" aria-label="Open navigation" onclick="toggleNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
     <!-- Left Navigation -->
     <nav class="deck-nav" aria-label="Presentation navigation">
       <div class="nav-header">
@@ -306,13 +378,16 @@
       <ul class="nav-sections">
         <li class="nav-section active"><a href="#/0" onclick="goToSlide(0)">Title</a></li>
         <li class="nav-section"><a href="#/1" onclick="goToSlide(1)">Key Insight</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">The Challenge</span></li>
         <li class="nav-section"><a href="#/2" onclick="goToSlide(2)">The Problem</a></li>
         <li class="nav-section"><a href="#/3" onclick="goToSlide(3)">The Analog Barrier</a></li>
         <li class="nav-section"><a href="#/4" onclick="goToSlide(4)">The Opportunity</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">The Framework</span></li>
         <li class="nav-section"><a href="#/5" onclick="goToSlide(5)">Transformation Framework</a></li>
         <li class="nav-section"><a href="#/6" onclick="goToSlide(6)">Digital Learning</a></li>
         <li class="nav-section"><a href="#/7" onclick="goToSlide(7)">Workforce Development</a></li>
         <li class="nav-section"><a href="#/8" onclick="goToSlide(8)">Reentry Preparation</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">Action</span></li>
         <li class="nav-section"><a href="#/9" onclick="goToSlide(9)">The ROI Case</a></li>
         <li class="nav-section"><a href="#/10" onclick="goToSlide(10)">Implementation</a></li>
         <li class="nav-section"><a href="#/11" onclick="goToSlide(11)">Call to Action</a></li>

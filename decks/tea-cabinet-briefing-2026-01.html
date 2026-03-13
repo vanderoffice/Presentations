@@ -127,7 +127,7 @@
     }
 
     .deck-container.nav-collapsed .deck-content {
-      margin-left: var(--nav-width-collapsed);
+      margin-left: 0;
     }
 
     /* ============================================
@@ -647,7 +647,10 @@
       box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
     }
 
-    .deck-container.nav-collapsed .deck-nav { width: var(--nav-width-collapsed); }
+    .deck-container.nav-collapsed .deck-nav {
+  width: 0;
+  box-shadow: none;
+}
     .deck-container.nav-collapsed .deck-nav .nav-text { opacity: 0; visibility: hidden; }
 
     .nav-header {
@@ -948,10 +951,79 @@
       .deck-content { margin-left: 0 !important; }
       .reveal .slides section { page-break-after: always; }
     }
-  </style>
+  /* Floating re-open button when nav is hidden */
+.nav-reopen {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+  background: rgba(6, 8, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.nav-reopen:hover {
+  background: rgba(6, 8, 16, 0.95);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-reopen svg {
+  width: 20px;
+  height: 20px;
+}
+
+.deck-container.nav-collapsed .nav-reopen {
+  display: flex;
+}
+
+
+/* ============================================
+   Navigation Group Dividers
+   ============================================ */
+
+.nav-divider {
+  list-style: none;
+  padding: 0.6rem 1.5rem 0.3rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-divider-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold-muted, #a88840);
+  opacity: 0.7;
+}
+
+.nav-divider:first-of-type {
+  margin-top: 0;
+  border-top: none;
+}
+
+.deck-container.nav-collapsed .nav-divider {
+  display: none;
+}
+
+</style>
 </head>
 <body>
   <div class="deck-container">
+
+    <!-- Floating button to re-open nav when collapsed -->
+    <button class="nav-reopen" aria-label="Open navigation" onclick="toggleNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
 
     <!-- Left Navigation -->
     <nav class="deck-nav" aria-label="Presentation navigation">
@@ -976,16 +1048,20 @@
       <ul class="nav-sections">
         <li class="nav-section active"><a href="#/0" class="nav-text" onclick="goToSlide(0)">Title</a></li>
         <li class="nav-section"><a href="#/1" class="nav-text" onclick="goToSlide(1)">The Crisis</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">The Problem</span></li>
         <li class="nav-section"><a href="#/2" class="nav-text" onclick="goToSlide(2)">By The Numbers</a></li>
         <li class="nav-section"><a href="#/3" class="nav-text" onclick="goToSlide(3)">18 Years of Failure</a></li>
         <li class="nav-section"><a href="#/4" class="nav-text" onclick="goToSlide(4)">The Root Cause</a></li>
         <li class="nav-section"><a href="#/5" class="nav-text" onclick="goToSlide(5)">Frontline Reality</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">The Solution</span></li>
         <li class="nav-section"><a href="#/6" class="nav-text" onclick="goToSlide(6)">The Solution: TEA</a></li>
         <li class="nav-section"><a href="#/7" class="nav-text" onclick="goToSlide(7)">Qualification Pathways</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">Reform Tracks</span></li>
         <li class="nav-section"><a href="#/8" class="nav-text" onclick="goToSlide(8)">Three-Track Reform</a></li>
         <li class="nav-section"><a href="#/9" class="nav-text" onclick="goToSlide(9)">Administrative Track</a></li>
         <li class="nav-section"><a href="#/10" class="nav-text" onclick="goToSlide(10)">Legislative Track</a></li>
         <li class="nav-section"><a href="#/11" class="nav-text" onclick="goToSlide(11)">Constitutional Track</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">Path Forward</span></li>
         <li class="nav-section"><a href="#/12" class="nav-text" onclick="goToSlide(12)">Implementation Timeline</a></li>
         <li class="nav-section"><a href="#/13" class="nav-text" onclick="goToSlide(13)">Success Metrics</a></li>
         <li class="nav-section"><a href="#/14" class="nav-text" onclick="goToSlide(14)">The Ask</a></li>

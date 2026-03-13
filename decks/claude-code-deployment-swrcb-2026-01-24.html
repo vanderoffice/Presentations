@@ -128,7 +128,7 @@ body {
 }
 
 .deck-container.nav-collapsed .deck-content {
-  margin-left: var(--nav-width-collapsed);
+  margin-left: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -830,7 +830,8 @@ tr:hover td {
 }
 
 .deck-container.nav-collapsed .deck-nav {
-  width: var(--nav-width-collapsed);
+  width: 0;
+  box-shadow: none;
 }
 
 .deck-container.nav-collapsed .deck-nav .nav-text {
@@ -1193,10 +1194,79 @@ tr:hover td {
   padding-left: 0.25rem;
 }
 
-  </style>
+  /* Floating re-open button when nav is hidden */
+.nav-reopen {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+  background: rgba(6, 8, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.nav-reopen:hover {
+  background: rgba(6, 8, 16, 0.95);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-reopen svg {
+  width: 20px;
+  height: 20px;
+}
+
+.deck-container.nav-collapsed .nav-reopen {
+  display: flex;
+}
+
+
+/* ============================================
+   Navigation Group Dividers
+   ============================================ */
+
+.nav-divider {
+  list-style: none;
+  padding: 0.6rem 1.5rem 0.3rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-divider-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold-muted, #a88840);
+  opacity: 0.7;
+}
+
+.nav-divider:first-of-type {
+  margin-top: 0;
+  border-top: none;
+}
+
+.deck-container.nav-collapsed .nav-divider {
+  display: none;
+}
+
+</style>
 </head>
 <body>
   <div class="deck-container">
+
+    <!-- Floating button to re-open nav when collapsed -->
+    <button class="nav-reopen" aria-label="Open navigation" onclick="toggleNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
 
     <!-- Left Navigation -->
     <nav class="deck-nav" aria-label="Presentation navigation">
@@ -1222,14 +1292,17 @@ tr:hover td {
         <li class="nav-section"><a href="#/0" onclick="deck.slide(0)">Title</a></li>
         <li class="nav-section"><a href="#/1" onclick="deck.slide(1)">Bottom Line</a></li>
         <li class="nav-section"><a href="#/2" onclick="deck.slide(2)">What is Claude Code?</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">Risk &amp; Compliance</span></li>
         <li class="nav-section"><a href="#/3" onclick="deck.slide(3)">Risk Classification</a></li>
         <li class="nav-section"><a href="#/4" onclick="deck.slide(4)">Compliance Requirements</a></li>
         <li class="nav-section"><a href="#/5" onclick="deck.slide(5)">Attribution Problem</a></li>
         <li class="nav-section"><a href="#/6" onclick="deck.slide(6)">Vendor Compliance</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">Implementation</span></li>
         <li class="nav-section"><a href="#/7" onclick="deck.slide(7)">Implementation Timeline</a></li>
         <li class="nav-section"><a href="#/8" onclick="deck.slide(8)">Cost Estimate</a></li>
         <li class="nav-section"><a href="#/9" onclick="deck.slide(9)">Risk Mitigations</a></li>
         <li class="nav-section"><a href="#/10" onclick="deck.slide(10)">Immediate Actions</a></li>
+        <li class="nav-divider"><span class="nav-divider-label">Decision</span></li>
         <li class="nav-section"><a href="#/11" onclick="deck.slide(11)">Decision Required</a></li>
         <li class="nav-section"><a href="#/12" onclick="deck.slide(12)">Full Plan Reference</a></li>
         <li class="nav-section"><a href="#/13" onclick="deck.slide(13)">Sources</a></li>

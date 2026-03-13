@@ -234,7 +234,7 @@ body {
 }
 
 .deck-container.nav-collapsed .deck-content {
-  margin-left: var(--nav-width-collapsed);
+  margin-left: 0;
 }
 
 
@@ -1383,7 +1383,8 @@ tr:hover td {
 
 /* Collapsed state */
 .deck-container.nav-collapsed .deck-nav {
-  width: var(--nav-width-collapsed);
+  width: 0;
+  box-shadow: none;
 }
 
 .deck-container.nav-collapsed .deck-nav .nav-text {
@@ -1391,6 +1392,70 @@ tr:hover td {
   visibility: hidden;
 }
 
+
+
+/* Floating re-open button when nav is hidden */
+.nav-reopen {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+  background: rgba(6, 8, 16, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.nav-reopen:hover {
+  background: rgba(6, 8, 16, 0.95);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-reopen svg {
+  width: 20px;
+  height: 20px;
+}
+
+.deck-container.nav-collapsed .nav-reopen {
+  display: flex;
+}
+
+
+/* ============================================
+   Navigation Group Dividers
+   ============================================ */
+
+.nav-divider {
+  list-style: none;
+  padding: 0.6rem 1.5rem 0.3rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-divider-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-gold-muted, #a88840);
+  opacity: 0.7;
+}
+
+.nav-divider:first-of-type {
+  margin-top: 0;
+  border-top: none;
+}
+
+/* Hide dividers when nav is collapsed (width: 0) */
+.deck-container.nav-collapsed .nav-divider {
+  display: none;
+}
 
 /* ============================================
    Navigation Header
@@ -3545,6 +3610,13 @@ section:first-of-type .slide-footer {
 <body>
   <div class="deck-container">
 
+    <!-- Floating button to re-open nav when collapsed -->
+    <button class="nav-reopen" aria-label="Open navigation" onclick="toggleNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
     <!-- Left Navigation -->
     <nav class="deck-nav" aria-label="Presentation navigation">
       <div class="nav-header">
@@ -3606,6 +3678,7 @@ section:first-of-type .slide-footer {
     <span class="nav-text">Context Windows: AI&#039;s Working Memory</span>
   </a>
 </li>
+<li class="nav-divider"><span class="nav-divider-label">Prompt Fundamentals</span></li>
 <li class="nav-section">
   <a href="#/5" onclick="deck.slide(5); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3638,6 +3711,7 @@ section:first-of-type .slide-footer {
     <span class="nav-text">Prompting Techniques That Work</span>
   </a>
 </li>
+<li class="nav-divider"><span class="nav-divider-label">Context Engineering</span></li>
 <li class="nav-section">
   <a href="#/9" onclick="deck.slide(9); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3670,6 +3744,7 @@ section:first-of-type .slide-footer {
     <span class="nav-text">Tool Use &amp; Agentic AI</span>
   </a>
 </li>
+<li class="nav-divider"><span class="nav-divider-label">Compliance</span></li>
 <li class="nav-section">
   <a href="#/13" onclick="deck.slide(13); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3694,6 +3769,7 @@ section:first-of-type .slide-footer {
     <span class="nav-text">Human Review &amp; Disclosure</span>
   </a>
 </li>
+<li class="nav-divider"><span class="nav-divider-label">Workflows</span></li>
 <li class="nav-section">
   <a href="#/16" onclick="deck.slide(16); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3726,6 +3802,7 @@ section:first-of-type .slide-footer {
     <span class="nav-text">The Iteration Loop</span>
   </a>
 </li>
+<li class="nav-divider"><span class="nav-divider-label">Reference</span></li>
 <li class="nav-section">
   <a href="#/20" onclick="deck.slide(20); return false;">
     <svg class="nav-section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
