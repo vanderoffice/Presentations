@@ -32,6 +32,13 @@
   ],
   "recentlyAdded": [
     {
+      "href": "decks/genai-bot-pattern-2026-03.html",
+      "title": "Building GenAI Chatbots for Government — A Reusable Pattern",
+      "date": "Mar 25, 2026",
+      "tag": "Briefing",
+      "tagClass": "briefings"
+    },
+    {
       "href": "decks/prompt-context-engineering-gov-2026-02.html",
       "title": "Prompt & Context Engineering for Government Work",
       "date": "Feb 25, 2026",
@@ -89,6 +96,13 @@
     }
   ],
   "briefings": [
+    {
+      "title": "Building GenAI Chatbots for Government — A Reusable Pattern",
+      "href": "decks/genai-bot-pattern-2026-03.html",
+      "slides": "15 slides",
+      "date": "Mar 2026",
+      "description": "Pattern-based blueprint for building RAG chatbots that make existing public knowledge accessible 24/7. Covers the three-phase model (Curate → Build → Serve), two-team staffing (SMEs + IT), compliance fast lane, Azure/AWS infrastructure mapping, and a realistic 6-week timeline. Built for CA state departments considering GenAI implementations."
+    },
     {
       "title": "Agentic Engineering for California State Government",
       "href": "decks/agentic-engineering-civil-service-2026-02-22.html",
