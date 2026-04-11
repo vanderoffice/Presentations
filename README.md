@@ -10,7 +10,7 @@ Briefings and technical training decks for California government modernization.
 
 | Category | Description | Decks |
 |----------|-------------|:-----:|
-| **Briefings** | Executive briefings, governance frameworks, and agency overviews | 9 |
+| **Briefings** | Executive briefings, governance frameworks, and agency overviews | 6 |
 | **Training** | AI implementation patterns, production operations, and engineering practices | 4 |
 
 ---
@@ -24,10 +24,7 @@ Briefings and technical training decks for California government modernization.
 | Agentic Engineering for California State Government | Feb 2026 |
 | CDCR Technology Landscape | Feb 2026 |
 | CA Enterprise Modernization Plan | Jan 2026 |
-| CA Enterprise Modernization Appendix | Jan 2026 |
-| Technical Executive Assignment: Cabinet Briefing | Jan 2026 |
 | Claude Code Deployment at SWRCB | Jan 2026 |
-| Digital Transformation in Corrections (v1) | Jan 2026 |
 
 ## Training
 
