@@ -1,11 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Deployed: GitHub Pages](https://img.shields.io/badge/Deployed-GitHub_Pages-brightgreen.svg)](https://govfellows.github.io/presentations/)
 
-# Innovation Fellowship Presentation Library
+# VanderDev Presentations
 
-Interactive presentation decks for California's government modernization initiatives.
-
-**Live →** [govfellows.github.io/presentations](https://govfellows.github.io/presentations/)
+Briefings and technical training decks for California government modernization.
 
 ---
 
@@ -13,33 +10,39 @@ Interactive presentation decks for California's government modernization initiat
 
 | Category | Description | Decks |
 |----------|-------------|:-----:|
-| **Briefings** | Executive briefings and governance frameworks for state government leaders | 5 |
-| **Training** | AI for California Government course modules for state employees | 6 live, 3 coming soon |
-| **FellowOps** | Operational resources for Cohort 1 Senior Fellows | 1 |
+| **Briefings** | Executive briefings, governance frameworks, and agency overviews | 9 |
+| **Training** | AI implementation patterns, production operations, and engineering practices | 4 |
 
 ---
 
-## Training Course — AI for California Government
+## Briefings
 
-A structured course designed for California state employees with 10+ years of experience and spreadsheet-level technical skills.
+| Deck | Date |
+|------|------|
+| Building GenAI Chatbots for Government | Mar 2026 |
+| Digital Transformation in Corrections | Mar 2026 |
+| Agentic Engineering for California State Government | Feb 2026 |
+| CDCR Technology Landscape | Feb 2026 |
+| CA Enterprise Modernization Plan | Jan 2026 |
+| CA Enterprise Modernization Appendix | Jan 2026 |
+| Technical Executive Assignment: Cabinet Briefing | Jan 2026 |
+| Claude Code Deployment at SWRCB | Jan 2026 |
+| Digital Transformation in Corrections (v1) | Jan 2026 |
 
-| # | Module | Status |
+## Training
+
+| # | Module | Slides |
 |:-:|--------|--------|
-| 1 | Perplexity AI for Government | 13 slides |
-| 2 | GitHub for Non-Coders | 13 slides |
-| 3 | Search, Research & Verification with AI | Coming Soon |
-| 4 | Prompt Engineering for Government Work | Coming Soon |
-| 5 | Quality Assurance for RAG Knowledge Bases | 16 slides |
-| 6 | The Agentic Future: AI in Government Operations | Coming Soon |
-| 7 | WaterBot: Building a Government AI Assistant | 23 slides |
-| 8 | Building a Presentation Pipeline with AI | 19 slides |
-| 9 | Production Hardening for Government Web Services | 20 slides |
+| 1 | Prompt & Context Engineering for Government Work | 24 |
+| 2 | Quality Assurance for RAG Knowledge Bases | 16 |
+| 3 | WaterBot: Building a Government AI Assistant | 23 |
+| 4 | Production Hardening for Government Web Services | 20 |
 
 ---
 
 ## Architecture
 
-All decks are standalone [Reveal.js](https://revealjs.com/) HTML files — no build step, no dependencies, no server required.
+All decks are standalone [Reveal.js](https://revealjs.com/) HTML files. No build step, no dependencies, no server required.
 
 ```
 presentations/
@@ -48,23 +51,21 @@ presentations/
 ├── decks/              # All deck HTML + source markdown
 ├── briefings/          # Briefings category page
 ├── training/           # Training category page
-├── fellowops/          # FellowOps category page
-├── img/                # Shared images
-└── lab/                # Experimental decks
+└── img/                # Shared images
 ```
 
-> **Manifest-driven:** `decks.json` defines all categories, decks, and metadata. The hub and category pages render from it dynamically.
+> **Manifest-driven:** `decks.json` defines all categories, decks, and metadata. Hub and category pages render from it dynamically.
 
 ## Adding a Deck
 
 1. Build the deck HTML (via the `/deck` skill or manually)
 2. Place the compiled `.html` in `decks/`
 3. Add an entry to `decks.json` under the appropriate category
-4. Push to `main` — GitHub Pages deploys automatically
+4. Push to `main`
 
 ## Design
 
-Dark theme · Inter font · CSS custom properties for theming · Fully responsive layouts. Each category has its own accent color (blue, gold, teal).
+Dark theme. Inter font. CSS custom properties for theming. Fully responsive layouts.
 
 ---
 
