@@ -64,6 +64,11 @@ presentations/
 
 Dark theme. Inter font. CSS custom properties for theming. Fully responsive layouts.
 
+## Related
+
+- [State-Modernization](https://github.com/vanderoffice/State-Modernization) -- research that informs briefing content
+- [VanderDev-Website](https://github.com/vanderoffice/VanderDev-Website) -- main site (presentations hosted separately)
+
 ---
 
 ## License
